@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--纤芯 -->
+<tpl>
+	<grid name="DM.POSRELATION" title="POS" >
+		<plugins>
+			<plugin>number</plugin>
+		</plugins>
+		<columns>
+			<column dataIndex="DISHI">地市</column>
+			<column dataIndex="LABEL_CN">POS名称</column>
+			<column dataIndex="CABLABEL_CN">所属设备</column>
+			<column dataIndex="ACCESSLABEL_CN">所属资源点</column>		
+			<column dataIndex="ROOMLABEL_CN" >所属机房</column>				
+		    
+		</columns>
+		<fields>
+			<field mapping="DISHI" type="String"></field>
+			<field mapping="LABEL_CN" type="String"></field>
+			<field mapping="CABLABEL_CN" type="String"></field>
+			<field mapping="ACCESSLABEL_CN" type="String"></field>
+			<field mapping="ROOMLABEL_CN" type="String"></field>
+			<field mapping="DISHI2" type="String"></field>
+		</fields>
+		<cm>
+			{
+			}
+		</cm>
+		<sql dao="IbatisTnmsDAO">
+			<![CDATA[
+			SELECT 
+			A.RELATED_DISTRICT_CUID AS DISHI2,
+			(SELECT LABEL_CN FROM DISTRICT WHERE CUID = A.RELATED_DISTRICT_CUID) DISHI,
+       LABEL_CN,
+       (SELECT LABEL_CN
+          FROM FIBER_DP
+         WHERE CUID = A.RELATED_CAB_CUID
+        UNION
+        SELECT LABEL_CN FROM FIBER_CAB WHERE CUID = A.RELATED_CAB_CUID) CABLABEL_CN,
+       (SELECT LABEL_CN FROM ACCESSPOINT WHERE CUID = A.RELATED_ACCESS_POINT) ACCESSLABEL_CN,
+       (SELECT LABEL_CN FROM ROOM WHERE CUID = A.RELATED_ROOM_CUID) ROOMLABEL_CN
+ 			 FROM AN_POS A
+      ]]>
+		</sql>
+		<note>
+			POS查询
+		</note>
+	</grid>
+</tpl>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<combo name="DMmenu.index">
+		<items>
+			<item value="DM_POINT_MAINTAIN" CODE="dm_maintain">管线管理</item>
+		</items>
+	</combo>
+	
+</tpl>

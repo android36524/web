@@ -1,0 +1,35 @@
+[
+{
+      "name":"LABEL_CN", 
+      "displayName":"名称", 
+      "editable":true, 
+      "nullable":false,
+      "emptiable":true,
+      "color":"red",
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"RELATED_DISTRICT_CUID_NAME", 
+      "displayName":"所属区域", 
+      "editable":false,
+      "nullable":false,
+      "color":"red", 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"LONGITUDE", 
+      "displayName":"经度", 
+      "editable":false,
+      "nullable":false,
+      "color":"red", 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"LATITUDE", 
+      "displayName":"纬度", 
+      "editable":false,
+      "nullable":false,
+      "color":"red", 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+]

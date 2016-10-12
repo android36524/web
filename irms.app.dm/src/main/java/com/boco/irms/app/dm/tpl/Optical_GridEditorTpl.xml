@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+<!-- 光纤管理 -->
+	<editor name="IRMS.RMS.OPTICAL" classname="OPTICAL" title="光纤">
+		<columns>
+		     <column id="OBJECTID"  filter="all" categoryname="系统属性">OBJECTID</column>
+			<column id="CUID"  filter="all" categoryname="系统属性">CUID</column>
+			 
+			<column id="LABEL_CN" filter="all" editable="true" categoryname="基本属性" nullable="true">光纤名称
+			</column>
+			<column id="ORIG_SITE_CUID" filter="all" editable="true" 
+			    editor="dmcombox@service_dict_dm.DM_SITE" 
+			    categoryname="基本属性" nullable="true">起点站点
+			</column>
+			<column id="ORIG_ROOM_CUID" editable="true" filter="all"
+				editor="dmcombox@service_dict_dm.DM_ROOM" 
+				categoryname="基本属性" nullable="true">起点机房
+			</column>
+			<column id="ORIG_EQP_CUID" editable="true" filter="all"
+				editor="menucombox"
+	            categoryname="基本属性" nullable="true">起点设备
+	        </column>
+			<column id="ORIG_POINT_CUID" editable="true" filter="all" 
+			    editor="menucombox"
+			    categoryname="基本属性" nullable="true">起点端子
+			</column>
+		    <column id="DEST_SITE_CUID" editable="true" filter="all" 
+               editor="dmcombox@service_dict_dm.DM_SITE" 
+		        categoryname="基本属性" nullable="true">终点站点
+            </column>
+            <column id="DEST_ROOM_CUID" editable="true" filter="all" 
+                editor="dmcombox@service_dict_dm.DM_ROOM" 
+                categoryname="基本属性" nullable="true">终点机房
+            </column>
+            <column id="DEST_EQP_CUID" editable="true" filter="all" 
+                editor="menucombox"
+				categoryname="基本属性" nullable="true">终点设备
+			</column>
+			<column id="DEST_POINT_CUID" editable="true" filter="all" 
+			    editor="menucombox"
+			    categoryname="基本属性" nullable="true">终点端子
+		    </column>
+		    <column id="ROUTE_DESCIPTION" editable="false" width="450" filter="all" 
+				categoryname="基本属性">路由信息
+		    </column>
+		    <column id="OWNERSHIP" editable="true" filter="all" 
+		        editor="enumbox@DMOwnerShip" categoryname="基本属性">产权归属
+		    </column>
+		    <column id="FIBER_LEVEL" editable="true" filter="all" 
+		        editor="enumbox@DMFIBERLEVEL" categoryname="基本属性">级别
+		    </column>
+		    <column id="FIBER_STATE" editable="true" filter="all" 
+		        editor="enumbox@DMSUSAGESTATE" categoryname="基本属性">使用状态
+		    </column>
+		    <column id="USER_NAME" editable="true" filter="all" categoryname="基本属性">用户名
+		    </column>
+		    <column id="FIBER_TYPE" editable="true" filter="all"
+		        editor="enumbox@DMFiberType" categoryname="基本属性">类型
+			</column>
+			<column id="FIBER_DIR" editable="true" filter="all" 
+			    editor="enumbox@DMSIGNALDIRECTION" categoryname="基本属性">方向
+			</column>
+			<column id="PURPOSE" editable="true" filter="all" 
+			    editor="enumbox@DMPurpose" categoryname="基本属性">用途
+		    </column>
+            <column id="LENGTH" editable="true" filter="all" 
+                editor="double"
+				categoryname="基本属性">总长度(M)
+            </column>
+            <column id="SUM_ATTENU_1310" editable="true" filter="all" 
+                editor="double"
+				categoryname="基本属性">1310总衰耗
+            </column>
+            <column id="SUM_ATTENU_1550" editable="true" filter="all" 
+                editor="double"
+				categoryname="基本属性">1550总衰耗
+            </column>
+            <column id="MAKE_FLAG" editable="false" filter="all"
+                editor="enumbox@PathMakeFlag" categoryname="基本属性">核查状态
+            </column>
+            <!--  -->
+            <column id="APPLY_TYPE" editable="true" filter="all" categoryname="基本属性">适用类型
+            </column>
+            
+		</columns>
+		<sql>
+			SELECT * FROM OPTICAL
+		</sql>
+		<remote name="ProjectPropTemplateBO">
+			<method type="query">IOpticalBO.getOpticalBySelectSqlExt</method>
+			<method type="count">IOpticalBO.getOpticalBySelectSqlExt</method>
+			<method type="insert">IOpticalBO.addOpticalWithLabelCn</method>
+			<method type="update">IOpticalBO.modifyOpticalExt</method>
+			<method type="delete">IOpticalBO.deleteOpticals</method>
+		</remote>
+	</editor>
+</tpl>

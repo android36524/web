@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<grid name="DMMA.HITCHTASK.GRID" title="故障处理任务管理表格" >
+		<columns>
+			<column dataIndex="CUID" isNotNull="true">编号</column>
+			<column dataIndex="TASK_STATE" isNotNull="true">完成情况</column>
+			<column dataIndex="LABEL_CN" isNotNull="true">任务名称</column>
+			<column dataIndex="ISSAVE" isNotNull="true">归档状态</column>
+			<column dataIndex="ARCHIVE_TIME" isNotNull="true">归档时间</column>
+			<column dataIndex="PDA_ACCEPT_TIME" isNotNull="true">接受时间</column>		
+			<column dataIndex="PDA_ACTUAL_END_TIME" isNotNull="true">实际结束时间</column>				
+		    <column dataIndex="PDA_TASK_STATE" isNotNull="true">任务状态</column>	
+		    <column dataIndex="PDA_USER_NAME" isNotNull="true">派发PDA设备</column>	
+		    <column dataIndex="TASK_TIME" isNotNull="true">任务派发时间</column>
+		    <column dataIndex="REMARK" isNotNull="true">备注</column>	
+		</columns>
+		<fields>
+			
+		</fields>
+		<cm>
+			{
+			}
+		</cm>
+		<sql dao="IbatisResDAO">
+		
+			SELECT  *
+		  FROM SITE T
+      
+		</sql>
+		<note>
+			故障处理任务管理表格
+		</note>
+	</grid>
+	
+</tpl>

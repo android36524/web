@@ -1,0 +1,118 @@
+[
+{
+      "name":"DUCT_CHILD_HOLD_NUM", 
+      "displayName":"编号", 
+      "editable":true, 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"USAGE_STATE", 
+      "displayName":"使用状态", 
+      "editable":true, 
+      "className":"Renderer.EnumTypeRenderer", 
+      "key":"ChildHoleState",
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"LENGTH", 
+      "displayName":"长度", 
+      "editable":true, 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"RELATED_SYSTEM_NAME", 
+      "displayName":"所属管道", 
+      "editable":true, 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"OWNERSHIP", 
+      "displayName":"产权", 
+      "editable":true, 
+      "className":"Renderer.EnumTypeRenderer", 
+      "key":"DMOwnerShip",
+      "categoryName":"业务属性", 
+      "accessType":"attr"}
+,{
+      "name":"PURPOSE", 
+      "displayName":"用途", 
+      "editable":true, 
+      "className":"Renderer.EnumTypeRenderer", 
+      "key":"DMPurpose",
+      "categoryName":"业务属性", 
+      "accessType":"attr"}
+,{
+      "name":"RES_OWNER", 
+      "displayName":"所有权人", 
+      "editable":true, 
+      "categoryName":"业务属性", 
+      "accessType":"attr"}
+,{
+      "name":"BUILDER", 
+      "displayName":"施工单位", 
+      "editable":true, 
+      "categoryName":"业务属性", 
+      "accessType":"attr"}
+,{
+      "name":"BUILD_DATE", 
+      "displayName":"施工时间", 
+      "editable":true, 
+      "className":"Renderer.DatetimeRenderer",
+      "format":"yyyy-MM-dd HH:mm:ss",
+      "categoryName":"业务属性", 
+      "accessType":"attr"}
+,{
+      "name":"FINISH_DATE", 
+      "displayName":"竣工时间", 
+      "editable":true, 
+      "className":"Renderer.DatetimeRenderer",
+      "format":"yyyy-MM-dd HH:mm:ss",
+      "categoryName":"业务属性", 
+      "accessType":"attr"}
+,{
+      "name":"SERVICER", 
+      "displayName":"巡检人", 
+      "editable":true, 
+      "categoryName":"业务属性", 
+      "accessType":"attr"}
+,{
+      "name":"MAINT_DEP", 
+      "displayName":"维护单位", 
+      "editable":true, 
+      "categoryName":"业务属性", 
+      "accessType":"attr"}
+,{
+      "name":"PHONE_NO", 
+      "displayName":"联系电话", 
+      "editable":true, 
+      "categoryName":"业务属性", 
+      "accessType":"attr"}
+,{
+      "name":"MAINT_MODE", 
+      "displayName":"维护方式", 
+      "editable":true, 
+      "className":"Renderer.EnumTypeRenderer", 
+      "key":"DMMaintMode",
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"CHECK_DATE", 
+      "displayName":"检修时间", 
+      "editable":true, 
+      "className":"Renderer.DatetimeRenderer",
+      "format":"yyyy-MM-dd HH:mm:ss",
+      "categoryName":"业务属性", 
+      "accessType":"attr"}
+,{
+      "name":"REMARK", 
+      "displayName":"备注", 
+      "editable":true, 
+      "categoryName":"其它属性", 
+      "accessType":"attr"}
+,{
+      "name":"FIBERINFO", 
+      "displayName":"光缆信息", 
+      "editable":false, 
+      "categoryName":"其它属性", 
+      "accessType":"attr"}
+]

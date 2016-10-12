@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<!-- 人手井 -->
+	<editor name="IRMS.RMS.MANHLE"  classname="MANHLE" title="人井">
+		<columns>
+		     <column id="OBJECTID"  filter="all" categoryname="系统属性">OBJECTID</column>
+			<column id="CUID"  filter="all" categoryname="系统属性">CUID</column>
+			 
+			<column id="LABEL_CN" filter="all" width ="100" editable="true"  nullable="true" categoryname="系统属性">名称
+			</column>
+			<column id="RELATED_DISTRICT_CUID" filter="all" editor="asyncombox@DMDF.DISTRICT" 
+				editable="true"  nullable="true" categoryname="基本属性">所属区域</column>
+			<column id="OWNERSHIP"  filter="all" editable="true" editor="enumbox@DMOwnerShip"  nullable="true"  
+				categoryname="基本属性">产权</column>
+			<column id="PURPOSE"  filter="all" editor="enumbox@DMPurpose"  nullable="true" categoryname="基本属性"
+				editable="true">用途</column>
+				
+			<column id="LONGITUDE"  filter="all" editable="true"
+				editor="double@0~180|6"				
+				categoryname="基本属性">显示经度</column>
+			<column id="LATITUDE"  filter="all" editable="true"
+				editor="double@0~90|6"
+				categoryname="基本属性">显示纬度</column>
+			<column id="REAL_LONGITUDE"  filter="all" editable="true"
+				editor="double@0~180|6"
+				categoryname="基本属性">实际经度</column>		    
+			<column id="REAL_LATITUDE"  filter="all" editable="true"
+				editor="double@0~90|6"
+				categoryname="基本属性">实际纬度</column>
+			<column id="WELL_KIND"  filter="editor" editable="true"
+				editor="enumbox@ManhleKind"
+				categoryname="基本属性">人手井类型</column>
+			<column id="WELL_TYPE"  editable="true"  
+				editor="enumbox@ManhleType"
+				categoryname="基本属性">具体类型</column>
+			<column id="STRUCT" editable="true"
+				editor="enumbox@ManhleStruct"
+				categoryname="基本属性">结构</column>
+			<column id="SPEC" editable="true"
+				editor="enumbox@ManhleSpec"
+				categoryname="基本属性">规格</column>
+			<column id="MODEL" editable="true"
+				editor="enumbox@ManhleModel"
+				categoryname="基本属性">型号</column>
+			<column id="WALL_DEEP" editable="true"
+				editor="double"
+				categoryname="基本属性">井深(M)</column>
+			<column id="WELL_HEIGHT" editable="true"
+				editor="double" 
+				categoryname="基本属性">壁厚(CM)</column>			
+			<column id="UP_DEEP" editable="true"
+				editor="double" 
+				categoryname="基本属性">上覆厚(CM)</column>
+			<column id="BASE_DEEP" editable="true"
+				editor="double" 
+				categoryname="基本属性">底基厚(CM)</column>
+			<column id="NET_HEIGHT" editable="true"
+				editor="double" 
+				categoryname="基本属性">净空高(M)</column>
+			<column id="NORTH_SOUTH_LENGTH" editable="true"
+				editor="double" 
+				categoryname="基本属性">南北长(M)</column>
+			<column id="EAST_WEST_LENGTH" editable="true"
+				editor="double" 
+				categoryname="基本属性">东西长(M)</column>
+			<column id="ROAD_SIDE_LENGTH" editable="true"
+				editor="double" 
+				categoryname="基本属性">路边距(M)</column>
+			<column id="ROAD_CENTER_LENGTH" editable="true"
+				editor="double" 
+				categoryname="基本属性">路中心距(M)</column>
+			<column id="COVER_STUFF" editable="true"
+				editor="enumbox@ManhleStruct"
+				categoryname="基本属性">井盖材质</column>
+			<column id="SUSTAIN" editable="true"
+				editor="double" 
+				categoryname="基本属性">井盖承重</column>
+			<column id="COVER_BULGE" editable="true"
+				editor="double" 
+				categoryname="基本属性">井盖突起度</column>
+			<column id="COVER_PARAM" editable="true" categoryname="基本属性">井盖参数
+			</column>
+			<column id="RES_OWNER" editable="true" categoryname="业务属性">所有权人
+			</column>
+			<column id="USERNAME" editable="true" categoryname="业务属性">使用单位
+			</column>
+			<column id="MAINT_DEP" editable="true" categoryname="业务属性">维护单位
+			</column>
+			<column id="LOCATION" editable="true" categoryname="业务属性">地址
+			</column>
+			<column id="MAINT_MODE" editable="true" nullable="true" editor="enumbox@DMMaintMode"
+				categoryname="业务属性">维护方式</column>
+			<column id="SERVICER" editable="true" categoryname="业务属性">巡检人
+			</column>
+			<column id="PHONE_NO" editable="true" categoryname="业务属性">联系电话
+			</column>
+			<column id="CHECK_DATE" editable="true" editor="date"
+				 categoryname="业务属性">检修时间
+			</column>
+			<column id="IS_KEEP_POINT"  editor="enumbox@BooleanType" editable="true"	categoryname="业务属性">是否是预留点</column>
+			<column id="IS_DANGER_POINT"  categoryname="业务属性" editor="enumbox@BooleanType">是否危险点</column>
+			<column id="IS_CONN_POINT"  categoryname="业务属性" editor="enumbox@BooleanType">是否接头点</column>
+			<column id="BUILDER" editable="true" categoryname="业务属性">施工单位
+			</column>
+			<column id="BUILD_DATE" editable="true" editor="date"
+				 categoryname="业务属性">施工时间
+			</column>
+			<column id="FINISH_DATE" editable="true" editor="date"
+				 categoryname="业务属性">竣工时间
+			</column>
+			<column id="RELATED_PROJECT_CUID" editable="true"
+				editor="dmcombox@service_dict_dm.DM_PROJECT_MANAGEMENT"
+				categoryname="业务属性">所属工程</column>
+			<column id="PROJECT_STATE" editable="false"
+				editor="enumbox@DMProjectState"
+				categoryname="业务属性">工程状态</column>
+			<column id="RELATED_MAINT_CUID" editable="true"
+				editor="dmcombox@service_dict_dm.DM_MAINT_MANAGEMENT"
+				categoryname="业务属性">所属维护作业</column>
+			<column id="MAINT_STATE" editable="false"
+				editor="enumbox@MaintState"
+				categoryname="业务属性">维护作业状态</column>
+			<column id="PRO_NAME" editable="true" categoryname="业务属性">工程名称
+			</column>
+			<column id="REMARK" editable="true" categoryname="其他属性">备注
+			</column>
+			<column id="CREATOR" editable="false" categoryname="其他属性">录入人
+			</column>
+			<column id="CREATE_TIME" editable="false" editor="date"
+				 categoryname="其他属性">录入时间
+			</column>
+			<column id="LAST_MODIFY_TIME" editable="false" editor="date"
+				  categoryname="其他属性">最后修改时间
+			</column>
+		</columns>
+		<sql>
+			SELECT * FROM MANHLE
+		</sql>
+		<remote name="PointPropTemplateBO">
+			<method type="query">IManhleBO.getManhleBySql</method>
+			<method type="count">IManhleBO.getManhleBySql</method>
+			<method type="insert">IManhleBO.addManhles</method>
+			<method type="update">IManhleBO.modifyManhles</method>
+			<method type="delete">IManhleBO.deleteManhles</method>
+			<method type="editorMetaPluginBoName">DefaultEditorMetaPluginBO</method>
+		</remote>
+	</editor>
+</tpl>

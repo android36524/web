@@ -1,0 +1,80 @@
+[
+{
+      "name":"PREFIX", 
+      "displayName":"前缀", 
+      "editable":true, 
+      "categoryName":"基本属性", 
+      "color":"red",
+      "nullable":false,
+      "emptiable":true,
+      "accessType":"attr"}
+,{
+      "name":"SERIALNUMBER", 
+      "displayName":"编号位数", 
+      "editable":true, 
+      "className":"Renderer.EnumTypeRenderer", 
+      "key":"SerialNumber",
+      "categoryName":"基本属性", 
+      "color":"red",
+      "nullable":false,
+      "accessType":"attr"}
+,{
+      "name":"SUFFIX", 
+      "displayName":"后缀", 
+      "editable":true, 
+      "className":"Renderer.EnumTypeRenderer", 
+      "key":"MANHLELastName",
+      "categoryName":"基本属性", 
+      "color":"red",
+      "nullable":false,
+      "accessType":"attr"}
+,{
+      "name":"ORIGNUMBER", 
+      "displayName":"起始编号", 
+      "editable":true, 
+      "categoryName":"基本属性",
+      "color":"red", 
+      "nullable":false,
+      "emptiable":true,
+      "accessType":"attr"}
+,{
+      "name":"COUNT", 
+      "displayName":"数量", 
+      "editable":false, 
+      "categoryName":"基本属性",
+      "color":"red", 
+      "nullable":false,
+      "accessType":"attr"}
+,{
+      "name":"RELATED_DISTRICT_CUID_NAME", 
+      "displayName":"所属区域", 
+      "editable":false,
+      "nullable":false,
+      "color":"red", 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"WELL_KIND", 
+      "displayName":"人手井类型", 
+      "editable":true, 
+      "className":"Renderer.EnumTypeRenderer", 
+      "key":"ManhleKind", 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"WELL_TYPE", 
+      "displayName":"具体类型", 
+      "editable":true, 
+      "className":"Renderer.EnumTypeRenderer", 
+      "key":"ManhleType", 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"MODEL", 
+      "displayName":"型号", 
+      "editable":true, 
+      "className":"Renderer.EnumTypeRenderer", 
+      "key":"ManhleModel", 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+]

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<!-- 站点查询 -->
+	<editor name="IRMS.RMS.SITE" classname="SITE" title="站点">
+		<columns>
+			<column id="OBJECTID" filter="all">OBJECTID</column>
+			<column id="CUID" filter="all">CUID</column>
+			<column id="LABEL_CN" editable="false" categoryname="业务属性">站点名称
+			</column>
+			<column id="RELATED_SPACE_CUID" editable="false"
+				editor="asyncombox@DMDF.DISTRICT" categoryname="业务属性">所属区域
+			</column>
+			<column id="ALIAS" editable="false" categoryname="业务属性">别名 </column>
+			<column id="ABBREVIATION" editable="false" categoryname="业务属性">缩写
+			</column>
+			<column id="OWNERSHIP" editable="false" editor="enumbox@OwnerShip"
+				categoryname="业务属性">产权</column>
+			<column id="SERVICE_LEVEL" editable="false" editor="enumbox@ServiceLevel"
+				categoryname="业务属性">网元业务级别 </column>
+			<!-- <column id="SITE_TYPE" editable="false" editor="enumbox@SITE_CFG_TYPE" 
+				categoryname="业务属性">站点类型 </column> -->
+			<column id="LOCATION" editable="false" categoryname="业务属性">位置
+			</column>
+			<column id="LONGITUDE" editable="false"
+				editor="double@0~180|6"
+				categoryname="业务属性">显示经度 </column>
+			<column id="LATITUDE" editable="false"
+				editor="double@0~90|6"
+				categoryname="业务属性">显示纬度 </column>
+			<column id="REAL_LONGITUDE" editable="false"
+				editor="double@0~180|6"
+				categoryname="业务属性">实际经度 </column>
+			<column id="REAL_LATITUDE" editable="false"
+				editor="double@0~90|6"
+				categoryname="业务属性"> 实际纬度</column>
+			<column id="CONTACTOR" editable="false" categoryname="业务属性">联系人
+			</column>
+
+			<column id="CONTACT_ADDRESS" editable="false" categoryname="业务属性">
+				联系地址</column>
+
+			<column id="TELEPHONE" editable="false" categoryname="业务属性">联系电话
+			</column>
+
+			<column id="REMARK" editable="false" categoryname="业务属性">备注 </column>
+
+		</columns>
+		<sql>
+			SELECT * FROM SITE
+		</sql>
+		<remote name="PropGridTemplateProxyBO">
+			<method type="query">ISiteBO.getSitePageBySql</method>
+			<method type="count">ISiteBO.getSitePageBySql</method>
+			<method type="insert">ISiteBO.addSite</method>
+			<method type="update">ISiteBO.modifySite</method>
+			<method type="delete">ISiteBO.deleteSite</method>
+		</remote>
+	</editor>
+</tpl>

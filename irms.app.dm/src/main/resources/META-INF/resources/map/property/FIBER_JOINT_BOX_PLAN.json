@@ -1,0 +1,64 @@
+[
+{
+      "name":"LABEL_CN", 
+      "displayName":"名称", 
+      "editable":true, 
+      "categoryName":"基本属性", 
+      "nullable":false,
+      "emptiable":true,
+      "color":"red",
+      "accessType":"attr"}
+,{
+      "name":"RELATED_DISTRICT_CUID_NAME", 
+      "displayName":"所属区域", 
+      "editable":false, 
+      "color":"red",
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"LONGITUDE", 
+      "displayName":"经度", 
+      "editable":false,
+      "nullable":false,
+      "color":"red", 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"LATITUDE", 
+      "displayName":"纬度", 
+      "editable":false,
+      "nullable":false,
+      "color":"red", 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"JUNCTION_TYPE", 
+      "displayName":"接头形式", 
+      "editable":true, 
+      "className":"Renderer.EnumTypeRenderer", 
+      "key":"DMJunctionType",
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"CAPACITY", 
+      "displayName":"接头盒容量", 
+      "editable":true, 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"KIND", 
+      "displayName":"设备类型", 
+      "editable":true, 
+      "className":"Renderer.EnumTypeRenderer", 
+      "key":"DMFBoxKindType",
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"RELATED_VENDOR_CUID", 
+      "displayName":"设备供应商", 
+      "editable":true, 
+      "className":"Renderer.EnumTypeRenderer", 
+      "key":"DeviceVendor", 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+]

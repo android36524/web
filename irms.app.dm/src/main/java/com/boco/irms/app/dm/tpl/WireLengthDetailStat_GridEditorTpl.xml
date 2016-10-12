@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<!-- 河南区域细分光缆皮长 -->
+	<editor name="IRMS.RMS.WIRE_LENGTH_DET" classname="WIRE_LENGTH_DET" title="区域细分光缆皮长">
+		<columns>
+		     <!-- <column id="OBJECTID"  filter="all" categoryname="系统属性">OBJECTID</column> -->
+			<column id="CUID"  filter="all" categoryname="系统属性">CUID</column>
+			<column id="PARENT_DISTRICT_NAME"  editable="false" categoryname="基本属性" nullable="false" >区域
+			</column>
+			<column id="DISTRICT_NAME" editable="false" categoryname="基本属性" nullable="false" >县区
+			</column>
+			<column id="BRANCH_COMPANY" editable="false" categoryname="基本属性" nullable="false">分公司
+			</column>
+			<column id="DUCT_SEG" editable="false" categoryname="基本属性" nullable="false">管道线路（公里）
+			</column>
+			<column id="POLEWAY_SEG" editable="false" categoryname="基本属性" nullable="false">杆路线路（公里）
+			</column>
+			<column id="STONEWAY_SEG" editable="false" categoryname="基本属性" nullable="false">直埋线路（公里）
+			</column>
+			<column id="UP_LINE_SEG" editable="false" categoryname="基本属性" nullable="false">引上线路（公里）
+			</column>
+			<column id="HANG_WALL_SEG" editable="false" categoryname="基本属性" nullable="false">挂墙线路（公里）
+			</column>
+			<column id="ALL_SEG" editable="false" categoryname="基本属性" nullable="false">合计（公里）
+			</column>
+			<column id="CHECK_YEAR" editable="false" categoryname="基本属性" nullable="false">核查年份
+			</column>
+			<column id="CHECK_MONTH" editable="false" categoryname="基本属性" nullable="false">核查月份
+			</column>
+		</columns>
+		
+		<sql>SELECT * FROM WIRE_LENGTH_DET,SELECT * FROM DUCT_LINE_LENGTH_DET</sql>
+	</editor>
+</tpl>

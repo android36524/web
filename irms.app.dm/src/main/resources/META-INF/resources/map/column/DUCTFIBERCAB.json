@@ -1,0 +1,15 @@
+[
+{
+      "name":"LABEL_CN", 
+      "displayName":"名称", 
+      "editable":false,
+      "width":300,
+      "accessType":"attr"}
+,{
+      "name":"RELATED_DISTRICT_CUID", 
+      "displayName":"所属区域", 
+      "editable":false, 
+      "width":80, 
+      "accessType":"attr"}
+
+]

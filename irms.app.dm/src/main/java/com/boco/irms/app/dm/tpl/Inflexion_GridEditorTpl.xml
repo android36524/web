@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<editor name="IRMS.RMS.INFLEXION"  classname="INFLEXION" title="拐点">
+		<columns>
+		     <column id="OBJECTID"  filter="all" categoryname="系统属性">OBJECTID</column>
+			<column id="CUID"  filter="all" categoryname="系统属性">CUID</column>
+			 
+ <column
+  id="LABEL_CN"
+  editable="true"
+  categoryname="基本属性"
+  nullable="true">名称
+  </column>
+
+  <column
+  	 id="RELATED_DISTRICT_CUID"
+     editor="asyncombox@DMDF.DISTRICT"
+  	 editable="true"
+     categoryname="基本属性"
+     nullable="true">所属区域
+  </column>
+    <column
+	id="OWNERSHIP"
+    editable="true"
+    editor="enumbox@DMOwnerShip"
+    categoryname="基本属性"
+    nullable="true">产权</column>
+
+ <column
+  id="PURPOSE"
+  editable="true"
+  editor="enumbox@DMPurpose"
+  categoryname="基本属性"
+  nullable="true">用途</column>
+
+    <column
+  id="LONGITUDE"
+  editable="true"
+  editor="double@0~180|6"
+  categoryname="基本属性">显示经度</column>
+
+ <column
+  id="LATITUDE"
+  editable="true"
+  editor = "double@0~90|6"
+  categoryname="基本属性">显示纬度</column>
+
+
+  <column
+  id="REAL_LONGITUDE"
+  editable="true"
+  editor="double@0~180|6"
+  categoryname="基本属性">实际经度</column>
+
+ <column
+  id="REAL_LATITUDE"
+  editable="true"
+  editor = "double@0~90|6"
+  categoryname="基本属性">实际纬度</column>
+
+    <column
+        id="RES_OWNER"
+        editable="true"
+        categoryname="业务属性">所有权人</column>
+    <column
+        id="USERNAME"
+        editable="true"
+        categoryname="业务属性">使用单位</column>
+
+ <column
+  id="MAINT_DEP"
+  editable="true"
+  categoryname="业务属性">维护单位</column>
+
+ <column
+  id="LOCATION"
+  editable="true"
+  categoryname="业务属性">地址</column>
+
+  <column
+  id="MAINT_MODE"
+  editable="true"
+                editor="enumbox@DMMaintMode"
+  categoryname="业务属性">维护方式</column>
+
+  <column
+  id="SERVICER"
+  editable="true"
+  categoryname="业务属性">巡检人</column>
+
+  <column
+  id="PHONE_NO"
+  editable="true"
+  categoryname="业务属性">联系电话</column>
+
+  <column
+  id="CHECK_DATE"
+  editable="true"
+  editor="date"
+  categoryname="业务属性">检修时间</column>
+
+  <column
+  id="IS_DANGER_POINT"
+  editable="true"
+  editor="enumbox@BooleanType"
+  categoryname="业务属性">是否是危险点</column>
+
+ <column
+  id="IS_CONN_POINT"
+  editable="true"
+  editor="enumbox@BooleanType"
+  categoryname="业务属性">是否接头点</column>
+
+ <column
+  id="IS_KEEP_POINT"
+  editable="false"
+  editor="enumbox@BooleanType"
+  categoryname="业务属性">是否是预留点</column>
+
+  <column
+  id="BUILDER"
+  editable="true"
+  categoryname="业务属性">施工单位</column>
+
+ <column
+  id="BUILD_DATE"
+  editable="true"
+  editor="date"
+  categoryname="业务属性">施工时间</column>
+
+ <column
+  id="FINISH_DATE"
+  editable="true"
+  editor="date"
+  categoryname="业务属性">竣工时间</column>
+
+ <column
+  id="RELATED_PROJECT_CUID"
+  editable="true"
+  editor="dmcombox@service_dict_dm.DM_PROJECT_MANAGEMENT"
+  categoryname="业务属性">所属工程
+  </column>
+   <column
+  id="PROJECT_STATE"
+  editable="false"
+  editor="enumbox@DMProjectState"
+  categoryname="业务属性">工程状态</column>
+  
+   <column
+  id="RELATED_MAINT_CUID"
+  editable="true"
+  editor="dmcombox@service_dict_dm.DM_MAINT_MANAGEMENT"
+  categoryname="业务属性">所属维护作业</column>
+   <column
+  id="MAINT_STATE"
+  editable="false"
+  editor="enumbox@MaintState"
+  categoryname="业务属性">维护作业状态</column>
+
+  <column
+  id="PRO_NAME"
+  editable="true"
+  categoryname="业务属性">工程名称</column>
+
+ <column
+  id="REMARK"
+  editable="true"
+  categoryname="其他属性">备注</column>
+<column
+  id="CREATOR"
+  editable="false"
+  categoryname="其他属性">录入人</column>
+
+   <column
+  id="CREATE_TIME"
+  editable="false"
+  editor="date"
+  categoryname="其他属性">录入时间</column>
+
+   <column
+  id="LAST_MODIFY_TIME"
+  editor="date"
+  editable="false"
+  categoryname="其他属性">最后修改时间</column>
+	</columns>
+		<sql>
+			SELECT * FROM Inflexion
+		</sql>
+		<remote name="PointPropTemplateBO">
+			<method type="query">IInflexionBO.getInflexionBySql</method>
+			<method type="count">IInflexionBO.getInflexionBySql</method>
+			<method type="insert">IInflexionBO.addInflexions</method>
+			<method type="update">IInflexionBO.modifyInflexions</method>
+			<method type="delete">IInflexionBO.deleteInflexions</method>
+			<method type="editorMetaPluginBoName">DefaultEditorMetaPluginBO</method>
+		</remote>
+	</editor>
+</tpl>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<editor name="IRMS.RMS.WIRE_SEG" classname="WIRE_SEG" title="光缆段">
+		<columns>
+		     <column id="OBJECTID"  filter="all" categoryname="系统属性">OBJECTID</column>
+			<column id="CUID"  filter="all" categoryname="系统属性">CUID</column>
+			 
+			<column id="LABEL_CN" filter="all" editable="true"
+			    categoryname="系统属性" nullable="true">名称
+			</column>
+			<column id="ALIAS" filter="all" editable="true"
+			    categoryname="系统属性" nullable="true">别名
+			</column>
+			<column id="RELATED_SYSTEM_CUID" editable="true"  editor="dmcombox@service_dict_dm.DM_WIRE_SYSTEM"
+                categoryname="系统属性" nullable="true">所属光缆
+			</column>
+			<column id="ORIG_POINT_CUID" editable="true" 
+			    editor="menucombox@DM_SITE=站点|DM_FIBER_CAB=光交接箱|DM_FIBER_DP=光分纤箱|DM_FIBER_JOINT_BOX=光接头盒|DM_ACCESSPOINT=接入点"
+                categoryname="系统属性" nullable="true">连接起点
+			</column>
+			<column id="DEST_POINT_CUID" editable="true"
+			    editor="menucombox@DM_SITE=站点|DM_FIBER_CAB=光交接箱|DM_FIBER_DP=光分纤箱|DM_FIBER_JOINT_BOX=光接头盒|DM_ACCESSPOINT=接入点"
+                categoryname="系统属性" nullable="true">连接终点
+			</column>
+			<column id="FIBER_COUNT" editable="false"
+			    editor="long"
+                categoryname="基本属性" >纤芯个数（芯）
+            </column>
+			<column id="DIA" editable="true" 
+			    editor="double"
+                categoryname="基本属性">光缆直径（CM）
+			</column>
+			<column id="STUFF" editable="true" categoryname="基本属性">材料
+			</column>
+			<column id="LAY_TYPE" editable="true" 
+			    editor="enumbox@DMLayType"
+                categoryname="基本属性">敷设方式
+			</column>
+			<column id="FIBER_TYPE" editable="true" 
+			    editor="enumbox@DMFiberType"
+                categoryname="基本属性">纤芯类型
+			</column>
+			<column id="VENDOR" editable="true" categoryname="基本属性">生产厂商
+			</column>
+			<column id="PRODUCE_DATE" editable="true" 
+			    editor="date"
+			    categoryname="基本属性">生产时间
+			</column>
+			<column id="RELATED_PATH_CUID" editable="true" categoryname="基本属性">所属路由
+			</column>
+			<column id="LENGTH" editable="true"
+				editor="double" 
+				categoryname="基本属性">总长度（M）
+			</column>
+			<column id="RELETED_TAMPLETE_NAME" editable="true" categoryname="基本属性">模板名称
+			</column>
+			<column id="OWNERSHIP" editable="true" nullable="true"
+				editor="enumbox@DMOwnerShip"
+				categoryname="业务属性">产权</column>
+			<column id="PURPOSE" editable="true"  nullable="true"
+			    editor="enumbox@DMPurpose"
+                categoryname="业务属性">用途
+			</column>
+			<column id="MAINT_MODE" editable="true"  nullable="true"
+				editor="enumbox@DMMaintMode"
+				categoryname="业务属性">维护方式
+			</column>
+			<column id="SPECIAL_PURPOSE" editable="true"  nullable="true" 
+				editor="enumbox@DMSpecialPurpose"
+				categoryname="业务属性">专线用途
+			</column>
+			<column id="OLEVEL" editable="true"  nullable="true" 
+				editor="enumbox@DMWireSegOlevel"
+				categoryname="业务属性">重要性
+			</column>
+
+			<column id="WIRE_TYPE" editable="true" categoryname="业务属性">光缆类型
+			</column>
+            <column id="NETWORK_TYPE" editable="true" 
+				editor="enumbox@DMNetworkType"
+				categoryname="业务属性">网络特性</column>
+			<column id="CHECK_MODE" editable="true" 
+			    editor="enumbox@DMCheckMode"
+                categoryname="业务属性">巡检方式</column>
+			<column id="GEO_ENV" editable="true"  
+				editor="enumbox@DMGeoEnv"
+				categoryname="业务属性">地理环境</column>
+			<column id="BUILDER" editable="true" categoryname="业务属性">施工单位
+			</column>
+			<column id="BUILD_DATE" editable="true"
+				editor="date" 
+				categoryname="业务属性">施工时间
+			</column>
+			<column id="FINISH_DATE" editable="true"
+				editor="date" 
+				categoryname="业务属性">竣工时间
+			</column>
+			<column id="CHECK_DATE" editable="true" 
+			    editor="date"
+                categoryname="业务属性">检修时间
+			</column>
+			<column id="MAINT_DEP" editable="true" categoryname="业务属性">维护单位
+			</column>
+			<column id="SERVICER" editable="true" categoryname="业务属性">巡检人
+			</column>
+			<column id="PHONE_NO" editable="true" categoryname="业务属性">联系电话
+			</column>
+			<column id="RES_OWNER" editable="true" categoryname="业务属性">产权单位
+			</column>
+			<column id="USER_NAME" editable="true" categoryname="业务属性">使用单位
+			</column>
+			<column id="RELATED_PROJECT_CUID" editable="false"
+                editor="dmcombox@service_dict_dm.DM_PROJECT_MANAGEMENT"
+                categoryname="业务属性">所属工程
+			</column>
+			<column id="PROJECT_STATE" editable="false" 
+			    editor="enumbox@DMProjectState"
+			    categoryname="业务属性">工程状态
+			</column>
+			<column id="RELATED_MAINT_CUID" editable="true" 
+			    editor="dmcombox@service_dict_dm.DM_MAINT_MANAGEMENT"
+			    categoryname="业务属性">所属维护作业
+			</column>
+			<column id="MAINT_STATE" editable="false" 
+			    editor="enumbox@MaintState"
+                categoryname="业务属性">维护作业状态
+			</column>
+			<column id="DATA_STATE" editable="false" 
+			    editor="enumbox@DataStateEnum"
+				categoryname="其他属性">数据状态
+			</column>
+			<column id="DATA_PROBLEM" editable="false" categoryname="其他属性">数据问题描述
+			</column>
+			<column id="PRO_NAME" editable="true" categoryname="业务属性">工程名称
+			</column>
+			<column id="REMARK" editable="true" categoryname="其他属性">备注
+			</column>
+			<column id="CREATOR" editable="false" categoryname="其他属性">录入人
+			</column>
+			<column id="CREATE_TIME" editable="false" 
+			    editor="date"
+				categoryname="其他属性">录入时间
+			</column>
+			<column id="LAST_MODIFY_TIME" editable="false"
+			    editor="date"
+				categoryname="其他属性">最后修改时间
+			</column>
+		</columns>
+		<sql>
+		     SELECT * FROM WIRE_SEG
+		</sql>
+		<remote name="WireSegPropTemplateBO">
+			<method type="query">IWireSegBO.getWireSegBySql</method>
+			<method type="count">IWireSegBO.getWireSegBySql</method>
+			<method type="insert">IWireSegBO.addWireSegs</method>
+			<method type="update">IWireSegBO.modifyWireSegs</method>
+			<method type="delete">IWireBranchBO.deleteWireBranchs</method>
+			<method type="editorMetaPluginBoName">DefaultEditorMetaPluginBO</method>
+		</remote>
+	</editor>
+</tpl>

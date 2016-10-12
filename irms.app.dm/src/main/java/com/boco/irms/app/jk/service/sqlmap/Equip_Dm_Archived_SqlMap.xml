@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="EQUIP_DM_ARCHIVED">
+	<parameterMap id="standardAddressMap" class="java.util.HashMap">
+		<parameter property="v_cuid" javaType="java.lang.String" jdbcType="VARCHAR" mode="IN" />
+	</parameterMap>
+
+	<procedure id="archivedStandardAddress" parameterMap="standardAddressMap">
+		{call sp_local_ftthmid_add(?)}
+	</procedure>
+</sqlMap>

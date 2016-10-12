@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+
+	<editor name="IRMS.RMS.VPN" classname="VPN" title="VPN">
+		<columns>
+		     <column id="OBJECTID"  filter="all">OBJECTID</column>
+			<column id="CUID"  filter="all">CUID</column>
+			
+			<column id="LABEL_CN" filter="all" editable="false" 
+			    categoryname="基本属性" nullable="true">VPN名称
+			</column>
+		    <column id="VPN_SERVICE_TYPE" editable="true" filter="all" 
+		        editor="enumbox@SvcClass"
+				categoryname="基本属性" nullable="true">业务类型
+		    </column>
+		    <column id="RELATED_VP_VPGROUP_CUID" editable="false" filter="all" 
+		        editor="asyncombox@DM.VP"
+		        categoryname="基本属性" nullable="true">所属客户
+		    </column>
+		    <column id="VPN_APP_CLAS" editable="true" filter="all" 
+		        editor="enumbox@VpnAppClas" categoryname="基本属性">应用类型
+		    </column>
+		    <column id="AGENTS_PHONE" editable="false" filter="all" categoryname="基本属性">代理商联系电话
+		    </column>
+		    <column id="AGENTS" editable="false" filter="all" categoryname="基本属性">代理商
+		    </column>
+		    <column id="ACCOUNT_MANAGER_PHONE" editable="false" filter="all" categoryname="基本属性">客户经理联系电话
+			</column>
+			<column id="CHIEF_ACCOUNT_MANAGER" editable="false" filter="all" categoryname="基本属性">首席客户经理
+			</column>
+			<column id="ACCOUNT_MANAGER" editable="false" filter="all" categoryname="基本属性">客户经理
+		    </column>
+            <column id="SALES_DEPARTMENT" editable="false" filter="all" categoryname="基本属性">销售部门
+            </column>
+            <column id="VPN_CODE" editable="false" filter="all" categoryname="基本属性">合同号
+            </column>
+            <column id="VPN_TOPO_TYPE" editable="false" filter="all" categoryname="基本属性">业务拓扑类型
+            </column>
+		</columns>
+		<sql>
+			SELECT * FROM VPN
+		</sql>
+		<remote name="ProjectPropTemplateBO">
+			<method type="query">IVpnBO.getVpnBySql</method>
+			<method type="count">IVpnBO.getVpnBySql</method>
+		</remote>
+	</editor>
+</tpl>

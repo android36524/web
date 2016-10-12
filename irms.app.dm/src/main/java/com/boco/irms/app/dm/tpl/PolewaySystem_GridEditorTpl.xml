@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<editor name="IRMS.RMS.POLEWAY_SYSTEM" classname="POLEWAY_SYSTEM" title="杆路系统">
+		<columns>
+		     <column id="OBJECTID"  filter="all" categoryname="系统属性">OBJECTID</column>
+			<column id="CUID"  filter="all" categoryname="系统属性">CUID</column>
+			 
+			<column id="LABEL_CN" filter="all" editable="true" 
+			   editor="filtertext"
+			   categoryname="基本属性" nullable="true">名称
+			</column>
+			<column id="SYSTEM_LEVEL" filter="all" editable="true"
+			    editor="enumbox@DMSystemLevel" categoryname="基本属性"
+			    nullable="true">系统级别
+			</column>
+			<column id="RELATED_SPACE_CUID" filter="all" 
+			    editor="asyncombox@DMDF.DISTRICT"
+				editable="true" nullable="true" categoryname="基本属性">所属区域
+			</column>
+			<column id="BELONGCOM" filter="all" editable="true" categoryname="基本属性">建设单位
+			</column>
+			
+			<column id="OWNERSHIP" filter="all" editable="true" 
+                editor="enumbox@DMOwnerShip" categoryname="基本属性"
+                nullable="true">产权
+			</column>
+			
+			<column id="ABBREVIATION" filter="all" editable="true" categoryname="基本属性">缩写
+			</column>
+			<column id="LENGTH" filter="all" editable="true"
+				editor="double" 
+				categoryname="基本属性">总长度（M）
+			</column>
+			<column id="MAINT_MODE" filter="all" editable="true"  
+				editor="enumbox@DMMaintMode" categoryname="业务属性"
+				nullable="true">维护方式
+			</column>
+			<column id="PROJECT" filter="all" editable="true" categoryname="业务属性">工程名称
+			</column>
+			<column id="PROJECT_NO" filter="all" editable="true" categoryname="业务属性">工程编号
+			</column>
+			<column id="STATE" filter="all" editable="true" 
+				editor="enumbox@DMState" categoryname="业务属性"
+				nullable="true">工程状态
+			</column>
+			<column id="EQUIPMENTCODE" filter="all" editable="true" categoryname="业务属性">固定资产编号
+			</column>
+			<column id="EQUIPMENTKINDID" filter="all" editable="true" categoryname="业务属性">固定资产分类编码
+			</column>
+			<column id="BUILDER" filter="all" editable="true" categoryname="业务属性">施工单位
+			</column>
+			<column id="BUILD_DATE" filter="all" editable="true"
+				editor="date" 
+				categoryname="业务属性">施工时间
+			</column>
+			<column id="FINISH_DATE" filter="all" editable="true"
+				editor="date" 
+				categoryname="业务属性">竣工时间
+			</column>			
+			<column id="DESIGNER" filter="all" editable="true" categoryname="业务属性">管道沟公里
+			</column>
+			<column id="DATA_STATE" filter="all" editable="false" 
+			    editor="enumbox@DataStateEnum" categoryname="其他属性">数据状态
+			</column>
+			<column id="DATA_PROBLEM" filter="all" editable="false" categoryname="其他属性">数据问题描述
+			</column>
+			<column id="REMARK" filter="all" editable="true" categoryname="其他属性">备注
+			</column>
+			<column id="CREATOR" filter="all" editable="false" categoryname="其他属性">录入人
+			</column>
+			<column id="CREATE_TIME" filter="all" editable="false" 
+			    editor="date"
+				categoryname="其他属性">录入时间
+			</column>
+			<column id="LAST_MODIFY_TIME" filter="all" editable="false"
+			    editor="date"
+				categoryname="其他属性">最后修改时间
+			</column>
+		</columns>
+		<sql>
+			SELECT * FROM POLEWAY_SYSTEM
+		</sql>
+		<remote name="SystemPropTemplateBO">
+			<method type="query">IPolewaySystemBO.getPolewaySystemBySql</method>
+			<method type="count">IPolewaySystemBO.getPolewaySystemBySql</method>
+			<method type="insert">IPolewaySystemBO.addPolewaySystem</method>
+			<method type="update">IPolewaySystemBO.modifyPolewaySystem</method>
+			<method type="delete">IDuctManagerBO.deleteLocatedSystems</method>
+			<method type="editorMetaPluginBoName">DefaultEditorMetaPluginBO</method>
+			<!-- 
+			<method type="delete">IPolewaySystemBO.deletePolewaysSystem</method>
+			 -->
+		</remote>
+	</editor>
+</tpl>

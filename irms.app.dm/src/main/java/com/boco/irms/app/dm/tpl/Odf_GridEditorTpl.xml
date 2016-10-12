@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<!-- ODF -->
+	<editor name="IRMS.RMS.ODF" classname="ODF" title="ODF">
+		<columns>
+			<column id="OBJECTID" filter="all" categoryname="系统属性">OBJECTID</column>
+			<column id="CUID" filter="all" categoryname="系统属性">CUID</column>
+
+			<column id="LABEL_CN" editable="true" nullable="true"
+				categoryname="基本属性">名称</column>
+			<column id="OWNERSHIP" editable="true" 
+			    editor="enumbox@OwnerShip"
+				categoryname="基本属性">产权类型</column>
+			<column id="VENDOR" editable="true" 
+			    editor="enumbox@DeviceVendor"
+			    categoryname="基本属性">设备供应商
+			</column>
+			<column id="ACCESS_SCENE" filter="all" editable="true" nullable="true"
+				editor="enumbox@DMAccessSence" categoryname="基本属性">集客接入场景</column>
+			<column id="LENGTH" editable="true" 
+				editor="double" 
+				categoryname="基本属性">长度(M)
+			</column>
+			<column id="HEIGHT" editable="true"  
+			    editor="double"
+				categoryname="基本属性">高度(M)</column>
+			<column id="WIDTH" editable="true"  
+			    editor="double"
+				categoryname="基本属性">宽度(M)</column>
+			<column id="THICK" editable="true" 
+				editor="double"
+				categoryname="基本属性">厚度(M)</column>
+			<column id="UNIT" editable="true" 
+			    categoryname="基本属性">单位
+			</column>
+			<column id="CREATOR" editable="true"
+				categoryname="基本属性">建设单位</column>
+			<column id="PRESERVER" editable="true"
+				categoryname="基本属性">维护人</column>
+			<column id="CREATE_TIME" editable="true" 
+			    editor="date"
+				categoryname="基本属性">建设日期</column>
+			<column id="SETUP_TIME" editable="true"
+                editor="date"
+				categoryname="基本属性">投产时间</column>
+			<column id="EQUIP_NO" editable="true"
+				categoryname="基本属性">固定资产号</column>
+			<column id="DESIGN_CAPACITY" editable="true"
+			    editor="long"
+				categoryname="基本属性">设计容量</column>
+			<column id="INSTALL_CAPACITY" editable="true"
+			    editor="long"
+				categoryname="基本属性">安装容量</column>
+			<column id="LOCATION" editable="true"
+				categoryname="基本属性">位置</column>
+			<column id="SERIAL" editable="true"
+				categoryname="基本属性">序列号</column>
+			<column id="SERVICE_STATE" editable="true"
+			    editor="enumbox@CardState"
+				categoryname="基本属性">运行状态</column>
+			<column id="MODEL" editable="true"
+				categoryname="基本属性">型号</column>
+			<column id="LOCKED" editable="true"
+			    editor="enumbox@BooleanType"
+				categoryname="基本属性">是否锁定</column>
+			<column id="DEVICE_NO" editable="true"
+				categoryname="基本属性">编号</column>
+			<column id="COLUMN_LABEL" editable="true"
+				categoryname="基本属性">列号</column>
+			<column id="ROW_LABEL" editable="true"
+				categoryname="基本属性">行号</column>
+			<column id="SERVICE_LEVEL" editable="true"
+			    editor="enumbox@ServiceLevel"
+				categoryname="基本属性">网元业务级别</column>
+			<column id="BELONGCOM" editable="true"
+				categoryname="基本属性">所属分公司</column>
+			<column id="EQUIPMENTKINDID" editable="true"
+				categoryname="基本属性">固定资产分类编码</column>
+			<column id="MAINTAINENDDATE" editable="true"
+				categoryname="基本属性">保修截止日期</column>
+			<column id="RENEWAL_END_DATE" editable="true"
+				editor="date"
+				categoryname="基本属性">续保截止日期</column>
+			<column id="MAINT_MODE" editable="true"
+			    editor="enumbox@DMMaintMode"
+				categoryname="基本属性">维护方式</column>
+			<column id="USER_NAME" editable="true"
+				categoryname="基本属性">产权人</column>
+			<column id="REMARK" editable="true"
+				categoryname="基本属性">备注</column>
+			<column id="FREE_CAPACITY_NUM" editable="false"
+			    editor="long"
+				categoryname="基本属性">空闲容量</column>
+			<column id="USED_CAPACITY_NUM" editable="false"
+			    editor="long"
+				categoryname="基本属性">使用容量</column>
+			<column id="MOD_NUM_NUM" editable="false"
+			    editor="long"
+				categoryname="基本属性">模块数</column>
+		</columns>
+		<sql>
+			  SELECT * FROM ODF
+		</sql>
+		<remote name="AbstractPropTemplateBO">
+			<method type="query">IPhyOdfBO.getOdfsBySql</method>
+			<method type="count">IPhyOdfBO.getOdfsBySql</method>
+		</remote>
+	</editor>
+</tpl>
+
+
+

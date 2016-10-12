@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<grid name="DMMA.DEVICEGROUP.GRID" title="设备组管理表格" >
+		<columns>
+			<column dataIndex="CUID" isNotNull="true">编号</column>
+			<column dataIndex="LABEL_CN" isNotNull="true">PDA编码</column>
+			<column dataIndex="RELATED_DISTRICT_CUID" isNotNull="true">所属区域</column>
+		</columns>
+		<fields>
+			
+		</fields>
+		<cm>
+			{
+			}
+		</cm>
+		<sql dao="IbatisResDAO">
+		
+			SELECT  *
+		  FROM SITE T
+      
+		</sql>
+		<note>
+			设备组管理表格
+		</note>
+	</grid>
+	
+</tpl>

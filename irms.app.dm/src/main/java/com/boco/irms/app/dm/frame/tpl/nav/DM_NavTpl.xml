@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<!-- 
+	<nav id="GIS" name="GIS" context="GIS" sort="3">
+		<navbar
+			id="dm.index"
+			name="管线视图"
+			context="DM"
+			sort="2"
+			handler="/map/map_index.jsp"/>
+	</nav>
+	-->
+	<nav id="WEBDM" name="管线管理" context="WEBDM" sort="1">
+		<navbar
+			id="dm_maintain.index"
+			name="管线管理"
+			index="/map/map_index.jsp"
+			sort="1"
+			code="dm_maintain.index"/>
+	</nav>
+</tpl>

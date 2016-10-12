@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<bean id="ibatisDAO" class="com.boco.core.ibatis.dao.IbatisDAO">
+		<property name="sqlMapClient" ref="sqlMapClient" />
+	</bean>
+	
+	<bean id="sqlMapClientAlarm" class="com.boco.core.ibatis.utils.SqlMapClientFactoryBean">
+		<property name="configLocations">
+			<list>
+				<value>classpath*:/config/ibatis/sql-map-config.xml</value>
+			</list>
+		</property>
+		<property name="mappingLocations">
+			<list>
+				<value>classpath*:com/boco/**/sqlmap/**/*_SqlMap.xml</value>
+			</list>
+		</property>
+		<property name="dataSource" ref="dataSourceTnms" />
+
+		<property name="sqlExecutor">
+			<bean class="com.boco.core.ibatis.utils.LimitSqlExecutor">
+				<property name="dialect">
+					<bean class="${alarm.jdbc.dialect}" />
+				</property>
+			</bean>
+		</property>
+		<property name="lobHandler" ref="lobHandler" />
+	</bean>
+
+	<bean id="ibatisAlarmDAO" class="com.boco.core.ibatis.dao.IbatisDAO">
+		<property name="sqlMapClient" ref="sqlMapClientAlarm" />
+	</bean>
+	
+	<bean id="dataSourceTnms" class="com.alibaba.druid.pool.DruidDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${tnms.jdbc.driver}" />
+		<property name="url" value="${tnms.jdbc.url}" />
+		<property name="username" value="${tnms.jdbc.username}" />
+		<property name="password" value="${tnms.jdbc.password}" />
+		<property name="initialSize" value="${tnms.jdbc.initialSize}" />
+		<property name="maxActive" value="${tnms.jdbc.maxActive}" />
+		<property name="minIdle" value="${tnms.jdbc.minIdle}" />
+
+		<!-- 配置获取连接等待超时的时间 -->
+		<property name="maxWait" value="60000" />
+		<!-- 是否自动回收超时连接 -->
+		<property name="removeAbandoned" value="true" />
+		<!-- 超时时间(以秒数为单位) -->
+		<property name="removeAbandonedTimeout" value="150" />
+		<!-- 是否在自动回收超时连接的时候打印连接的超时错误 -->
+		<property name="logAbandoned" value="true" />
+		<!-- false : 空闲时是否验证, 若不通过断掉连接, 前提是空闲对象回收器开启状态 -->
+		<property name="testWhileIdle" value="true" />
+		<property name="validationQuery" value="SELECT 'x' from dual" />
+		<!-- -1 : 以毫秒表示空闲对象回收器由运行间隔。值为负数时表示不运行空闲对象回收器 若需要回收, 该值最好小于 minEvictableIdleTimeMillis值 -->
+		<property name="timeBetweenEvictionRunsMillis" value="300000" />
+		<!-- 1000*60*30 : 被空闲对象回收器回收前在池中保持空闲状态的最小时间, 毫秒表示 若需要回收, 该值最好小于DB中的 wait_timeout值 -->
+		<property name="minEvictableIdleTimeMillis" value="320000" />
+		<!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+		<property name="poolPreparedStatements" value="true" />
+		<property name="maxPoolPreparedStatementPerConnectionSize"
+			value="20" />
+		<property name="defaultTransactionIsolation" value="${tnms.jdbc.isolation}"></property>
+	</bean>
+	
+	<bean id="dataSourceSde" class="com.alibaba.druid.pool.DruidDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="${sde.jdbc.driver}" />
+		<property name="url" value="${sde.jdbc.url}" />
+		<property name="username" value="${sde.jdbc.username}" />
+		<property name="password" value="${sde.jdbc.password}" />
+		<property name="initialSize" value="${sde.jdbc.initialSize}" />
+		<property name="maxActive" value="${sde.jdbc.maxActive}" />
+		<property name="minIdle" value="${sde.jdbc.minIdle}" />
+
+		<!-- 配置获取连接等待超时的时间 -->
+		<property name="maxWait" value="60000" />
+		<!-- 是否自动回收超时连接 -->
+		<property name="removeAbandoned" value="true" />
+		<!-- 超时时间(以秒数为单位) -->
+		<property name="removeAbandonedTimeout" value="150" />
+		<!-- 是否在自动回收超时连接的时候打印连接的超时错误 -->
+		<property name="logAbandoned" value="true" />
+		<!-- false : 空闲时是否验证, 若不通过断掉连接, 前提是空闲对象回收器开启状态 -->
+		<property name="testWhileIdle" value="true" />
+		<property name="validationQuery" value="SELECT 'x' from dual" />
+		<!-- -1 : 以毫秒表示空闲对象回收器由运行间隔。值为负数时表示不运行空闲对象回收器 若需要回收, 该值最好小于 minEvictableIdleTimeMillis值 -->
+		<property name="timeBetweenEvictionRunsMillis" value="300000" />
+		<!-- 1000*60*30 : 被空闲对象回收器回收前在池中保持空闲状态的最小时间, 毫秒表示 若需要回收, 该值最好小于DB中的 wait_timeout值 -->
+		<property name="minEvictableIdleTimeMillis" value="320000" />
+		<!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+		<property name="poolPreparedStatements" value="true" />
+		<property name="maxPoolPreparedStatementPerConnectionSize"
+			value="20" />
+		<property name="defaultTransactionIsolation" value="${sde.jdbc.isolation}"></property>
+	</bean>
+	
+	<bean id="sqlMapClientSde" class="com.boco.core.ibatis.utils.SqlMapClientFactoryBean">
+		<property name="configLocation">
+			<value>classpath:/config/ibatis/sql-map-config.xml</value>
+		</property>
+		<property name="mappingLocations">
+			<value>classpath*:/com/boco/**/sqlmap/**/*_SqlMap.xml</value>
+		</property>
+		<property name="dataSource" ref="dataSourceSde" />
+
+		<property name="sqlExecutor">
+			<bean class="com.boco.core.ibatis.utils.LimitSqlExecutor">
+				<property name="dialect">
+					<bean class="${sde.jdbc.dialect}" />
+				</property>
+			</bean>
+		</property>
+		<property name="lobHandler" ref="lobHandler" />
+	</bean>
+	
+	<bean id="IbatisSdeDAO" class="com.boco.core.ibatis.dao.IbatisDAO">
+		<property name="sqlMapClient" ref="sqlMapClientSde" />
+	</bean>
+	
+</beans>

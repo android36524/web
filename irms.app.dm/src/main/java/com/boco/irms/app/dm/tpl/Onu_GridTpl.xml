@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--纤芯 -->
+<tpl>
+	<grid name="DM.ONURELATION" title="ONU" >
+		<plugins>
+			<plugin>number</plugin>
+		</plugins>
+		<columns>
+			<column dataIndex="DISHI">地市</column>
+			<column dataIndex="LABEL_CN">ONU名称</column>
+			<column dataIndex="CABLABEL_CN">所属设备</column>		
+		    
+		</columns>
+		<fields>
+			<field mapping="DISHI" type="String"></field>
+			<field mapping="LABEL_CN" type="String"></field>
+			<field mapping="CABLABEL_CN" type="String"></field>
+			<field mapping="DISHI2" type="String"></field>
+		</fields>
+		<cm>
+			{
+			}
+		</cm>
+		<sql dao="IbatisTnmsDAO">
+			<![CDATA[
+			SELECT A.RELATED_DISTRICT_CUID AS DISHI2,
+       (SELECT LABEL_CN FROM DISTRICT WHERE CUID = A.RELATED_DISTRICT_CUID) DISHI,
+       LABEL_CN,
+       (SELECT LABEL_CN FROM FIBER_CAB WHERE CUID = A.LOCATION) CABLABEL_CN
+  		FROM AN_ONU A
+
+      ]]>
+		</sql>
+		<note>
+			ONU查询
+		</note>
+	</grid>
+</tpl>

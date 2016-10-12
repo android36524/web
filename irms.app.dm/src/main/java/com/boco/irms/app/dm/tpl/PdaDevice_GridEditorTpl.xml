@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<editor name="IRMS.RMS.PDA_DEVICE" classname="PDA_DEVICE" title="PDA设备管理">
+		<columns>
+			<column id="CUID"  filter="all" categoryname="系统属性">CUID</column>
+			  <column id="OBJECTID"  filter="all" categoryname="系统属性">OBJECTID</column>
+    <column
+  id="DEVICE_CODE"   editable="true" 
+  categoryname="系统属性"
+  nullable="true">PDA编码</column>
+  
+  <column
+  id="USER_NAME"   editable="true" 
+  categoryname="系统属性"
+  nullable="true">用户</column>
+
+	<column id="RELATED_DISTRICT_CUID" editable="true" filter="all"
+					editor="asyncombox@DMDF.DISTRICT"
+		            categoryname="基本属性" nullable="true">所属区域
+	</column>
+
+ <column
+  id="DEVICE_STATE"
+  editable="true"
+  editor="enumbox@PDAUseState"
+  categoryname="业务属性">设备状态</column>
+  
+  <!--column
+  id="GROUP_CUID"  
+  editable="false"
+  categoryname="业务属性" nullable="false">所属设备组</column--> 
+   <column id="GROUP_CUID" editable="true"
+				editor="dmcombox@service_dict_dm.PDA_GROUP"
+				categoryname="业务属性">所属设备组</column>
+
+  <column
+  id="REMARK"  
+  categoryname="业务属性" nullable="false">备注</column>
+  
+</columns>
+		<sql>
+		     SELECT * FROM PDA_DEVICE
+		</sql>
+		 
+		<remote name="PdaPropTemplateBO">
+		    <method type="query">IPdaDeviceBO.queryPda</method>
+		    <method type="count">IPdaDeviceBO.queryPda</method>
+			<method type="insert">IPdaDeviceBO.addPdaDevices</method>
+			<method type="update">IPdaDeviceBO.modifyPdaDevices</method>
+			<method type="delete">IPdaDeviceBO.deletePdaDevices</method>
+		</remote>
+		 
+	</editor>
+</tpl>

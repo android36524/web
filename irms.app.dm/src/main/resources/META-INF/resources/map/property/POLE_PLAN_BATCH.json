@@ -1,0 +1,57 @@
+[
+{
+      "name":"PREFIX", 
+      "displayName":"前缀", 
+      "editable":true, 
+      "categoryName":"基本属性",
+      "color":"red", 
+      "nullable":false, 
+      "emptiable":true,
+      "accessType":"attr"}
+,{
+      "name":"SERIALNUMBER", 
+      "displayName":"编号位数", 
+      "editable":true, 
+      "className":"Renderer.EnumTypeRenderer", 
+      "key":"SerialNumber",
+      "color":"red", 
+      "nullable":false,
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"SUFFIX", 
+      "displayName":"后缀", 
+      "editable":true, 
+      "className":"Renderer.EnumTypeRenderer", 
+      "key":"POLELastName",
+      "color":"red", 
+      "nullable":false,
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"ORIGNUMBER", 
+      "displayName":"起始编号", 
+      "editable":true, 
+      "color":"red", 
+      "nullable":false,
+      "emptiable":true,
+      "className":"Renderer.LongRenderer",
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"COUNT", 
+      "displayName":"数量", 
+      "editable":true, 
+      "color":"red", 
+      "nullable":false,
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"RELATED_DISTRICT_CUID_NAME", 
+      "displayName":"所属区域", 
+      "editable":false, 
+      "categoryName":"基本属性", 
+      "nullable":false,
+      "color":"red", 
+      "accessType":"attr"}
+]

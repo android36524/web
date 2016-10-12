@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd   
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd   
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd   
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<!-- <bean id="DmmaInitUtils" class="com.boco.transnms.dmma.utils.DmmaInitUtils" init-method="initXrpcClient">
+		<property name="uurl" value="${TNMS_BMDP_URL}"></property>
+	</bean> -->
+	
+	<bean id="TaskExportBO" class="com.boco.transnms.dmma.task.TaskExportBO">
+	</bean>
+	<bean id="TaskBO" class="com.boco.transnms.dmma.task.TaskBO">
+		 <property name="ResConfigurer" ref="ResConfigurer"/>
+	</bean>
+	<bean id="ProjectTaskBO" class="com.boco.transnms.dmma.projecttask.ProjectTaskBO">
+		 <property name="ResConfigurer" ref="ResConfigurer"/>
+	</bean>
+	<bean id="HitchTaskBO" class="com.boco.transnms.dmma.hitchtask.HitchTaskBO">
+		 <property name="ResConfigurer" ref="ResConfigurer"/>
+	</bean>
+	<bean id="DeviceGroupBO" class="com.boco.transnms.dmma.devicegroup.DeviceGroupBO">
+		 <property name="ResConfigurer" ref="ResConfigurer"/>
+	</bean>
+	<bean id="DeviceBO" class="com.boco.transnms.dmma.devicemanage.DeviceBO">
+		 <property name="ResConfigurer" ref="ResConfigurer"/>
+	</bean>
+	<bean id="GatherPointsBO" class="com.boco.transnms.dmma.projecttask.GatherPointsBO">
+	</bean>
+	<bean id="ProjectTaskActionBO" class="com.boco.transnms.dmma.projecttask.ProjectTaskActionBO">
+	</bean>
+	<bean id="HitchTaskActionBO" class="com.boco.transnms.dmma.hitchtask.HitchTaskActionBO">
+	</bean>
+	<bean id="HitchTaskAction" class="com.boco.transnms.dmma.hitchtask.HitchTaskAction">
+	</bean>
+	<bean id="TaskAction" class="com.boco.transnms.dmma.task.TaskAction">
+	</bean>
+	<bean id="TaskActionBO" class="com.boco.transnms.dmma.task.TaskActionBO">
+	</bean>
+	<bean id="TaskPatrolPointsBO" class="com.boco.transnms.dmma.task.TaskPatrolPointsBO">
+	</bean>
+	<bean id="TaskHiddenDangerBO" class="com.boco.transnms.dmma.task.TaskHiddenDangerBO">
+	</bean>
+	<bean id="TaskPatrolTraceBO" class="com.boco.transnms.dmma.task.TaskPatrolTraceBO">
+	</bean>
+	<bean id="TaskStonewaySystemBO" class="com.boco.transnms.dmma.task.TaskStonewaySystemBO">
+	 <property name="ResConfigurer" ref="ResConfigurer"/>
+	</bean>
+	<bean id="TaskPolewaySystemBO" class="com.boco.transnms.dmma.task.TaskPolewaySystemBO">
+	 <property name="ResConfigurer" ref="ResConfigurer"/>
+	</bean>
+	<bean id="TaskDuctSystemBO" class="com.boco.transnms.dmma.task.TaskDuctSystemBO">
+	 <property name="ResConfigurer" ref="ResConfigurer"/>
+	</bean>
+	<bean id="WireSegBatchActionBO" class="com.boco.transnms.dmma.wiresegbatch.WireSegBatchActionBO">
+	</bean>
+	
+</beans>

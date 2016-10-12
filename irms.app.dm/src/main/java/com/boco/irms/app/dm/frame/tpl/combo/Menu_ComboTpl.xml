@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<combo name="dm_maintain.index">
+		<items>
+			<item value="TNMS_DM" TREE_NAME="DM_MAINTAIN_INDEX_XML" TEMPLATE_ID="LV1">管线管理</item>
+		</items>
+	</combo>
+	
+</tpl>

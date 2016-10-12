@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<grid name="DM.DM_ROOM" title="机房">
+		<columns>
+		    <column dataIndex="CUID">CUID</column>
+			<column dataIndex="LABEL_CN">机房名称</column>
+			<column dataIndex="SITE_NAME">所属站点</column>
+			<column dataIndex="OWNERSHIP">产权</column>
+			<column dataIndex="ROOM_TYPE">机房类型</column>
+			<column dataIndex="SERVICE_LEVEL">业务类型</column>
+		</columns>
+		<cm>
+			{
+			    CUID : {
+					hidden : true
+				},
+				LABEL_CN : {
+					width : 200
+				},
+				SITE_NAME : {
+					width : 150
+				},
+				OWNERSHIP : {
+					width : 100
+				},
+				ROOM_TYPE : {
+					width : 100
+				},
+				SERVICE_LEVEL : {
+					width : 100
+				}
+			}
+		</cm>
+		<sql dao="IbatisResDAO">
+			select r.CUID,r.LABEL_CN,s.label_cn SITE_NAME,r.OWNERSHIP,r.ROOM_TYPE,r.SERVICE_LEVEL from ROOM r 
+			left join SITE s on r.RELATED_SITE_CUID=s.CUID 
+		</sql>
+	</grid>
+</tpl>

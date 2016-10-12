@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--纤芯 -->
+<tpl>
+	<grid name="IRMS.RMS.HIS_OVERLAY_RESOURCE" classname="HIS_OVERLAY_RESOURCE" title="历史规划数据">
+		<columns>			 
+			<column dataIndex="LABEL_CN">名称</column>
+			<column dataIndex="NOW_LABEL_CN">现存量名称</column>
+			<column dataIndex="DISTRICT_NAME">所属区域</column>			
+			<column dataIndex="LONGITUDE">经度</column>
+			<column dataIndex="LATITUDE">纬度</column>
+ 			<column dataIndex="RES_TYPE">资源类型</column>
+            <column dataIndex="LIFE_CYCLE_STATE">生命周期状态</column>
+			<column dataIndex="PLAN_NAME">规划期数</column>		
+			<column dataIndex="FIBER_COUNT">已规划纤芯</column>
+		</columns>
+		
+		<cm>
+			{
+
+			}
+		</cm>
+		
+		<sql dao="IbatisResDAO">
+           SELECT HIS.PROJECT_PLAN_PERIOD,HIS.LABEL_CN,RES_VIEW.LABEL_CN NOW_LABEL_CN ,DIS.LABEL_CN DISTRICT_NAME,HIS.LONGITUDE,HIS.LATITUDE,
+			DECODE(HIS.RES_TYPE,1,'机房',2,'接头盒',3,'交接箱',4,'交接箱','未知') RES_TYPE,	
+			            DECODE(HIS.LIFE_CYCLE_STATE,2,'现网','现网') LIFE_CYCLE_STATE,PERIOD.LABEL_CN PLAN_NAME,HIS.FIBER_COUNT FROM HIS_OVERLAY_RESOURCE HIS 
+			LEFT JOIN DISTRICT DIS ON HIS.RELATED_DISTRICT_CUID = DIS.CUID  
+			LEFT JOIN OVERLAY_RES_VIEW RES_VIEW ON HIS.STOCK_NAME = RES_VIEW.CUID  
+			LEFT JOIN PROJECT_PLAN_PERIOD PERIOD ON HIS.PROJECT_PLAN_PERIOD =PERIOD.CUID  
+		</sql>
+	</grid>
+</tpl>

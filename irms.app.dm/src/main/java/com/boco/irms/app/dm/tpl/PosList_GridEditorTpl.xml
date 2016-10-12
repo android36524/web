@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<!-- 分光器列表 -->
+	<editor name="IRMS.RMS.POS_LIST"  classname="AN_POS" title="分光器列表">
+		<columns>
+		    <column id="OBJECTID"  filter="all" categoryname="系统属性">唯一标识</column>
+			<column id="CUID"  filter="all" categoryname="系统属性">唯一编码</column>
+			 
+			<column id="LABEL_CN" filter="all" width ="300" editable="true"  nullable="true" categoryname="系统属性">名称
+			</column>
+			<column id="RELATED_DISTRICT_CUID" filter="all" editor="asyncombox@DMDF.DISTRICT" 
+				editable="true"  nullable="true" categoryname="基本属性">所属区域</column>
+			
+		<!--	<column id="POS_TYPE" nullable="true" editable="true" editor="enumbox@DMDF.ConfigType" categoryname="基本属性">配置类型</column>
+			<column id="RELATED_ACCESS_POINT"  nullable="true"  editable="true"  editor="asyncombox@DMDF.ACCESS_POINT"  categoryname="基本属性">所属接入点</column>
+			<column id="RELATED_CAB_CUID"  nullable="true"  editable="true"  editor="asyncombox@DMDF.CAB"  categoryname="基本属性">所属光交接点</column>
+			<column id="RELATED_ROOM_CUID"  nullable="true"  editable="true"  editor="asyncombox@DMDF.ROOM"  categoryname="基本属性">所属机房</column>-->
+		</columns>
+		
+	<sql>
+			SELECT * FROM an_pos where RELATED_CAB_CUID=""
+		</sql>
+		<remote name="PosListGridBO">
+			<method type="query">IDuctManagerBO.getObjectsBySql</method>
+		 <!--<method type="count">IOverlayResourceBO.getOverlayResourcesBySql</method>
+			<method type="insert">IOverlayResourceBO.addOverlayResource</method>
+			<method type="update">IOverlayResourceBO.modifyOverlayResources</method>
+			<method type="delete">IOverlayResourceBO.deleteOverlayResource</method> -->
+		</remote>
+			
+
+	</editor>
+</tpl>

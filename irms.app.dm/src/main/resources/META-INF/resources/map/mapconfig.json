@@ -1,0 +1,27 @@
+{
+	"map" : {
+		"initCenter" : {"lat":"34.25","lng":"108.91"},
+		"initZoomLevel" : 15,
+		"basemaps":[
+		{
+			"label":"湖北", 
+			"type":"tiled", 
+			"visible":true, 
+			"alpha":"0.95",
+			"url":"http://123.124.236.154:8399/arcgis/rest/services/china/MapServer"
+		}
+		],
+		"reslayers":[
+		{
+			"id":"0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
+			"label":"管线", 
+			"type":"dynamic", 
+			"visible":"true", 
+			"alpha":"0.95",
+			"count":"18",
+			"url":"http://123.124.236.154:8399/arcgis/rest/services/duct_hb/MapServer"
+		}
+		],
+		"geometryService":"http://123.124.236.154:8399/arcgis/rest/services/Geometry/GeometryServer"
+	}
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<!-- 光缆纤芯信息 -->
+	<editor name="IRMS.RMS.WIRE_FIBER_INFO"  classname="FIBER" title="光缆纤芯">
+		<columns>
+		    <column id="OBJECTID"  filter="all">OBJECTID</column>
+			<column id="CUID"  filter="all">CUID</column>
+			
+			<column id="RELATED_OPTICAL_WAY_CUID" filter="all" editable="true">光路名称</column>
+			
+			<column id="RELATED_SEG_CUID"  filter="all" editable="true">光缆段名称</column>
+			
+			<column id="WIRE_NO"  filter="all" editable="true">使用纤芯编号</column>	
+		</columns>
+		<cm>
+		    {
+				RELATED_OPTICAL_WAY_CUID : {
+					width : 260
+				},
+				RELATED_SEG_CUID : {
+					width : 260
+				},
+				WIRE_NO : {
+					width : 180
+				}
+			}
+		</cm>
+		<sql>
+			SELECT * FROM FIBER
+		</sql>
+	</editor>
+</tpl>

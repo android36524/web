@@ -1,0 +1,24 @@
+[
+{
+      "name":"FIBER_COUNT", 
+      "displayName":"纤芯总数", 
+      "editable":true, 
+      "nullable":false,
+      "emptiable":true,
+      "color":"red",
+      "className":"Renderer.LongRenderer", 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"VENDOR", 
+      "displayName":"生产厂商", 
+      "editable":true, 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"WIRE_TYPE", 
+      "displayName":"光缆类型", 
+      "editable":true, 
+      "categoryName":"业务属性", 
+      "accessType":"attr"}
+]

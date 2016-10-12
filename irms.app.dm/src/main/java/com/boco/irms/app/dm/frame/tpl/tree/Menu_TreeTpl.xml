@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<tree name="DM_MAINTAIN_INDEX_XML">
+		<node cuid="PDA_MAINTAIN" label_cn="手机移动助手" icon_cls="nav_tree_node" expanded="1">
+			<node cuid="DM_MAINTAIN_PDA_DEVICE" label_cn="PDA设备管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.PDA_DEVICE">
+			</node>
+			<node cuid="DM_MAINTAIN_PDA_GROUP" label_cn="PDA设备组管理" icon_cls="nav_tree_child" expanded="0"
+				url="/rms/dm/import/PdaGroupGridPanelHT.jsp?code=service_dict_dm.PDA_GROUP">
+			</node>
+			<node cuid="DM_MAINTAIN_DMMA_TASK" label_cn="巡线任务管理" icon_cls="nav_tree_child" expanded="0" url="/dmma/task/task.jsp">
+			</node>
+			<node cuid="DM_MAINTAIN_DMMA_PROJECTTASK" label_cn="资源采集任务管理" icon_cls="nav_tree_child" expanded="0" url="/dmma/projecttask/projecttask.jsp">
+			</node>
+			<node cuid="DM_MAINTAIN_PDA_DMMA_HITTASK" label_cn="故障处理任务管理" icon_cls="nav_tree_child" expanded="0" url="/dmma/hitchtask/hitchtask.jsp">
+			</node>
+		</node>
+
+		<node cuid="POINT_MAINTAIN" label_cn="点设施维护" icon_cls="nav_tree_node" expanded="1">
+			<node cuid="DM_MAINTAIN_DM_MANHLE" label_cn="人手井管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_MANHLE">
+			</node>
+			<node cuid="DM_MAINTAIN_DM_POLE" label_cn="电杆管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_POLE">
+			</node>
+			<node cuid="DM_MAINTAIN_DM_STONE" label_cn="标石管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_STONE">
+			</node>
+			<node cuid="DM_MAINTAIN_DM_INFLEXION" label_cn="拐点管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_INFLEXION">
+			</node>
+			<node cuid="DM_MAINTAIN_DM_FIBER_CAB" label_cn="交接箱管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_FIBER_CAB">
+			</node>
+			<node cuid="DM_MAINTAIN_DM_FIBER_DP" label_cn="光分纤箱管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_FIBER_DP">
+			</node>
+			<node cuid="DM_MAINTAIN_DM_FIBER_JOINT_BOX" label_cn="光接头盒管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_FIBER_JOINT_BOX">
+			</node>
+			<node cuid="DM_MAINTAIN_DM_FIBER_TERMINAL_BOX" label_cn="光终端盒管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_FIBER_TERMINAL_BOX">
+			</node>
+			<node cuid="DM_MAINTAIN_DM_COVERAGE_DESIGN" label_cn="集客预覆盖规划管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_COVERAGE_DESIGN">
+			</node>
+			<node cuid="DM_MAINTAIN_DM_HISCOVERAGE_DESIGN" label_cn="集客预覆盖历史规划数据管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_HISCOVERAGE_DESIGN">
+			</node>
+			<!-- 李刚同意去掉 2016-03-23 18629324220
+			<node cuid="DM_MAINTAIN_DM_POS" label_cn="POS管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_POS">
+			</node>
+			-->
+			<node cuid="DM_MAINTAIN_DM_ONUBOX" label_cn="ONU综合箱管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_ONUBOX">
+			</node>
+		</node>
+
+		<node cuid="LINE_MAINTAIN" label_cn="线设施维护" icon_cls="nav_tree_node" expanded="1">
+			<node cuid="DM_MAINTAIN_DM_WIRE_SYSTEM" label_cn="光缆系统管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_WIRE_SYSTEM">
+			</node>
+			<node cuid="DM_MAINTAIN_DM_DUCT_SYSTEM" label_cn="管道系统管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_DUCT_SYSTEM">
+			</node>
+			<node cuid="DM_MAINTAIN_DM_POLEWAY_SYSTEM" label_cn="杆路系统管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_POLEWAY_SYSTEM">
+			</node>
+			<node cuid="DM_MAINTAIN_DM_STONEWAY_SYSTEM" label_cn="标石路由系统管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_STONEWAY_SYSTEM">
+			</node>
+			<node cuid="DM_MAINTAIN_DM_UPLINE" label_cn="引上管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_UPLINE">
+			</node>
+			<node cuid="DM_MAINTAIN_DM_HANG_WALL" label_cn="挂墙管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_HANG_WALL">
+			</node>
+		</node>
+
+		<node cuid="PROJECT_MAINTAIN" label_cn="工程维护" icon_cls="nav_tree_node" expanded="1">
+			<node cuid="DM_MAINTAIN_DM_PROJECT_MANAGEMENT" label_cn="工程管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_PROJECT_MANAGEMENT">
+			</node>
+			<node cuid="DM_MAINTAIN_DM_SUBPROJECT_MANAGEMENT" label_cn="项目管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_SUBPROJECT_MANAGEMENT">
+			</node>
+			<node cuid="DM_MAINTAIN_DM_MAINT_MANAGEMENT" label_cn="维护管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_MAINT_MANAGEMENT">
+			</node>
+			<node cuid="" label_cn="光缆割接任务管理" icon_cls="nav_tree_child" expanded="0" url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_CUTOVER_TASK">
+			</node>
+		</node>
+
+		<node cuid="BUSSINESS_MAINTAIN" label_cn="业务管理" icon_cls="nav_tree_node" expanded="1">
+			<node cuid="DM_MAINTAIN_DM_OPTICAL_MANAGEMENT" label_cn="光纤管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_OPTICAL">
+			</node>
+			<node cuid="DM_MAINTAIN_DM_OPTICAL_WAY_MANAGEMENT" label_cn="光路管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_OPTICAL_WAY">
+			</node>
+			<node cuid="DM_MAINTAIN_DM_JXWIRE_FIBER_MANAGEMENT" label_cn="局向光缆纤芯查询" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_JXWIRE_FIBER">
+			</node>
+			<node cuid="DM_MAINTAIN_DM_JX_FIBER_ANALYSE" label_cn="局向光纤查询分析" icon_cls="nav_tree_child" expanded="0"
+				url="/rms/dm/common/JXFiberEditorTreeGridPanelHT.jsp">
+			</node>
+			<node cuid="DM_MAINTAIN_DM_SITE_CONN_ANALYSE" label_cn="站点通达查询分析" icon_cls="nav_tree_child" expanded="0"
+				url="/rms/dm/common/SiteConnEditorTreeGridPanelHT.jsp">
+			</node>
+			<node cuid="DM_MAINTAIN_DM_OPTICAL_INVERTIGATE_MANAGEMENT" label_cn="核查计划管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_OPTICAL_INVERTIGATE">
+			</node>
+
+			<node cuid="DM_MAINTAIN_DM_OPTICAL_ERROR_ALARM" label_cn="光缆故障告警" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_OPTICAL_ERROR_ALARM">
+			</node>
+			<node cuid="DM_FIBER_STAT" label_cn="纤芯使用情况分析" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/ResGridPanel.jsp?code=service_dict_dm.DM_FIBER_STAT">
+			</node>
+			<node cuid="DM_MAINTAIN_DM_WIRE_LOGIC_TOPO" label_cn="光缆逻辑拓扑图" icon_cls="nav_tree_child" expanded="0" url="/topo/index.do?code=WireLogicTopo">
+			</node>
+		</node>
+
+		<node cuid="SITE_MAINTAIN" label_cn="站内资源管理" icon_cls="nav_tree_node" expanded="1">
+			<node cuid="DM_MAINTAIN_DM_INTER_WIRE_MANAGEMENT" label_cn="楼内光缆管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_INTER_WIRE">
+			</node>
+			<node cuid="DM_MAINTAIN_DM_INTE_CABLE_MANAGEMENT" label_cn="楼内电缆管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_INTER_CABLE">
+			</node>
+			<node cuid="LOCATION_INDEX_TABLE_SITE" label_cn="站点" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/ResGridPanel.jsp?code=service_dict_dm.DM_SITE">
+			</node>
+			<node cuid="LOCATION_INDEX_TABLE_ROOM" label_cn="机房" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/ResGridPanel.jsp?code=service_dict_dm.DM_ROOM">
+			</node>
+			<node cuid="LOCATION_INDEX_TABLE_RESOURCE" label_cn="资源点" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/ResGridPanel.jsp?code=service_dict_dm.SPACE_ACCESSPOINT">
+			</node>
+		</node>
+
+		<node cuid="FLOW_INDEX_JK_DEVICE_ACCESS" label_cn="PON资源管理" icon_cls="nav_tree_node" expanded="1">
+			<node cuid="FLOW_INDEX_JK_DEVICE_ACCESS_SEG_GROUP" label_cn="家客PON资源管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.DM_JK_DEVICE_ACCESS_SEG_GROUP">
+			</node>
+				<node cuid="FLOW_INDEX_JK_DEVICE_POSRELATION" label_cn="POS设备" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/ResGridPanel.jsp?code=service_dict_dm.DM_POSRELATION">
+			</node>
+			<node cuid="FLOW_INDEX_JK_DEVICE_ONURELATION" label_cn="ONU设备" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/ResGridPanel.jsp?code=service_dict_dm.DM_ONURELATION">
+			</node>
+		</node>
+	
+
+		<node cuid="STAT_ANALYSIS" label_cn="统计分析" icon_cls="nav_tree_node" expanded="1">
+			<node cuid="RESOURCE_STAT_ANALYSIS" label_cn="资源统计分析" icon_cls="nav_tree_node" expanded="1">
+				<!-- 北京使用配置 -->
+				<node cuid="DUCT_BREAK_ANALYSE" label_cn="管道连通性" icon_cls="nav_tree_child" expanded="0"
+					url="http://10.10.1.23:8084/report/loadReport?reportId=1415263590001">
+				</node>
+				<node cuid="FIBER_BY_TRAPH" label_cn="光缆纤芯关联电路" icon_cls="nav_tree_child" expanded="0"
+					url="http://10.10.1.23:8084/report/loadReport?reportId=1415263590004">
+				</node>
+				<node cuid="FIBER_BY_TRANS_PATH" label_cn="光缆纤芯关联传输系统" icon_cls="nav_tree_child" expanded="0"
+					url="http://10.10.1.23:8084/report/loadReport?reportId=1415263590006">
+				</node>
+				<node cuid="DUCT_SEG_LENGTH_VERACITY_ANALYSE" label_cn="管道段长度准确性" icon_cls="nav_tree_child" expanded="0"
+					url="http://10.10.1.23:8084/report/loadReport?reportId=1415263590005">
+				</node>
+				<node cuid="WIRE_WITHOUT_REMAIN_OR_JOINT_BOX" label_cn="光缆无预留或接头" icon_cls="nav_tree_child" expanded="0"
+					url="http://10.10.1.23:8084/report/loadReport?reportId=1415263590007">
+				</node>
+				<node cuid="DIFFERENCE_OF_WIRE_AND_DUCT" label_cn="光缆与敷设管线差值" icon_cls="nav_tree_child" expanded="0"
+					url="http://10.10.1.23:8084/report/loadReport?reportId=1415263590008">
+				</node>
+				<node cuid="NO_DUCT_HOLE_OR_CHILD_HOLE" label_cn="管道无管子孔" icon_cls="nav_tree_child" expanded="0"
+					url="http://10.10.1.23:8084/report/loadReport?reportId=1415263590009">
+				</node>
+				<node cuid="DUCT_LINE_LENGTH_ZERO" label_cn="管线系统长度为零" icon_cls="nav_tree_child" expanded="0"
+					url="http://10.10.1.23:8084/report/loadReport?reportId=1415263590010">
+				</node>
+				<node cuid="DUCT_LINES_NOT_FULL" label_cn="管线信息不完整" icon_cls="nav_tree_child" expanded="0"
+					url="http://10.10.1.23:8084/report/loadReport?reportId=1415263590011">
+				</node>
+				<node cuid="ALONE_SITES" label_cn="管线孤立站点" icon_cls="nav_tree_child" expanded="0"
+					url="http://10.10.1.23:8084/report/loadReport?reportId=1415263590012">
+				</node>
+				<node cuid="WIRE_NOLAY" label_cn="光缆无敷设信息" icon_cls="nav_tree_child" expanded="0"
+					url="http://10.10.1.23:8084/report/loadReport?reportId=1415263590013">
+				</node>
+			</node>
+		</node>
+
+		<node cuid="DATA_MAINTAIN" label_cn="数据维护" icon_cls="nav_tree_node" expanded="1">
+			<node cuid="DATA_IMPORT" label_cn="数据导入" icon_cls="nav_tree_child" expanded="0" url="/rms/dm/import/ImportPanel.jsp">
+			</node>
+		</node>
+
+		<node cuid="TROUBLE_MANAGEMENT" label_cn="隐患管理" icon_cls="nav_tree_node" expanded="1">
+			<node cuid="WIRE_TROUBLE_MANAGEMENT" label_cn="光缆隐患管理" icon_cls="nav_tree_child" expanded="0"
+				url="/cmp_res/grid/EditorGridPanel.jsp?code=service_dict_dm.WIRE_TROUBLE_MANAGEMENT">
+			</node>
+		</node>
+	</tree>
+</tpl>

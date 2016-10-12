@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--纤芯 -->
+<tpl>
+	<grid name="DM.SITE.GRID" title="站点" >
+		<plugins>
+			<plugin>number</plugin>
+		</plugins>
+		<columns>
+			<column dataIndex="LABEL_CN" isNotNull="true">站点名称</column>
+			<column dataIndex="CITY_LABEL" isNotNull="true">所属地市</column>
+			<column dataIndex="RELATED_SPACE_CUID_LABEL" isNotNull="true">所属区县</column>
+			<column dataIndex="OLEVEL_LABEL" isNotNull="true">重要性等级</column>		
+			<column dataIndex="OWNERSHIP_LABEL" isNotNull="true">产权性质</column>				
+		    <column dataIndex="LONGITUDE" isNotNull="true">经度</column>	
+		    <column dataIndex="LATITUDE" isNotNull="true">纬度</column>
+		    <column dataIndex="LOCATION" isNotNull="true">所在地址</column>				
+		    <column dataIndex="SITE_TYPE_LABEL" isNotNull="true">站点类型</column>	
+			<column dataIndex="SERVICE_LEVEL_LABEL" isNotNull="true">传输业务级别</column>	
+			<column dataIndex="STATUS" isNotNull="true">生命周期状态</column>
+			<column dataIndex="MAINT_MODE"  isNotNull="true">维护方式</column>
+			<column dataIndex="STATE"  isNotNull="true">设施状态</column>
+			<column dataIndex="CREATE_TIME"  isNotNull="true">入网日期</column>	
+			<column dataIndex="FLOOR_MAXNUM" >楼房总层数</column>									
+			<column dataIndex="PROPERTY_COMPANY" >产权单位</column>	
+			<column dataIndex="SPELLABBREVIATION" >拼音缩写</column>		
+			<column dataIndex="USE_COMPANY" >使用单位</column>
+			<column dataIndex="CONTACTOR" >联系人</column>		
+			<column dataIndex="TELEPHONE" >联系电话</column>	
+			<column dataIndex="REMARK" >备注</column>	
+			<column dataIndex="ALIAS" >站点别名</column>	
+			<column dataIndex="ABBREVIATION" >缩写</column>				
+			
+			<column dataIndex="MAINTAINDEPARTMENT" >维护部门</column>	
+			
+			<column dataIndex="EQUIPMENTCODE" >固定资产编号</column>	
+			<column dataIndex="RENT" >租金</column>	
+			<column dataIndex="SITECODING" >站号</column>	
+			<column dataIndex="SERVICER_CYCLE" >巡检周期</column>	
+			<column dataIndex="STANDARD_NAME" >标准名称</column>	
+			<column dataIndex="REAL_LONGITUDE">实际经度</column>	
+		    <column dataIndex="REAL_LATITUDE">实际纬度</column>	
+		</columns>
+		<fields>
+			<field mapping="CUID" type="String"></field>
+			<field mapping="OBJECTID" type="String"></field>
+		</fields>
+		<cm>
+			{
+			}
+		</cm>
+		<sql dao="IbatisResDAO">
+		
+			SELECT T.OBJECTID,
+		       T.CUID,
+		       T.LABEL_CN,
+		       T.SITECODING,
+		       T.ALIAS,
+		       to_char(T.CREATE_TIME, 'yyyy-MM-dd HH24:mi:ss') AS CREATE_TIME,
+		       (SELECT MAX(LABEL_CN)
+		          FROM DISTRICT
+		         WHERE CUID = SUBSTR(T.RELATED_SPACE_CUID, 0, 26)) AS CITY_LABEL,
+		       decode(t.service_level,'1','省际','2','省内','3','省内+本地','4','本地骨干','5','本地汇聚','6','本地接入','7','其他') AS SERVICE_LEVEL_LABEL,
+		       GET_SITE_TYPE(T.SITE_TYPE) AS SITE_TYPE_LABEL,
+		       T.SITE_TYPE,
+		       decode(t.OLEVEL, '1', '一级', '2', '二级', '3', '三级') AS OLEVEL_LABEL,
+		       T.OLEVEL,
+		       decode(t.OWNERSHIP,'0','其他','1','自建','2','共建','3','合建','4','租用','5','购买','6','置换') AS OWNERSHIP_LABEL,
+		       T.OWNERSHIP,
+		       T.LONGITUDE,
+		       T.ABBREVIATION,
+		       T.LATITUDE,
+		       T.REAL_LONGITUDE,
+		       T.REAL_LATITUDE,
+		       T.LOCATION,
+		       (SELECT MAX(LABEL_CN) FROM DISTRICT WHERE CUID = T.RELATED_SPACE_CUID) AS RELATED_SPACE_CUID_LABEL,
+		       T.RELATED_SPACE_CUID,
+		       t.service_level,
+		       decode(T.STATUS, '1', '空闲', '2', '在用', '3', '退网', '4', '工程') AS STATUS,
+		       T.FLOOR_MAXNUM,
+		       decode(T.PROPERTY_COMPANY, '1', '中国移动', '2', '中国联通', '3', '中国电信', '4', '中国铁通', '5', '广电', '6', '业主', '7', '其它') AS PROPERTY_COMPANY,
+		       decode(T.USE_COMPANY, '1', '中国移动', '2', '中国联通', '3', '中国电信', '4', '中国铁通', '5', '广电', '6', '业主', '7', '其它') AS USE_COMPANY,
+		       T.CONTACTOR,
+		       T.TELEPHONE,
+		       T.REMARK,
+		       T.SPELLABBREVIATION,
+		       decode(T.MAINT_MODE, '0', '未知', '1', '代维', '2', '自维') AS MAINT_MODE,
+		       T.MAINTAINDEPARTMENT,
+		       decode(T.STATE,'1','设计','2','在建','3','竣工','4','废弃','5','维护','6','在用') AS STATE,
+		       T.EQUIPMENTCODE,
+		       T.RENT,
+		       T.SERVICER_CYCLE,
+		       T.STANDARD_NAME
+		  FROM SITE T
+      
+		</sql>
+		<note>
+			站点查询
+		</note>
+	</grid>
+</tpl>

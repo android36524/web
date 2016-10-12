@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 光缆系统方向-->
+<tpl>
+	<editor name="IRMS.RMS.WIRESYSTEMDIRCTION" classname="WIRE_SYSTEM" title="光缆系统方向">
+		<columns>
+			<column id="NO" filter="all" editable="true">接头盒序号</column>				
+			<column id="DIRCTION" filter="all" editable="true">方向</column>		
+		</columns>
+		<cm>
+		    {
+				NO : {
+					width : 150
+				},
+				DIRCTION : {
+					width : 560
+				}
+			}
+		</cm>
+	</editor>
+</tpl>
+			
+    

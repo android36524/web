@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 交接箱 -->
+<tpl>
+	<editor name="IRMS.RMS.FIBER_CAB" classname="FIBER_CAB" title="交接箱">
+		<columns>
+		     <column id="OBJECTID"  filter="all" categoryname="系统属性">OBJECTID</column>
+			<column id="CUID"  filter="all" categoryname="系统属性">CUID</column>
+			 
+			<column id="LABEL_CN" filter="all" editable="true"
+				categoryname="系统属性" nullable="true">名称</column>
+			<column id="FIBERCAB_NO" editable="true" categoryname="系统属性">编号</column>
+			<column id="RELATED_DISTRICT_CUID" filter="all" editor="asyncombox@DMDF.DISTRICT" 
+				editable="true"  nullable="true" categoryname="基本属性">所属区域</column>
+			<column id="ACCESS_SCENE" filter="all" editable="true" nullable="true"
+				editor="enumbox@DMAccessSence" categoryname="业务属性">集客接入场景</column>	
+			<column id="OWNERSHIP"  filter="all" editable="true" editor="enumbox@DMOwnerShip"  nullable="true"  
+				categoryname="基本属性">产权归属</column>
+			<column id="PURPOSE"  filter="all" editor="enumbox@DMPurpose"  nullable="true" categoryname="基本属性"
+				editable="true">用途</column>
+			<column id="RELATED_SITE_CUID" filter="all" editor="menucombox@DM_ROOM=机房|DM_ACCESSPOINT=接入点" 
+				editable="true" categoryname="基本属性">设备所在位置</column>
+			<column id="DP_TYPE" filter="all" editable="false"
+			    editor="enumbox@DMDpType"
+				categoryname="基本属性">分纤点类型
+			</column>								
+			<column id="LONGITUDE" editable="true"
+				editor="double@0~180|6"
+				categoryname="基本属性">显示经度</column>
+			<column id="LATITUDE" editable="true"
+				editor="double@0~90|6"
+				categoryname="基本属性">显示纬度</column>
+			<column id="REAL_LONGITUDE" editable="true"
+				editor="double@0~180|6"
+				categoryname="基本属性">实际经度</column>
+			<column id="REAL_LATITUDE" editable="true"
+				editor="double@0~90|6"
+				categoryname="基本属性">实际纬度</column>
+			<column id="MODEL" editable="true" filter="all" categoryname="基本属性"
+				nullable="false">型号</column>
+			<column id="DESIGN_CAPACITY" editable="true"
+				editor="long" 
+				categoryname="基本属性">设计容量(芯)</column>
+			<column id="INSTALL_CAPACITY" editable="true"
+				editor="long" 
+				categoryname="基本属性">安装容量(芯)</column>
+			<column id="USED_CAPACITY" editable="true"
+				editor="long" 
+				categoryname="基本属性">使用容量(芯)</column>
+			<column id="FREE_CAPACITY" editable="true"
+				editor="long" 
+				categoryname="基本属性">空闲容量(芯)</column>
+			<column id="FACE_COUNT" editable="true"
+				editor="long" 
+				categoryname="基本属性">面数</column>
+			<column id="FACE_COL_COUNT" editable="true"
+				editor="long" 
+				categoryname="基本属性">每面列数</column>
+			<column id="TIER_PORT_COUNT" editable="true"
+				editor="long" 
+				categoryname="基本属性">每排行数</column>
+			<column id="RELATED_TEMPLATE_NAME" editable="true"
+				categoryname="基本属性" nullable="false">关联模板名称</column>
+			<column id="LABEL_DEV" filter="all" categoryname="基本属性"
+				nullable="false">设备标识</column>
+			<column id="SEQNO" filter="all" categoryname="基本属性" nullable="false">设备序列号
+			</column>
+			<column id="RELATED_VENDOR_CUID" filter="all" editable="true"
+				editor="enumbox@DeviceVendor"
+				categoryname="基本属性">设备供应商</column>
+			<column id="SPECIAL_LABEL" filter="all" categoryname="基本属性"
+				nullable="false">厂商特征值</column>
+			<column id="UP_POINT_NAME" filter="all" categoryname="业务属性"
+				nullable="true">引接点信息</column> 
+			<column id="RES_OWNER" filter="all" categoryname="业务属性"
+				nullable="false">所有权人</column>
+			<column id="USERNAME" filter="all" categoryname="业务属性" nullable="false">
+				使用单位</column>
+			<column id="MAINT_DEP" filter="all" categoryname="业务属性"
+				nullable="false">维护单位</column>
+			<column id="LOCATION" filter="all" categoryname="业务属性" nullable="false">
+				地址</column>
+			<column id="PRESERVER" filter="all" categoryname="业务属性"
+				nullable="false">维护人</column>
+			<column id="PRESERVER_PHONE" filter="all" categoryname="业务属性"
+				nullable="false">维护人联系电话</column>
+			<column id="MAINT_MODE" editable="true"
+				editor="enumbox@DMMaintMode"
+				categoryname="业务属性" nullable="true">维护方式</column>
+			<column id="SETUP_TIME" editable="true"
+				editor="date" categoryname="业务属性">
+				入网时间</column>
+			<column id="CHECK_DATE" editable="true"
+				editor="date" categoryname="业务属性">
+				核查日期</column>
+			<column id="SERVICER" filter="all" categoryname="业务属性" nullable="false">
+				巡检人</column>
+			<column id="PRESERVER_ADDR" filter="all" categoryname="业务属性"
+				nullable="false">维护人通信地址</column>
+			<column id="IS_USAGE_STATE" editable="true" editor="enumbox@BooleanType"
+				categoryname="业务属性">是否正在使用</column>
+			<column id="SYMBOL_NAME" filter="all" categoryname="业务属性"
+				nullable="false">图标名称</column>
+			<!-- 
+			<column id="CREATOR" filter="all" categoryname="业务属性" nullable="false">建设单位
+			</column>
+			-->
+			<column id="CREATTIME" editable="true"
+				editor="date" categoryname="业务属性">建设日期
+			</column>
+			<column id="RELATED_PROJECT_CUID"
+				editor="dmcombox@service_dict_dm.DM_PROJECT_MANAGEMENT"
+				categoryname="业务属性">所属工程</column>
+			<column id="PROJECT_STATE" editable="false"
+				editor="enumbox@DMProjectState"
+				categoryname="业务属性">工程状态</column>
+			<column id="RELATED_MAINT_CUID" editable="true"
+				editor="dmcombox@service_dict_dm.DM_MAINT_MANAGEMENT"
+				categoryname="业务属性">所属维护作业</column>
+			<column id="MAINT_STATE" editable="false"
+				editor="enumbox@MaintState"
+				categoryname="业务属性">维护作业状态</column>
+			<column id="PRO_NAME" editable="true" categoryname="业务属性">工程名称
+			</column>
+			<column id="IS_YJR" editable="true"
+				editor="enumbox@IsYjrPoint"
+				categoryname="业务属性">是否预覆盖接入点</column>
+			<column id="BOSS_CODE" editable="true" categoryname="业务属性">boss编码
+			</column>
+			<column id="VP_LABEL_CN" editable="true" categoryname="业务属性">客户名称
+			</column>
+			<column id="REMARK" editable="true" categoryname="其他属性">备注</column>
+			<column id="CREATOR" editable="false" categoryname="其他属性">录入人
+			</column>
+			<column id="CREATE_TIME" editable="false"
+				editor="date" categoryname="其他属性">录入时间
+			</column>
+			<column id="LAST_MODIFY_TIME" editor="date"
+				editable="false" categoryname="其他属性">最后修改时间</column>
+			
+		</columns>
+		<sql> SELECT * FROM FIBER_CAB </sql>
+		<remote name="PointPropTemplateBO">
+			<method type="query">IFiberCabBO.getFiberCabBySql</method>
+			<method type="count">IFiberCabBO.getFiberCabBySql</method>
+			<method type="insert">IFiberCabBO.addFiberCabs</method>
+			<method type="update">IFiberCabBO.modifyFiberCabs</method>
+			<method type="delete">IFiberCabBO.deleteFiberCabs</method>
+			<method type="editorMetaPluginBoName">DefaultEditorMetaPluginBO</method>
+		</remote>
+	</editor>
+</tpl>
+			
+    

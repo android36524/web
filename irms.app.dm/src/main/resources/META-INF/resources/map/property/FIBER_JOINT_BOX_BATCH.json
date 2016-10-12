@@ -1,0 +1,83 @@
+[
+{
+      "name":"PREFIX", 
+      "displayName":"前缀", 
+      "editable":true, 
+      "nullable":false,
+      "emptiable":true,
+      "color":"red",
+      "categoryName":"系统属性", 
+      "accessType":"attr"}
+,{
+      "name":"SERIALNUMBER", 
+      "displayName":"编号位数", 
+      "editable":true, 
+      "nullable":false,
+      "color":"red",
+      "className":"Renderer.EnumTypeRenderer", 
+      "key":"SerialNumber",
+      "categoryName":"系统属性", 
+      "accessType":"attr"}
+,{
+      "name":"SUFFIX", 
+      "displayName":"后缀", 
+      "editable":true,
+      "nullable":false,
+      "color":"red", 
+      "className":"Renderer.EnumTypeRenderer", 
+      "key":"FIBER_JOINT_BOXLastName",
+      "categoryName":"系统属性", 
+      "accessType":"attr"}
+,{
+      "name":"ORIGNUMBER", 
+      "displayName":"起始编号", 
+      "editable":true,
+      "nullable":false,
+      "emptiable":true,
+      "color":"red", 
+      "categoryName":"系统属性", 
+      "accessType":"attr"}
+,{
+      "name":"COUNT", 
+      "displayName":"数量", 
+      "editable":false,
+      "nullable":false,
+      "color":"red", 
+      "categoryName":"系统属性", 
+      "accessType":"attr"}
+,{
+      "name":"RELATED_DISTRICT_CUID_NAME", 
+      "displayName":"所属区域", 
+      "editable":false, 
+      "color":"red",
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"JUNCTION_TYPE", 
+      "displayName":"接头形式", 
+      "editable":true, 
+      "className":"Renderer.EnumTypeRenderer", 
+      "key":"DMJunctionType",
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"CAPACITY", 
+      "displayName":"接头盒容量", 
+      "editable":true, 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"RELATED_VENDOR_CUID", 
+      "displayName":"设备供应商", 
+      "editable":true, 
+      "className":"Renderer.EnumTypeRenderer", 
+      "key":"DeviceVendor", 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"REMARK", 
+      "displayName":"备注", 
+      "editable":true, 
+      "categoryName":"其它属性", 
+      "accessType":"attr"}
+]

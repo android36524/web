@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<!-- 人手井 -->
+	<editor name="IRMS.RMS.OVERLAY_RESOURCE"  classname="OVERLAY_RESOURCE" title="集客预覆盖规划">
+		<columns>
+		     <column id="OBJECTID"  filter="all" categoryname="系统属性">唯一标识</column>
+			<column id="CUID"  filter="all" categoryname="系统属性">唯一编码</column>
+			 
+			<column id="LABEL_CN" filter="all" width ="100" editable="true"  nullable="true" categoryname="系统属性">名称
+			</column>
+			<column id="RELATED_DISTRICT_CUID" filter="all" editor="asyncombox@DMDF.DISTRICT" 
+				editable="true"  nullable="true" categoryname="基本属性">所属区域</column>
+			
+			<column id="LONGITUDE"  filter="all" editable="true" nullable="true" 
+				editor="double@0~180|6"				
+				categoryname="基本属性">经度</column>
+			<column id="LATITUDE"  filter="all" editable="true" nullable="true"
+				editor="double@0~90|6"
+				categoryname="基本属性">纬度</column>
+ 			 <column id="RES_TYPE"  nullable="true" 
+                 editable="true"
+                 editor="enumbox@OverLayType"
+                 categoryname="基本属性">资源类型</column>
+              <column id="LIFE_CYCLE_STATE"
+                    editable="true"
+                    editor="enumbox@LifeCycleState"
+                    categoryname="基本属性">生命周期状态</column>
+			<column id="PROJECT_PLAN_PERIOD"  editable="true"  nullable="true" 
+			editor="maintaincombox@service_dict_dm.DM_PROJECT_PLAN_PERIOD"  categoryname="基本属性">规划期数
+			</column>
+		
+			<column id="FIBER_COUNT" editable="true" categoryname="基本属性">已规划纤芯
+			</column>
+			
+		</columns>
+		
+		<sql>
+			SELECT * FROM OVERLAY_RESOURCE
+		</sql>
+		<remote name="ProjectPropTemplateBO">
+			<method type="query">IOverlayResourceBO.getOverlayResourcesBySql</method>
+			<method type="count">IOverlayResourceBO.getOverlayResourcesBySql</method>
+			<method type="insert">IOverlayResourceBO.addOverlayResource</method>
+			<method type="update">IOverlayResourceBO.modifyOverlayResources</method>
+			<method type="delete">IOverlayResourceBO.deleteOverlayResource</method>
+		</remote>
+			
+		
+	</editor>
+</tpl>

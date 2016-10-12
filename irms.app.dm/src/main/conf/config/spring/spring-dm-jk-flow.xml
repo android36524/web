@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<bean id="sqlMapClientTnms" class="com.boco.core.ibatis.utils.SqlMapClientFactoryBean">
+		<property name="configLocations">
+			<list>
+				<value>classpath*:/config/ibatis/sql-map-config.xml</value>
+			</list>
+		</property>
+		<property name="mappingLocations">
+			<list>
+				<value>classpath*:com/boco/**/sqlmap/**/*_SqlMap.xml</value>
+			</list>
+		</property>
+		<property name="dataSource" ref="dataSourceTnms" />
+		<property name="sqlExecutor">
+			<bean class="com.boco.core.ibatis.utils.LimitSqlExecutor">
+				<property name="dialect">
+					<bean class="${tnms.jdbc.dialect}" />
+				</property>
+			</bean>
+		</property>
+		<property name="lobHandler" ref="lobHandler" />
+	</bean>
+
+	<bean id="dataSourceDesigner" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+		<property name="driverClassName" value="${designer.jdbc.driver}" />
+		<property name="url" value="${designer.jdbc.url}" />
+		<property name="username" value="${designer.jdbc.username}" />
+		<property name="password" value="${designer.jdbc.password}" />
+		<property name="initialSize" value="${designer.jdbc.initialSize}" />
+		<property name="maxActive" value="${designer.jdbc.maxActive}" />
+		<property name="minIdle" value="${designer.jdbc.minIdle}" />
+
+		<!-- 配置获取连接等待超时的时间 -->
+		<property name="maxWait" value="60000" />
+		<!-- 是否自动回收超时连接 -->
+		<property name="removeAbandoned" value="true" />
+		<!-- 超时时间(以秒数为单位) -->
+		<property name="removeAbandonedTimeout" value="150" />
+		<!-- 是否在自动回收超时连接的时候打印连接的超时错误 -->
+		<property name="logAbandoned" value="true" />
+		<!-- false : 空闲时是否验证, 若不通过断掉连接, 前提是空闲对象回收器开启状态 -->
+		<property name="testWhileIdle" value="true" />
+		<!-- -1 : 以毫秒表示空闲对象回收器由运行间隔。值为负数时表示不运行空闲对象回收器 若需要回收, 该值最好小于 minEvictableIdleTimeMillis值 -->
+		<property name="timeBetweenEvictionRunsMillis" value="300000" />
+		<!-- 1000*60*30 : 被空闲对象回收器回收前在池中保持空闲状态的最小时间, 毫秒表示 若需要回收, 该值最好小于DB中的 wait_timeout值 -->
+		<property name="minEvictableIdleTimeMillis" value="320000" />
+		<!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+		<property name="poolPreparedStatements" value="true" />
+		<property name="maxPoolPreparedStatementPerConnectionSize" value="20" />
+		<property name="defaultTransactionIsolation" value="${designer.jdbc.isolation}"></property>
+	</bean>
+
+	<bean id="sqlMapClientDesigner" class="com.boco.core.ibatis.utils.SqlMapClientFactoryBean">
+		<property name="configLocation">
+			<value>classpath:/config/ibatis/sql-map-config.xml</value>
+		</property>
+		<property name="mappingLocations">
+			<value>classpath*:/com/boco/**/sqlmap/**/*_SqlMap.xml</value>
+		</property>
+		<property name="dataSource" ref="dataSourceDesigner" />
+
+		<property name="sqlExecutor">
+			<bean class="com.boco.core.ibatis.utils.LimitSqlExecutor">
+				<property name="dialect">
+					<bean class="${designer.jdbc.dialect}" />
+				</property>
+			</bean>
+		</property>
+		<property name="lobHandler" ref="lobHandler" />
+	</bean>
+
+	<bean id="dataSourceSynRes" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+		<property name="driverClassName" value="${synirms.jdbc.driver}" />
+		<property name="url" value="${synirms.jdbc.url}" />
+		<property name="username" value="${synirms.jdbc.username}" />
+		<property name="password" value="${synirms.jdbc.password}" />
+		<property name="initialSize" value="${synirms.jdbc.initialSize}" />
+		<property name="maxActive" value="${synirms.jdbc.maxActive}" />
+		<property name="minIdle" value="${synirms.jdbc.minIdle}" />
+
+		<!-- 配置获取连接等待超时的时间 -->
+		<property name="maxWait" value="60000" />
+		<!-- 是否自动回收超时连接 -->
+		<property name="removeAbandoned" value="true" />
+		<!-- 超时时间(以秒数为单位) -->
+		<property name="removeAbandonedTimeout" value="150" />
+		<!-- 是否在自动回收超时连接的时候打印连接的超时错误 -->
+		<property name="logAbandoned" value="true" />
+		<!-- false : 空闲时是否验证, 若不通过断掉连接, 前提是空闲对象回收器开启状态 -->
+		<property name="testWhileIdle" value="true" />
+		<property name="validationQuery" value="SELECT 'x' from dual" />
+		<!-- -1 : 以毫秒表示空闲对象回收器由运行间隔。值为负数时表示不运行空闲对象回收器 若需要回收, 该值最好小于 minEvictableIdleTimeMillis值 -->
+		<property name="timeBetweenEvictionRunsMillis" value="300000" />
+		<!-- 1000*60*30 : 被空闲对象回收器回收前在池中保持空闲状态的最小时间, 毫秒表示 若需要回收, 该值最好小于DB中的 wait_timeout值 -->
+		<property name="minEvictableIdleTimeMillis" value="320000" />
+		<!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+		<property name="poolPreparedStatements" value="true" />
+		<property name="maxPoolPreparedStatementPerConnectionSize" value="20" />
+		<property name="defaultTransactionIsolation" value="${synirms.jdbc.isolation}"></property>
+	</bean>
+
+	<bean id="sqlMapClientSynRes" class="com.boco.core.ibatis.utils.SqlMapClientFactoryBean">
+		<property name="configLocation">
+			<value>classpath:/config/ibatis/sql-map-config.xml</value>
+		</property>
+		<property name="mappingLocations">
+			<value>classpath*:/com/boco/**/sqlmap/**/*_SqlMap.xml</value>
+		</property>
+		<property name="dataSource" ref="dataSourceSynRes" />
+
+		<property name="sqlExecutor">
+			<bean class="com.boco.core.ibatis.utils.LimitSqlExecutor">
+				<property name="dialect">
+					<bean class="${synirms.jdbc.dialect}" />
+				</property>
+			</bean>
+		</property>
+		<property name="lobHandler" ref="lobHandler" />
+	</bean>
+
+	<bean id="dataSourceSdeDesign" class="com.alibaba.druid.pool.DruidDataSource" destroy-method="close">
+		<property name="driverClassName" value="${sdeDesign.jdbc.driver}" />
+		<property name="url" value="${sdeDesign.jdbc.url}" />
+		<property name="username" value="${sdeDesign.jdbc.username}" />
+		<property name="password" value="${sdeDesign.jdbc.password}" />
+		<property name="initialSize" value="${sdeDesign.jdbc.initialSize}" />
+		<property name="maxActive" value="${sdeDesign.jdbc.maxActive}" />
+		<property name="minIdle" value="${sdeDesign.jdbc.minIdle}" />
+
+		<!-- 配置获取连接等待超时的时间 -->
+		<property name="maxWait" value="60000" />
+		<!-- 是否自动回收超时连接 -->
+		<property name="removeAbandoned" value="true" />
+		<!-- 超时时间(以秒数为单位) -->
+		<property name="removeAbandonedTimeout" value="150" />
+		<!-- 是否在自动回收超时连接的时候打印连接的超时错误 -->
+		<property name="logAbandoned" value="true" />
+		<!-- false : 空闲时是否验证, 若不通过断掉连接, 前提是空闲对象回收器开启状态 -->
+		<property name="testWhileIdle" value="true" />
+		<property name="validationQuery" value="SELECT 'x' from dual" />
+		<!-- -1 : 以毫秒表示空闲对象回收器由运行间隔。值为负数时表示不运行空闲对象回收器 若需要回收, 该值最好小于 minEvictableIdleTimeMillis值 -->
+		<property name="timeBetweenEvictionRunsMillis" value="300000" />
+		<!-- 1000*60*30 : 被空闲对象回收器回收前在池中保持空闲状态的最小时间, 毫秒表示 若需要回收, 该值最好小于DB中的 wait_timeout值 -->
+		<property name="minEvictableIdleTimeMillis" value="320000" />
+		<!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+		<property name="poolPreparedStatements" value="true" />
+		<property name="maxPoolPreparedStatementPerConnectionSize" value="20" />
+		<property name="defaultTransactionIsolation" value="${sdeDesign.jdbc.isolation}"></property>
+	</bean>
+
+	<bean id="sqlMapClientSdeDesign" class="com.boco.core.ibatis.utils.SqlMapClientFactoryBean">
+		<property name="configLocation">
+			<value>classpath:/config/ibatis/sql-map-config.xml</value>
+		</property>
+		<property name="mappingLocations">
+			<value>classpath*:/com/boco/**/sqlmap/**/*_SqlMap.xml</value>
+		</property>
+		<property name="dataSource" ref="dataSourceSdeDesign" />
+
+		<property name="sqlExecutor">
+			<bean class="com.boco.core.ibatis.utils.LimitSqlExecutor">
+				<property name="dialect">
+					<bean class="${sdeDesign.jdbc.dialect}" />
+				</property>
+			</bean>
+		</property>
+		<property name="lobHandler" ref="lobHandler" />
+	</bean>
+
+	<bean id="IbatisSdeDAO" class="com.boco.core.ibatis.dao.IbatisDAO">
+		<property name="sqlMapClient" ref="sqlMapClientSde" />
+	</bean>
+
+	<bean id="IbatisSdeDesignDAO" class="com.boco.core.ibatis.dao.IbatisDAO">
+		<property name="sqlMapClient" ref="sqlMapClientSdeDesign" />
+	</bean>
+
+	<bean id="IbatisDesignerDAO" class="com.boco.core.ibatis.dao.IbatisDAO">
+		<property name="sqlMapClient" ref="sqlMapClientDesigner" />
+	</bean>
+
+	<bean id="IbatisTnmsDAO" class="com.boco.core.ibatis.dao.IbatisDAO">
+		<property name="sqlMapClient" ref="sqlMapClientTnms" />
+	</bean>
+
+	<bean id="IbatisSynResDAO" class="com.boco.core.ibatis.dao.IbatisDAO">
+		<property name="sqlMapClient" ref="sqlMapClientSynRes" />
+	</bean>
+
+	<bean id="JkCommonBO" class="com.boco.irms.app.jk.common.bo.JkCommonBO">
+		<property name="iBatisSynResDAO" ref="IbatisSynResDAO" />
+		<property name="iBatisDesignerDAO" ref="IbatisDesignerDAO" />
+		<property name="iBatisTnmsDAO" ref="IbatisTnmsDAO" />
+		<property name="iBatisPonDAO" ref="IbatisPonDAO" />
+		<property name="iBatisSdeDesignDAO" ref="IbatisSdeDesignDAO" />
+		<property name="iBatisSdeDAO" ref="IbatisSdeDAO" />
+	</bean>
+
+	<bean id="AbstractJkSegGroupBO" class="com.boco.irms.app.jk.rms.jkseggroup.bo.AbstractJkSegGroupBO" abstract="true" parent="JkCommonBO">
+		<property name="abstractJkDeviceBO" ref="JkDeviceSimulateAccessBO" />
+	</bean>
+
+	<bean id="JkSegGroupBO" class="com.boco.irms.app.jk.rms.jkseggroup.bo.JkSegGroupBO" parent="AbstractJkSegGroupBO">
+	</bean>
+
+	<bean id="JkHbSegGroupBO" class="com.boco.irms.app.jk.rms.jkseggroup.bo.JkHbSegGroupBO" parent="JkSegGroupBO">
+	</bean>
+
+	<bean id="JkSnSegGroupBO" class="com.boco.irms.app.jk.rms.jkseggroup.bo.JkSnSegGroupBO" parent="JkSegGroupBO">
+	</bean>
+
+	<bean id="AbstractJkDeviceBO" class="com.boco.irms.app.jk.service.bo.AbstractJkDeviceBO" abstract="true" parent="JkCommonBO">
+	</bean>
+
+	<bean id="JkDeviceAccessBO" class="com.boco.irms.app.jk.service.bo.JkDeviceAccessBO" parent="AbstractJkDeviceBO">
+	</bean>
+
+	<bean id="JkDeviceSimulateAccessBO" class="com.boco.irms.app.jk.service.bo.JkDeviceSimulateAccessBO" parent="AbstractJkDeviceBO">
+	</bean>
+
+	<bean id="JkDeviceChangeBO" class="com.boco.irms.app.jk.service.bo.JkDeviceChangeBO" parent="AbstractJkDeviceBO">
+	</bean>
+
+	<bean id="JkDeviceBackoutBO" class="com.boco.irms.app.jk.service.bo.JkDeviceBackoutBO" parent="AbstractJkDeviceBO">
+	</bean>
+	
+	<bean id="JkDevicePrecoverBO" class="com.boco.irms.app.jk.service.bo.JkDevicePrecoverBO" parent="AbstractJkDeviceBO">
+	</bean>
+</beans>

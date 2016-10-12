@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<!-- 挂墙段 -->
+	<editor name="IRMS.RMS.HANG_WALL_SEG" classname="HANG_WALL_SEG" title="挂墙段">
+		<columns>
+			<column id="OBJECTID" filter="all" categoryname="系统属性">OBJECTID
+			</column>
+			<column id="CUID" filter="all" categoryname="系统属性">CUID</column>
+
+			<column id="LABEL_CN" filter="all" width="100" editable="true"
+				categoryname="系统属性" nullable="true">名称
+			</column>
+			<column id="INDEX_IN_BRANCH" editable="true"
+				editor="long"
+				categoryname="基本属性">序号
+			</column>
+			<column id="ORIG_POINT_CUID" filter="all" editable="false"
+				editor="menucombox"
+				categoryname="系统属性" nullable="true">连接起点
+			</column>
+			<column id="DEST_POINT_CUID" filter="all" editable="false"
+				editor="menucombox"
+				categoryname="系统属性" nullable="true">连接终点
+			</column>
+
+			<column id="LENGTH" filter="all" editable="true"
+				editor="double"
+				categoryname="基本属性">长度(M)
+			</column>
+			<column id="OWNERSHIP" filter="all" editable="true"
+				editor="enumbox@DMOwnerShip" categoryname="业务属性" nullable="true">产权
+			</column>
+			<column id="MAINT_MODE" filter="all" editable="true"
+				editor="enumbox@DMMaintMode" categoryname="业务属性" nullable="true">维护方式
+			</column>
+			<column id="PURPOSE" filter="all" editable="true" 
+			    editor="enumbox@DMPurpose"
+				categoryname="业务属性" nullable="true">用途
+			</column>
+			<column id="BUILDER" filter="all" editable="true"
+				categoryname="业务属性">施工单位</column>
+			<column id="BUILD_DATE" filter="all" editable="true"
+				editor="date"
+				categoryname="业务属性">施工时间</column>
+			<column id="FINISH_DATE" filter="all" editable="true"
+				editor="date"
+				categoryname="业务属性">竣工时间</column>
+
+			<column id="CHECK_DATE" filter="all" editable="true"
+				editor="date"
+				categoryname="业务属性">检修时间</column>
+			<column id="MAINT_DEP" filter="all" editable="true"
+				categoryname="业务属性">维护单位</column>
+			<column id="SERVICER" filter="all" editable="true"
+				categoryname="业务属性">巡检人</column>
+			<column id="PHONE_NO" filter="all" editable="true"
+				categoryname="业务属性">联系电话</column>
+			<column id="USER_NAME" editable="true" categoryname="业务属性">使用单位
+			</column>
+			<column id="RES_OWNER" filter="all" editable="true"
+				categoryname="业务属性">所有权人</column>
+			<column id="RELATED_PROJECT_CUID" filter="all" editable="true"
+				editor="dmcombox@service_dict_dm.DM_PROJECT_MANAGEMENT" categoryname="业务属性">所属工程</column>
+			<column id="PROJECT_STATE" filter="all" editable="false"
+				editor="enumbox@DMProjectState" categoryname="基本属性">工程状态</column>
+			<column id="RELATED_MAINT_CUID" filter="all" editable="true"
+				editor="dmcombox@service_dict_dm.DM_MAINT_MANAGEMENT" categoryname="业务属性">所属维护作业</column>
+			<column id="MAINT_STATE" filter="all" editable="false"
+				editor="enumbox@MaintState" categoryname="业务属性">维护作业状态</column>
+			<column id="PRO_NAME" filter="all" editable="true"
+				categoryname="业务属性">工程名称</column>
+			<column id="DATA_STATE" filter="all" editable="false"
+				editor="enumbox@DataStateEnum" categoryname="其他属性">数据状态</column>
+			<column id="DATA_PROBLEM" filter="all" editable="false"
+				categoryname="其他属性">数据问题描述</column>
+			<column id="REMARK" filter="all" editable="true" categoryname="其他属性">备注</column>
+			<column id="CREATOR" filter="all" editable="false"
+				categoryname="其他属性">录入人</column>
+			<column id="CREATE_TIME" filter="all" editable="false"
+				editor="date"
+				categoryname="其他属性">录入时间</column>
+			<column id="LAST_MODIFY_TIME" filter="all" editable="false"
+				editor="date"
+				categoryname="其他属性">最后修改时间</column>
+		</columns>
+		<remote name="RouteManaPropTemplateBO">
+			<method type="query">IHangWallSegBO.getSegmentsBySql</method>
+			<method type="count">IHangWallSegBO.getSegmentsBySql</method>
+			<method type="insert">IHangWallSegBO.addHangWallSeg</method>
+			<method type="update">IHangWallSegBO.modifyHangWallSeg</method>
+			<method type="delete">IHangWallSegBO.deleteHangWallSegs</method>
+		</remote>
+	</editor>
+</tpl>

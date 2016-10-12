@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 光缆系统接头盒明细 -->
+<tpl>
+	<editor name="IRMS.RMS.FIBERJOINTBOXEXPORT" classname="WIRE_SYSTEM" title="光缆系统接头盒明细">
+		<columns>
+			<column id="NO" filter="all" editable="true">接头盒序号</column>
+			<column id="ROOM_NAME" filter="all" editable="true">机房/光交设备</column>
+			<column id="CODE" filter="all" editable="true">接头编号</column>
+			<column id="AB_DIRECTION" filter="all" editable="true">A-B方向</column>
+			<column id="BA_DIRECTION" filter="all" editable="true">B-A方向</column>
+			<column id="LENGTH"  filter="all" editable="true">总长度（米）</column>
+			<column id="JB_DISTANCE"  filter="all" editable="true">接头盒间距离（米）</column>
+			<column id="MANHLE_NAME"  filter="all" editable="true">人手井号</column>
+			<column id="STONE_NAME"  filter="all" editable="true">标石号</column>
+			<column id="POLE_NAME" filter="all" editable="true">杆路号</column>
+			<column id="INFLEXION_NAME" filter="all" editable="true">拐点号</column>
+			<column id="LONGITUDE"  filter="all" editable="true">经度（度°）</column>
+			<column id="LATITUDE"  filter="all" editable="true">纬度（度°）</column>
+		    <column id="REFERENCE_OBJECT"  filter="all" editable="true">接头位置参照物</column>
+			<column id="FIBER_TYPE"  filter="all" editable="true">光缆型号</column>
+			<column id="CONN_RELATIONSHIP" filter="all" editable="true">接续关系</column>
+			<column id="RATIO" filter="all" editable="true">光缆束管数/束管纤芯数</column>
+			<column id="USE_RATE"  filter="all" editable="true">在用芯数/光缆芯数</column>
+			<column id="INUSE_FIBER" filter="all" editable="true">在用纤芯</column>
+			<column id="CONNS_NAME" filter="all" editable="true">引接基站名称</column>
+			<column id="SJ_DISTANCE" filter="all" editable="true">基站－接头点距离</column>
+			<column id="LAST_MODIFY_TIME"  filter="all" editable="true">更新时间</column>
+			<column id="CREATOR"  filter="all" editable="true">更新责任人</column>					
+		</columns>
+	</editor>
+</tpl>
+			
+    

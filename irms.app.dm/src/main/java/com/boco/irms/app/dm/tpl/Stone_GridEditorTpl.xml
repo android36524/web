@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+<!-- 标石管理 -->
+	<editor name="IRMS.RMS.STONE"  classname="STONE" title="标石">
+		<columns>
+		     <column id="OBJECTID"  filter="all" categoryname="系统属性">OBJECTID</column>
+			<column id="CUID"  filter="all" categoryname="系统属性">CUID</column>
+			 
+			<column id="LABEL_CN" filter="all" editable="true" nullable="true" categoryname="基本属性">名称
+			</column>
+			<column id="RELATED_DISTRICT_CUID" editable="true" filter="all" 
+			    editor="asyncombox@DMDF.DISTRICT" 
+			    categoryname="基本属性" nullable="true">所属区域
+			</column>
+			<column id="OWNERSHIP" editable="true" filter="all" 
+			    editor="enumbox@DMOwnerShip" categoryname="基本属性"
+			    nullable="true">产权
+			</column>
+			<column id="PURPOSE" editable="true" filter="all" 
+			    editor="enumbox@DMPurpose" categoryname="基本属性"
+			    nullable="true">用途
+			</column>
+			<column id="LONGITUDE" editable="true" filter="all" 
+			    editor="double@0~180|6"
+                categoryname="基本属性">显示经度
+			</column>
+			<column id="LATITUDE" editable="true" filter="all" 
+			    editor = "double@0~90|6"
+                categoryname="基本属性">显示纬度
+			</column>
+			<column id="REAL_LONGITUDE" editable="true" filter="all" 
+			    editor="double@0~180|6"
+                categoryname="基本属性">实际经度
+			</column>
+			<column id="REAL_LATITUDE" editable="true" filter="all" 
+			    editor = "double@0~90|6"
+                categoryname="基本属性">实际纬度
+			</column>
+			<column id="STONE_TYPE" editable="true" filter="all" 
+			    editor="enumbox@DMStoneType" categoryname="基本属性"
+			    nullable="true">标石类型
+			</column>
+			<column id="RES_OWNER" editable="true" filter="all" categoryname="业务属性">所有权人
+			</column>
+			<column id="USERNAME" editable="true" filter="all" categoryname="业务属性">使用单位
+			</column>
+			<column id="MAINT_DEP" editable="true" filter="all" categoryname="业务属性">维护单位
+			</column>
+			<column id="LOCATION" editable="true" filter="all" categoryname="业务属性">地址
+			</column>
+			<column id="MAINT_MODE" editable="true" filter="all" 
+			    editor="enumbox@DMMaintMode" categoryname="业务属性"
+			    nullable="true">维护方式
+			</column>
+			<column id="SERVICER" editable="true" filter="all" categoryname="业务属性">巡检人
+			</column>
+			<column id="PHONE_NO" editable="true" filter="all" categoryname="业务属性">联系电话
+			</column>
+			<column id="CHECK_DATE" editable="true" filter="all" 
+			    editor="date"
+			    categoryname="业务属性">检修时间
+			</column>
+			<column id="IS_DANGER_POINT" editable="true" filter="all" 
+			    editor="enumbox@BooleanType" categoryname="业务属性">是否是危险点
+			</column>
+			<column id="IS_CONN_POINT" editable="true" filter="all" 
+			    editor="enumbox@BooleanType" categoryname="业务属性">是否接头点
+			</column>
+			<column id="IS_KEEP_POINT" editable="true" filter="all" 
+			    editor="enumbox@BooleanType" categoryname="业务属性">是否是预留点
+			</column>
+			<column id="BUILDER" editable="true" filter="all" categoryname="业务属性">施工单位
+			</column>
+			<column id="BUILD_DATE" editable="true" filter="all" 
+			    editor="date" 
+			    categoryname="业务属性">施工时间
+			</column>
+			<column id="FINISH_DATE" editable="true" filter="all" 
+			    editor="date" 
+			    categoryname="业务属性">竣工时间
+			</column>
+			<column id="RELATED_PROJECT_CUID" editable="true" filter="all" 
+			    editor="dmcombox@service_dict_dm.DM_PROJECT_MANAGEMENT"
+                categoryname="业务属性">所属工程
+			</column>
+			<column id="PROJECT_STATE" editable="false" filter="all" 
+			    editor="enumbox@DMProjectState" categoryname="业务属性">工程状态
+			</column>
+			<column id="RELATED_MAINT_CUID" editable="true" filter="all" 
+			    editor="dmcombox@service_dict_dm.DM_MAINT_MANAGEMENT"
+                categoryname="业务属性">所属维护作业
+			</column>
+			<column id="MAINT_STATE" editable="false" filter="all" 
+			    editor="enumbox@MaintState" categoryname="业务属性">维护作业状态
+			</column>
+			<column id="PRO_NAME" editable="true" filter="all" categoryname="业务属性">工程名称
+			</column>
+			<column id="REMARK" editable="true" filter="all" categoryname="其他属性">备注
+			</column>
+			<column id="CREATOR" editable="false" filter="all" categoryname="其他属性">录入人
+			</column>
+			<column id="CREATE_TIME" editable="false" filter="all" 
+			    editor="date" 
+			    categoryname="其他属性">录入时间
+			</column>
+			<column id="LAST_MODIFY_TIME" editable="false" filter="all" 
+			    editor="date"
+			    categoryname="其他属性">最后修改时间
+			</column>
+		</columns>
+		<sql>
+			SELECT * FROM STONE
+		</sql>
+		<remote name="PointPropTemplateBO">
+			<method type="query">IStoneBO.getStoneBySql</method>
+			<method type="count">IStoneBO.getStoneBySql</method>
+			<method type="insert">IStoneBO.addStones</method>
+			<method type="update">IStoneBO.modifyStones</method>
+			<method type="delete">IStoneBO.deleteStones</method>
+			<method type="editorMetaPluginBoName">DefaultEditorMetaPluginBO</method>
+		</remote>
+	</editor>
+</tpl>

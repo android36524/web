@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<!-- 维护作业管理 -->
+	<editor name="IRMS.RMS.MAINT_MANAGEMENT"  classname="MAINT_MANAGEMENT" title="维护作业">
+		<columns>
+		     <column id="OBJECTID"  filter="all" categoryname="系统属性">OBJECTID</column>
+			<column id="CUID"  filter="all" categoryname="系统属性">CUID</column>
+			 
+			 <column id="LABEL_CN" editable="true"
+			 editor="filtertext"
+			 nullable="true" categoryname="系统属性">维护作业名称</column>
+			<column id="RELATED_DISTRICT_CUID" editable="true"  nullable="true" 
+			 editor="asyncombox@DMDF.DISTRICT"
+			 relationproperty="true" categoryname="业务属性">所属区域</column>
+			 <column id="TYPE" editable="true"
+			 editor="enumbox@MaintType"
+			 nullable="true" categoryname="业务属性">维护作业类型</column>
+			 
+			 <column id="STATE" editable="false"
+			 editor="enumbox@MaintState"  categoryname="业务属性">状态</column>
+			 
+			 <column id="BUILD_DATE" editable="true"
+			 editor="date"
+			 nullable="true" categoryname="业务属性">施工时间</column>
+			 
+			 <column id="UPDATE_START_DATE" editable="true"
+			 editor="date"
+			 nullable="true" categoryname="业务属性">更新开始日期</column>
+			 
+			 <column id="UPDATE_FINISH_DATE" editable="true"
+			 editor="date"
+			 categoryname="业务属性">更新结束日期</column>
+			 
+			 <column id="OPERATOR" editable="false"
+			 nullable="false" categoryname="业务属性">操作员帐号</column>
+			 
+			 <column id="CHECK_DATE" editable="true"
+			 editor="date"
+			 categoryname="业务属性">数据验收日期</column>
+			 
+			 <column id="DUCT_LENGTH" editable="true"
+			 editor="double"
+			 categoryname="业务属性">管道沟公里(km)</column>
+			 
+			 <column id="DUCT_HOLE_LENGTH" editable="true"
+			 editor="double"
+			 categoryname="业务属性">管道孔公里(km)</column>
+			 
+			 <column id="WIRE_LENGTH" editable="true"
+			 editor="double"
+			 categoryname="业务属性">光缆皮公里(km)</column>
+			 
+			 <column id="FIBER_LENGTH" editable="true"
+			 editor="double"
+			 categoryname="业务属性">光缆芯公里(km)</column>
+			 
+			 <column id="POLE_WAY_LENGTH" editable="true"
+			 editor="double"
+			 categoryname="业务属性">杆路长度(km)</column>
+			 
+			 <column id="STONE_WAY_LENGTH" editable="true"
+			 editor="double"
+			 categoryname="业务属性">直埋长度(km)</column>
+			 
+			 <column id="BEFORE_MAINT_INFO" editable="true"
+			 nullable="true" categoryname="业务属性">维护前路由</column>
+			 
+			 <column id="AFTER_MAINT_INFO" editable="true"
+			 nullable="true" categoryname="业务属性">维护后路由</column>
+			 
+			 <column id="REMARK" editable="true"
+			 categoryname="业务属性">备注</column>
+		</columns>
+		<sql>
+			SELECT * FROM MAINT_MANAGEMENT
+		</sql>
+		<remote name="ProjectPropTemplateBO">
+			<method type="query">IMaintManagementBO.getMaintManagementsBySql</method>
+			<method type="count">IMaintManagementBO.getMaintManagementsBySql</method>
+			<method type="insert">IMaintManagementBO.addMaintManagement</method>
+			<method type="update">IMaintManagementBO.modifyMaintManagement</method>
+			<method type="delete">IMaintManagementBO.deleteMaintManagements</method>
+		</remote>
+	</editor>
+</tpl>
+
+
+

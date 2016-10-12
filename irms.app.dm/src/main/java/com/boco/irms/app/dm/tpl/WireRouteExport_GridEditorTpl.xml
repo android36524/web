@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 光缆系统路由明细 -->
+<tpl>
+	<editor name="IRMS.RMS.WIREROUTEEXPORT" classname="WIRE_SYSTEM" title="光缆系统路由明细">
+		<columns>
+		
+			<column id="NO" filter="all" editable="true">路由序号</column>				
+			<column id="SITE_NAME" filter="all" editable="true">站点</column>
+			<column id="MANHLE_NAME"  filter="all" editable="true">人手井号</column>
+			<column id="STONE_NAME"  filter="all" editable="true">标石号</column>
+			<column id="POLE_NAME" filter="all" editable="true">杆路号</column>
+			<column id="INFLEXION_NAME" filter="all" editable="true">拐点号</column>
+			<column id="LENGTH"  filter="all" editable="true">距离（米）</column>
+			<column id="REMAIN_LENGTH"  filter="all" editable="true">预留长度（米）</column>
+			<column id="JOINTBOX_NAME" filter="all" editable="true">接头号</column>
+			<column id="REAL_LONGITUDE"  filter="all" editable="true">经度（度°）</column>
+			<column id="REAL_LATITUDE"  filter="all" editable="true">纬度(度°)</column>
+			<column id="REMARK" filter="all" editable="true">备注</column>
+			<column id="LAST_MODIFY_TIME"  filter="all" editable="true">更新时间</column>
+			<column id="CREATOR"  filter="all" editable="true">更新责任人</column>			
+		</columns>
+	</editor>
+</tpl>
+			
+    

@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<editor name="IRMS.RMS.DUCT_SEG" classname="DUCT_SEG" title="管道段">
+		<columns>
+		    <column id="OBJECTID"  filter="all" categoryname="系统属性">OBJECTID</column>
+			<column id="CUID"  filter="all" categoryname="系统属性">CUID</column>
+			 
+    <column
+  id="LABEL_CN"   editable="true" 
+  categoryname="系统属性"
+  nullable="true">名称</column>
+
+    <column
+  id="ORIG_POINT_CUID"  
+  editable="false"
+  editor="menucombox"
+  categoryname="系统属性" nullable="true">连接起点</column>
+
+    <column
+  id="DEST_POINT_CUID"   editable="false"
+  editor="menucombox"
+  categoryname="系统属性" nullable="true">连接终点</column>
+
+ <column
+  id="SPEC"   editable="true"
+  editor="enumbox@DuctSegSpec"
+  categoryname="基本属性">规格 </column>
+
+ <column
+  id="STUFF"  editable="true"
+  editor="enumbox@DUCT_SEG_STUFF"
+  categoryname="基本属性">材料 </column>
+
+ <column
+  id="LENGTH"   editable="true"
+  editor="double"
+  categoryname="基本属性">长度(M)</column>
+
+ <column
+  id="SECTION_LENGTH"   editable="true"
+  editor="double"
+  categoryname="基本属性">截面长(CM)</column>
+
+ <column
+  id="SECTION_HEIGHT"   editable="true"
+  editor="double"
+  categoryname="基本属性">截面高(CM)</column>
+
+ <column
+  id="LEFT_DISTANCE_A"   editable="true"
+  editor="double"
+  categoryname="基本属性">左侧距1(CM)</column>
+
+ <column
+  id="LEFT_DISTANCE_B"
+  editable="true"
+  editor="double"
+  categoryname="基本属性">左侧距2(CM)</column>
+
+ <column
+  id="TOP_HELGHT_A"
+  editable="true"
+  editor="double"
+  categoryname="基本属性">管顶高1(CM)</column>
+
+ <column
+  id="TOP_HELGHT_B"
+  editable="true"
+  editor="double"
+  categoryname="基本属性">管顶高2(CM)</column>
+
+  <column
+  id="MOBILE_DUCTHOLE_NUM"
+  editable="true"
+  editor="long"
+  categoryname="基本属性">移动管孔数</column>
+
+  <column
+  id="MOBILE_CHILDHOLE_NUM"
+  editable="true"
+  editor="long"
+  categoryname="基本属性">移动子孔</column>
+  
+   <column
+  id="FREE_DUCTHOLE_NUM"
+  editable="true"
+  editor="long"
+  categoryname="基本属性">移动未用管孔数 </column>
+  
+    <column
+  id="FREE_CHILDHOLE_NUM"
+  editable="true"
+  editor="long"
+  categoryname="基本属性">移动未用子孔数 </column>
+
+  <column
+  id="MAINT_MODE"
+  editable="true"
+  editor="enumbox@DMMaintMode"
+  categoryname="业务属性" nullable="true">维护方式 </column>
+  <column
+  id="PURPOSE"
+  editable="true"
+  editor="enumbox@DMPurpose"
+  categoryname="业务属性" nullable="true">用途 </column>
+
+ <column
+  id="OWNERSHIP"
+  editable="true"
+  editor="enumbox@DMOwnerShip"
+  categoryname="业务属性" nullable="true">产权</column>
+
+ <column
+  id="DUCT_SEG_TYPE"
+  editable="true"
+  editor="enumbox@DuctSegType"
+  categoryname="业务属性">管道段类型 </column>
+
+ <column
+  id="SERVICER"
+  editable="true"
+  categoryname="业务属性">巡检人</column>
+
+ <column
+  id="MAINT_DEP"
+  editable="true"
+  categoryname="业务属性">维护单位 </column>
+
+ <column
+  id="CHECK_DATE"
+  editable="true"
+  editor="date"
+  categoryname="业务属性">检修时间 </column>
+
+ <column
+  id="PHONE_NO"
+  editable="true"
+  categoryname="业务属性">联系电话</column>
+
+ <column
+  id="USER_NAME"
+  editable="true"
+  categoryname="业务属性">使用单位</column>
+
+  <column
+  id="RES_OWNER"
+  editable="true"
+  categoryname="业务属性">所有权人</column>
+
+ <column
+  id="BUILDER"
+  editable="true"
+  categoryname="业务属性">施工单位</column>
+
+ <column
+  id="BUILD_DATE"
+  editable="true"
+  editor="date"
+  categoryname="业务属性">施工时间</column>
+
+ <column
+  id="FINISH_DATE"
+  editable="true"
+  editor="date"
+  categoryname="业务属性">竣工时间 </column>
+
+ <column
+  id="RELATED_PROJECT_CUID"
+  editable="true"
+  editor="dmcombox@service_dict_dm.DM_PROJECT_MANAGEMENT"
+  categoryname="业务属性">所属工程</column>
+   <column
+  id="PROJECT_STATE"
+  editable="false"
+  editor="enumbox@DMProjectState"
+  categoryname="业务属性">工程状态</column>
+   <column
+  id="RELATED_MAINT_CUID"
+  editable="true"
+  editor="dmcombox@service_dict_dm.DM_MAINT_MANAGEMENT"
+  categoryname="业务属性">所属维护作业</column>
+   <column
+  id="MAINT_STATE"
+  editable="false"
+  editor="enumbox@MaintState"
+  categoryname="业务属性">维护作业状态</column>
+
+  <column
+  id="PRO_NAME"
+  editable="true"
+  categoryname="业务属性">工程名称</column>
+  
+  <column
+  id="MULTI_BUILD_USER"
+  editable="true"
+  categoryname="业务属性"
+   nullable="false">共建单位</column>
+  
+  <column
+  id="SHARED_USER"
+  editable="true"
+   categoryname="业务属性"
+   nullable="false">共享单位</column>
+ <column
+  id="DATA_STATE"
+  editable="false"
+  editor="enumbox@DataStateEnum"
+  categoryname="其他属性">数据状态</column>
+
+ <column
+  id="DATA_PROBLEM"
+  editable="false"
+  categoryname="其他属性">数据问题描述</column>
+
+ <column
+  id="REMARK"
+  editable="true"
+  categoryname="其他属性">备注</column>
+
+<column
+  id="CREATOR"
+  editable="false"
+  categoryname="其他属性">录入人 </column>
+
+   <column
+  id="CREATE_TIME"
+  editable="false"
+  editor="date"
+  categoryname="其他属性">录入时间</column>
+
+   <column
+  id="LAST_MODIFY_TIME"
+  editor="date"
+  editable="false"
+  categoryname="其他属性">最后修改时间</column>
+</columns>
+		<sql>
+		     SELECT * FROM DUCT_SEG
+		</sql>
+		 
+		<remote name="RouteManaPropTemplateBO">
+		    <method type="query">IDuctSegBO.getDuctSegBySql</method>
+		    <method type="count">IDuctSegBO.getDuctSegBySql</method>
+			<method type="insert">IDuctSegBO.addDuctSeg</method>
+			<method type="update">IDuctSegBO.modifyDuctSeg</method>
+			<method type="delete">IDuctSegBO.deleteDuctSegs</method>
+		</remote>
+		 
+	</editor>
+</tpl>

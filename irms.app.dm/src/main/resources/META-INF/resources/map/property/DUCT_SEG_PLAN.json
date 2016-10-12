@@ -1,0 +1,53 @@
+[
+{
+      "name":"LABEL_CN", 
+      "displayName":"名称", 
+      "editable":true, 
+      "nullable":false,
+      "emptiable":true,
+      "color":"red",
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"ORIG_POINT_CUID_NAME", 
+      "displayName":"连接起点", 
+      "editable":false, 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"DEST_POINT_CUID_NAME", 
+      "displayName":"连接终点", 
+      "editable":false,
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"MOBILE_DUCTHOLE_NUM",
+      "displayName":"管孔数",
+      "editable":true,
+      "categoryName":"基本属性",
+      "accessType":"attr"}
+,{
+      "name":"SPEC", 
+      "displayName":"规格", 
+      "editable":true, 
+      "className":"Renderer.EnumTypeRenderer", 
+      "key":"DuctSegSpec", 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"STUFF", 
+      "displayName":"材料", 
+      "editable":true, 
+      "className":"Renderer.EnumTypeRenderer", 
+      "key":"DUCT_SEG_STUFF", 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"DUCT_SEG_TYPE", 
+      "displayName":"管道段类型", 
+      "editable":true, 
+      "className":"Renderer.EnumTypeRenderer", 
+      "key":"DuctSegType", 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+]

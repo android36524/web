@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<editor name="IRMS.RMS.OPTICAL_ERROR_ALARM" classname="CURRENT_ALARM" title="光缆故障告警">
+		<columns>
+			<!-- column id="OBJECTID"  filter="all" categoryname="系统属性">OBJECTID</column>
+			<column id="CUID"  filter="all" categoryname="系统属性">CUID</column-->
+			 
+			<column
+				id="CITY_NAME"  
+				editable="false"
+				categoryname="基本属性">区域</column>
+
+			<column
+				id="ALARM_SEVERITY_NAME"   editable="true"
+				editor="enumbox@CheckTaskState"
+				categoryname="基本属性">网管告警级别</column>
+
+			<column
+				id="NEALARM_TIME"
+				editable="false"
+				editor="date"
+				categoryname="基本属性">网元告警产生时间</column>
+			
+			<column
+				id="ALARM_NAME"  
+				editable="false"
+				categoryname="基本属性">告警标题</column>
+				
+			<column
+				id="EMS_NAME"  
+				editable="false"
+				categoryname="基本属性">EMS</column>
+				
+			<column
+				id="NE_MODEL"   editable="true"
+				editor="enumbox@NeSingeType"
+				categoryname="基本属性">设备类型</column>
+				
+			<column
+				id="RELATED_PORT_A"  
+				editable="false"
+				categoryname="基本属性">A端设备端口</column>
+				
+			<column
+				id="RELATED_PORT_Z"  
+				editable="false"
+				categoryname="基本属性">Z端设备端口</column>
+				
+			<column
+				id="ALM_DEVINFO"  
+				editable="false"
+				categoryname="基本属性">告警位置</column>
+		</columns>
+		<sql>
+		</sql>
+		 
+		<remote name="OpticalErrorAlarmBO">
+		</remote>
+	</editor>
+</tpl>

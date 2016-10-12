@@ -1,0 +1,23 @@
+.graphView {
+    margin: 0px;
+    padding: 0px;
+    background: #ffffff;
+    position: absolute;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+.mask{
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.2);
+    position: absolute;
+    display: table;
+}
+.mask div{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}

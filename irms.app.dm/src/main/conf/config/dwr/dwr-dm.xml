@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN" "http://www.getahead.ltd.uk/dwr/dwr20.dtd">
+<dwr>
+	<allow>
+		<convert converter="bean" match="java.util.*" />
+		<convert match="java.lang.Exception" converter="exception">
+			<param name='include' value='message' />
+		</convert>
+		<convert match="java.lang.RuntimeException" converter="exception">
+			<param name='include' value='message' />
+		</convert>
+		<!--批量命名 -->
+		<create creator="new" javascript="BatchNamesAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.BatchNamesAction"/>
+        </create>
+        
+        <!--Pda_Group查询 -->
+		<create creator="new" javascript="PdaGroupAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.PdaGroupAction"/>
+        </create>
+		
+        <!--批量编辑-->
+        <create creator="new" javascript="PatchEditAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.PatchEditAction"/>
+        </create>
+        <!-- 光缆系统————生成光纤 -->
+        <create creator="new" javascript="GenerateOpticalAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.GenerateOpticalAction"/>
+        </create>
+         <!--光缆管理_设置核查任务-->
+        <create creator="new" javascript="CheckTaskNameAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.CheckTaskNameAction"/>
+        </create>
+         <!--将POS添加到光交接箱 -->
+          <create creator="new" javascript="PosAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.PosAction"/>
+        </create>
+        <!--系统管理-->
+        <create creator="new" javascript="DMSystemAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.DMSystemAction"/>
+        </create>
+		<!--长度测量-->
+          <create creator="new" javascript="CalculateSystemLengthAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.CalculateSystemLengthAction"/>
+	      </create>
+        <!--查看光纤列表-->
+        <create creator="new" javascript="OpticalViewAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.OpticalViewAction"/>
+        </create>
+        <!-- 查询政区 -->
+        <create creator="new" javascript="DistrictDataAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.DistrictDataAction"/>
+        </create>
+        <!-- 光纤关联 -->
+         <create creator="new" javascript="FiberLinkAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.FiberLinkAction"/>
+        </create>
+        <!-- 光缆敷设 -->
+         <create creator="new" javascript="ReviewWireViewAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.ReviewWireViewAction"/>
+        </create>
+        <!-- 光纤上架 -->
+        <create creator="new" javascript="InterFiberLinkAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.InterFiberLinkAction"/>
+        </create>
+       <!--跳纤管理-->
+        <create creator="new" javascript="FiberManagerAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.FiberManagerAction"/>
+        </create>
+        <create creator="new" javascript="jumpFiberRemarkAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.jumpFiberRemarkAction"/>
+        </create>
+        <!--光缆预留信息-->
+        <create creator="new" javascript="WireRemainAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.WireRemainAction"/>
+        </create>
+        <!--获取服务参数url-->
+        <create creator="new" javascript="GetServiceParamAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.GetServiceParamAction"/>
+        </create>
+        <!--端口管理-->
+        <create creator="new" javascript="PortsManageAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.PortsManageAction"/>
+        </create>
+        <create creator="new" javascript="ExportCADAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.ExportCADAction"/>
+        </create>
+        <!--导出CAD
+        <create creator="new" javascript="ExportCADAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.ExportCADAction"/>
+        </create>-->
+        <!--工程管理——查看关联资源-->
+        <create creator="new" javascript="ResourceViewAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.ResourceViewAction"/>
+        </create>
+        <!--工程管理——添加关联资源-->
+        <create creator="new" javascript="ProjectManageAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.ProjectManageAction"/>
+        </create>
+        <!--光接头盒设备管理——根据所在位置设置经纬度-->
+        <create creator="new" javascript="FiberJointBoxAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.FiberJointBoxAction"/>
+        </create>
+        <!-- 删除点线资源Action -->
+        <create creator="new" javascript="DeleteResInMapAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.DeleteResInMapAction"/>
+        </create>
+         <!-- 查看关联线设施Action -->
+        <create creator="new" javascript="RelatedSystemAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.RelatedSystemAction"/>
+        </create>
+        
+        <!-- 地图配置Action -->
+        <create creator="new" javascript="MapConfigAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.MapConfigAction"/>
+        </create>
+        
+        <!--光路管理——光路定位-->
+        <create creator="new" javascript="OpticalWayAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.OpticalWayAction"/>
+        </create>
+        
+        <!-- 光缆断点查询 -->
+        <create creator="new" javascript="WireInterruptAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.WireInterruptAction"/>
+        </create>
+                <!-- 移动点资源 -->
+        <create creator="new" javascript="MovePointResourceAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.MovePointResourceAction"/>
+        </create>
+        
+        <!-- 通达站点光缆分析 -->
+        <create creator="new" javascript="SiteWireAnalysisAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.SiteWireAnalysisAction"/>
+        </create>
+        
+        <!-- 管道段合并管理-->
+        <create creator="new" javascript="UniteDuctSegAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.UniteDuctSegAction"/>
+        </create>
+        <!-- 杆路段合并管理-->
+        <create creator="new" javascript="UnitePWSegAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.UnitePWSegAction"/>
+        </create>
+        <!-- 标石路由段、引上段、挂墙段合并管理-->
+        <create creator="new" javascript="UniteSUHSegAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.UniteSUHSegAction"/>
+        </create>
+        <!-- 获取系统参数-->
+        <create creator="new" javascript="GetSystemParaAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.GetSystemParaAction"/>
+        </create>
+        
+         <!-- 获取用户系统权限-->
+        <create creator="new" javascript="GetSystemAuthorityAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.GetSystemAuthorityAction"/>
+        </create>
+        
+         <!--根据ClassName生成CUID-->
+        <create creator="new" javascript="GenerateCuidAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.GenerateCuidAction"/>
+        </create>
+        <!--用于拆分管道段-->
+        <create creator="new" javascript="SplitMapDuctSegAction" scope="application">
+        	<param name="class" value="com.boco.gis.rest.SplitMapDuctSegAction"/>
+        </create>
+        
+        <!--用于拆分光缆段-->
+        <create creator="new" javascript="SplitMapWireSegAction" scope="application">
+        	<param name="class" value="com.boco.gis.rest.SplitMapWireSegAction"/>
+        </create>
+        
+		<!-- 用于取区域名称-->
+       <create creator="new" javascript="DistNameAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.DistNameAction"/>
+       </create>
+       
+        <!-- 综合业务区 -->
+        <create creator="new" javascript="MapGridAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.MapGridAction"/>
+        </create>
+        
+        <!-- 地图下拉框组件 -->
+        <create creator="new" javascript="MapComboxAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.MapComboxAction"/>
+        </create>
+        
+        <!--用于合并承载段-->
+        <create creator="new" javascript="MergeDuctLineSegsAction" scope="application">
+        	<param name="class" value="com.boco.gis.rest.MergeDuctLineSegsAction"/>
+        </create>
+        <!--用于合并承载分支-->
+        <create creator="new" javascript="MergeDuctLineBranchsAction" scope="application">
+        	<param name="class" value="com.boco.gis.rest.MergeDuctLineBranchsAction"/>
+        </create>
+        <!--用于合并光缆段-->
+        <create creator="new" javascript="MergeWireSegsAction" scope="application">
+        	<param name="class" value="com.boco.gis.rest.MergeWireSegsAction"/>
+        </create>
+        
+        <!--光缆改迁-->
+        <create creator="new" javascript="MapMoveWireRouteAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.MapMoveWireRouteAction"/>
+        </create>        
+        
+        <!--按设备类型分多个文件导出数据-->
+        <create creator="new" javascript="ExportAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.ExportAction"/>
+        </create>
+        
+        <!--代维统计-->
+        <create creator="new" javascript="WireStatAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.WireStatAction"/>
+        </create>
+        <!--局向光纤查询分析-->
+        <create creator="new" javascript="JXFiberQueryAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.JXFiberQueryAction"/>
+        </create>
+        <!--站点通达查询分析-->
+        <create creator="new" javascript="SiteConncetionQueryAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.SiteConncetionQueryAction"/>
+        </create>
+
+        <!--查询管道系统长度-->
+        <create creator="new" javascript="DmQueryLengthAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.DmQueryLengthAction"/>
+        </create>
+        
+       	<!--光交接箱端子直熔-->
+        <create creator="new" javascript="FiberCabFusionAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.FiberCabFusionAction"/>
+        </create>
+        
+        <create creator="new" javascript="DmResExplorerAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.DmResExplorerAction"/>
+        </create>
+        
+        <!--核查计划管理-->
+        <create creator="new" javascript="OpticalCheckAction" scope="application">
+        	<param name="class" value="com.boco.irms.app.dm.action.OpticalCheckAction"/>
+        </create>
+        <!-- 场景固化分岐 直通 批量接续 -->
+        <create creator="new" javascript="SpotFixHandlerAction" scope="application">
+            <param name="class" value="com.boco.irms.app.dm.action.SpotFixHandlerAction"/>
+        </create>
+         <!-- 资源采集管理数据操作层 -->
+        <create creator="new" javascript="ProjectTaskAction" scope="application">
+            <param name="class" value="com.boco.transnms.dmma.projecttask.ProjectTaskAction"/>
+        </create>
+           <create creator="new" javascript="HitchTaskAction" scope="application">
+            <param name="class" value="com.boco.transnms.dmma.hitchtask.HitchTaskAction"/>
+        </create>
+          <create creator="new" javascript="TaskAction" scope="application">
+            <param name="class" value="com.boco.transnms.dmma.task.TaskAction"/>
+        </create>
+          <create creator="new" javascript="WireSegBatchAction" scope="application">
+            <param name="class" value="com.boco.transnms.dmma.wiresegbatch.WireSegBatchAction"/>
+        </create>
+          <!--光缆割接任务-->
+        <create creator="new" javascript="CutOverTaskAction" scope="application">
+            <param name="class" value="com.boco.irms.app.dm.action.CutOverTaskAction"/>
+        </create>
+        <create creator="new" javascript="WireFinishCutAction" scope="application">
+            <param name="class" value="com.boco.irms.app.dm.action.WireFinishCutAction"/>
+        </create>
+        <create creator="new" javascript="CutOverPointSelectAction" scope="application">
+            <param name="class" value="com.boco.irms.app.dm.action.CutOverPointSelectAction"/>
+        </create>
+        <create creator="new" javascript="CutOverRouteManageAction" scope="application">
+            <param name="class" value="com.boco.irms.app.dm.action.CutOverRouteManageAction"/>
+        </create>
+	</allow>
+	<signatures>
+	  <![CDATA[
+	   
+	    ]]>
+	</signatures>
+</dwr>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<editor name="IRMS.RMS.WIRE_TROUBLE" classname="WIRE_TROUBLE" title="光缆隐患表">
+		<columns>
+			<column id="OBJECTID" filter="all" categoryname="系统属性">OBJECTID</column>
+			<column id="CUID" filter="all" categoryname="系统属性">CUID</column>
+			
+			<column id="LABEL_CN" filter="all" editable="true"
+					categoryname="基本属性" nullable="true">名称</column>
+			<column id="SERIAL_NUMBER" filter="all" editable="true" editor="int"
+					categoryname="基本属性">序号</column>
+			<column id="RELATED_SPACE_CUID" filter="all" editable="true" editor="asyncombox@DMDF.DISTRICT" 
+					categoryname="基本属性" nullable="true">所属区域</column>
+			<column id="BELONGCOM" filter="all" editable="true" 
+					categoryname="基本属性" nullable="true">单位名称</column>
+			<column id="ORIG_POINT_CUID" editable="true" 
+					editor="menucombox@DM_SITE=站点|DM_FIBER_CAB=光交接箱|DM_FIBER_DP=光分纤箱 |DM_FIBER_JOINT_BOX=光接头盒|DM_ACCESSPOINT=接入点|DM_PON=POS" 
+					categoryname="业务属性" nullable="true">隐患点位置起点 </column>
+			<column id="DEST_POINT_CUID" editable="true" 
+					editor="menucombox@DM_SITE=站点|DM_FIBER_CAB=光交接箱|DM_FIBER_DP=光分纤箱 |DM_FIBER_JOINT_BOX=光接头盒|DM_ACCESSPOINT=接入点|DM_PON=POS"
+					categoryname="业务属性" nullable="true">隐患点位置止点</column>
+			<column id="TROUBLE_LEVEL" editable="true" editor="enumbox@TroubleSystemLevel"
+					categoryname="业务属性">系统级别</column>
+			<column id="FIND_TIME" editable="true" editor="date" 
+					categoryname="业务属性" nullable="true">隐患发现时间</column>
+			<column id="STATE" editable="true" editor="enumbox@WireTroubleState" 
+					categoryname="业务属性" nullable="true">状态</column>
+			<column id="LOCATION" editable="true" 
+					categoryname="业务属性" nullable="true">隐患点位置描述</column>
+			<column id="DANGER_TYPE" editable="true" editor="enumbox@ExtType" 
+					categoryname="业务属性" nullable="true">施工隐患类别</column>
+			<column id="DESCRIPTION" editable="true" 
+					categoryname="业务属性" nullable="true">隐患描述</column>
+			<column id="LENGTH" editable="true" 
+					categoryname="业务属性" nullable="true">影响线路长度(M)</column>
+			<column id="CONSTRUCT_PROJECT_NAME" editable="true" 
+					categoryname="业务属性" nullable="true">具体施工单位与工程名称</column>
+			<column id="SECURITY_PROTOCOL" editable="true" 
+					categoryname="业务属性" nullable="true">安全协议</column>
+			<column id="CONTACTOR" editable="true" 
+					categoryname="业务属性" nullable="true">施工方负责人姓名及联系电话</column>
+			<column id="MANAGER" editable="true" 
+					categoryname="业务属性" nullable="true">分公司责任人姓名和联系电话</column>
+			<column id="MAINT_DEP" editable="true" 
+					categoryname="业务属性" nullable="true">代维单位名称</column>
+			<column id="CARE_PERSON" editable="true" 
+					categoryname="业务属性" nullable="true">盯防人员姓名及联系电话</column>
+			<column id="TROUBLE_START_TIME" editable="true" editor="date" 
+					categoryname="业务属性" nullable="true">隐患起始时间</column>
+			<column id="TROUBLE_END_TIME" editable="true" editor="date" 
+					categoryname="业务属性" nullable="true">隐患结束时间</column>
+			<column id="CONSTRUCTION_PERIOD" editable="true" 
+					categoryname="业务属性" nullable="true">施工周期</column>
+				
+			<column id="CREATE_TIME" editable="false" editor="date" categoryname="其他属性">创建时间</column>
+			<column id="LAST_MODIFY_TIME" editable="false" editor="date" categoryname="其他属性">最后修改时间</column>
+			<column id="REMARK" editable="true" categoryname="其他属性" nullable="true">备注</column>
+		</columns>
+		<sql>
+		     SELECT * FROM WIRE_TROUBLE
+		</sql>
+		 
+		<remote name="WireTroubleTemplateBO">
+			<method type="query">IWireTroubleBO.getWireTroublesBySql</method>
+			<method type="count">IWireTroubleBO.getWireTroublesBySql</method>
+			<method type="insert">IWireTroubleBO.addWireTrouble</method>
+			<method type="update">IWireTroubleBO.modifyWireTrouble</method>
+			<method type="delete">IWireTroubleBO.deleteWireTroubles</method>
+		</remote>
+		 
+	</editor>
+</tpl>

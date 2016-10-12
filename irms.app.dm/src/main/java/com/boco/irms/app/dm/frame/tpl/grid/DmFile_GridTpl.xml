@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<!-- 附件列表 -->
+	<grid name="DM.DESIGNER.FILE.GRID">
+		<plugins>
+			<plugin>number</plugin>
+		</plugins>
+		<columns>
+			<column dataIndex="CUID">唯一标识</column>
+			<column dataIndex="RELATED_SHEET_CUID">关联工单CUID</column>
+			<column dataIndex="ATTACH_ADDRESS">附件存储位置</column>
+			<column dataIndex="ATTACH_TYPE">附件流程</column>
+			<column dataIndex="FILENAME">附件名称</column>
+			<column dataIndex="USERNAME">上传用户</column>
+			<column dataIndex="CREATE_TIME">上传时间</column>
+		</columns>
+		<cm>
+			{
+				CUID : {
+					hidden : true
+				},
+				RELATED_SHEET_CUID : {
+					hidden : true
+				},
+				ATTACH_ADDRESS : {
+					hidden : true
+				},
+				ATTACH_TYPE : {
+					hidden : true
+				},
+				FILENAME : {
+					width : 300
+				}
+			}
+		</cm>
+		<sql dao="IbatisResDAO">
+			SELECT CUID,
+			       RELATED_SHEET_CUID,
+			       ATTACH_ADDRESS,
+			       ATTACH_TYPE,
+			       ATTACH_FILENAME AS FILENAME,
+			       ADD_USER_NAME AS USERNAME,
+			       TO_CHAR(CREATE_TIME, 'YYYY-MM-DD HH24:MI:SS') AS CREATE_TIME
+			  FROM T_SYS_FILE
+			 WHERE RELATED_SERVICE_CUID = '{relatedServiceCuid}'
+			   AND ATTACH_TYPE = '{type}'
+		</sql>
+	</grid>
+</tpl>

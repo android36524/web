@@ -1,0 +1,85 @@
+[{
+	"name": "LABEL_CN",
+	"displayName": "名称",
+	"icon":"primary",
+	"accessType": "attr",
+	"icon":"/resources/topo/dm/primary.png",
+	"editable": "true"
+},{
+	"name": "ORDER",
+	"displayName": "编号",
+	"accessType": "attr",
+	"valueType": "int",
+	"editable": "false"
+},{
+	"name": "RELATED_ZONE_CUID",
+	"displayName": "所属综合业务区",
+	"accessType": "attr",
+	"icon":"/resources/topo/dm/primary.png",
+	"editable": "true"
+},{
+	"name": "ADDRESS",
+	"displayName": "地址",
+	"accessType": "attr",
+	"icon":"/resources/topo/dm/primary.png",
+	"editable": "true"
+},{
+	"name": "BUILD_TYPE",
+	"displayName": "产权",
+    "className":"Renderer.EnumTypeRenderer", 
+    "key":"DMBuildType",
+	"accessType": "attr",
+	"icon":"/resources/topo/dm/primary.png",
+	"editable": "true"
+},{
+	"name": "ZONE_TYPE",
+	"displayName": "地域属性",
+    "className":"Renderer.EnumTypeRenderer", 
+    "key":"DMDistrictType",
+	"accessType": "attr",
+	"icon":"/resources/topo/dm/primary.png",
+	"editable": "true"
+},{
+	"name": "ACCESS_MODE",
+	"displayName": "网络属性",
+    "className":"Renderer.EnumTypeRenderer", 
+    "key":"DMAccessMode",
+	"accessType": "attr",
+	"icon":"/resources/topo/dm/primary.png",
+	"editable": "true"
+},{
+	"name": "CLIENT_TYPE",
+	"displayName": "用户属性",
+    "className":"Renderer.EnumTypeRenderer", 
+    "key":"DMUserType",
+	"accessType": "attr",
+	"icon":"/resources/topo/dm/primary.png",
+	"editable": "true"
+},{
+	"name": "MAINTAIN_DEPT",
+	"displayName": "责任单位",
+	"accessType": "attr",
+	"icon":"/resources/topo/dm/primary.png",
+	"editable": "true"
+},{
+	"name": "BUILDINGS_NUM",
+	"displayName": "楼宇数",
+	"valueType": "int",
+	"accessType": "attr",
+	"icon":"/resources/topo/dm/primary.png",
+	"editable": "true"
+},{
+	"name": "UNITS_NUM",
+	"displayName": "总单元数",
+	"valueType": "int",
+	"accessType": "attr",
+	"icon":"/resources/topo/dm/primary.png",
+	"editable": "true"
+},{
+	"name": "HOUSEHOLDS_NUM",
+	"displayName": "总户数",
+	"accessType": "attr",
+	"editable": "true",
+	"icon":"/resources/topo/dm/primary.png",
+	"valueType": "int"
+}]

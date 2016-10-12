@@ -1,0 +1,38 @@
+[
+{
+      "name":"seqnumber", 
+      "displayName":"序号", 
+      "editable":false, 
+      "width":50,
+      "accessType":"attr"}
+,{
+      "name":"jointCoreNum", 
+      "displayName":"接续芯数", 
+      "editable":false, 
+      "width":80, 
+      "accessType":"attr"}
+,{
+      "name":"jointComboBoxa", 
+      "displayName":"A光缆段名称", 
+      "editable":false, 
+      "width":150, 
+      "accessType":"attr"}
+,{
+      "name":"aStartIndexa", 
+      "displayName":"起始芯序", 
+      "editable":false, 
+      "width":80, 
+      "accessType":"attr"}
+,{
+      "name":"jointComboBoxb", 
+      "displayName":"Z光缆段名称", 
+      "editable":false, 
+      "width":150, 
+      "accessType":"attr"}
+,{
+      "name":"aStartIndexb", 
+      "displayName":"起始芯序", 
+      "editable":false, 
+      "width":80, 
+      "accessType":"attr"}
+]

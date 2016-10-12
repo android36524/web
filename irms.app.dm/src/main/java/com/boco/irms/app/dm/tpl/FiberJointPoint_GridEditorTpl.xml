@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 焊点-->
+<tpl>
+	<editor name="IRMS.RMS.FIBERJOINTPOINT" classname="FIBERJOINTPOINT" title="焊点">
+		<columns>
+		
+			<column id="OBJECTID"  filter="all" categoryname="系统属性">OBJECTID</column>
+			<column id="CUID"  filter="all" categoryname="系统属性">CUID</column>
+		
+			<column id="LABEL_CN" filter="all" editable="true"
+				categoryname="系统属性">焊点名称</column>				
+			<column id="SERVICE_STATE" editable="true" 
+			   editor="enumbox@DMServiceState"
+			   categoryname="业务">端子业务状态</column>
+			<column id="PORT_LABEL"  filter="all"  categoryname="业务"
+				editable="true">端子标签信息</column>
+			<column id="IS_CONNECTED" editable="false"
+			    editor="enumbox@BooleanType"
+				categoryname="业务">焊点与焊点连接状态</column>
+			<column id="IS_CONNECTED_TO_FIBER" editable="false"
+			    editor="enumbox@BooleanType"
+				categoryname="业务">焊点与纤芯连接状态</column>	
+			<column id="RELATED_WIRESYSTEM" editable="false"
+				categoryname="业务">所属光缆号</column>		
+			<column id="RELATED_WIRESEG" editable="false"
+				categoryname="业务">所属光缆段</column>	
+			<column id="FIBERNO" editable="false"
+				categoryname="业务">纤芯号(芯数编号)</column>	
+			<column id="NUM_IN_MROW" editable="false"
+				categoryname="业务">焊点所在行</column>
+			<column id="NUM_IN_MCOL" editable="false"
+				categoryname="业务">焊点所在列</column>				
+		</columns>
+	</editor>
+</tpl>
+			
+    

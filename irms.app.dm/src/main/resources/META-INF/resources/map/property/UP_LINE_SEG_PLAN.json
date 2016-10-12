@@ -1,0 +1,23 @@
+[
+{
+      "name":"LABEL_CN", 
+      "displayName":"名称", 
+      "editable":true, 
+      "categoryName":"基本属性", 
+      "nullable":false,
+      "emptiable":true,
+      "color":"red", 
+      "accessType":"attr"}
+,{
+      "name":"ORIG_POINT_CUID_NAME", 
+      "displayName":"连接起点", 
+      "editable":false, 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"DEST_POINT_CUID_NAME", 
+      "displayName":"连接终点", 
+      "editable":false,  
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+]

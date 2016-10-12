@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<grid name="DMMA.TASK.TOP.GRID" title="任务管理TOP表格" >
+		<columns>
+			<column dataIndex="CUID" isNotNull="true">编号</column>
+			<column dataIndex="RELATED_DISTRICT_CUID" isNotNull="true">所属区域</column>
+			<column dataIndex="IS_CYCLE" isNotNull="true">是否周期</column>
+			<column dataIndex="ISDANGER" isNotNull="true">是否隐患</column>
+			<column dataIndex="LABEL_CN" isNotNull="true">任务名称</column>		
+			<column dataIndex="TASK_TIME" isNotNull="true">派发任务时间</column>				
+		    <column dataIndex="FREQUENCE_TYPE" isNotNull="true">周期频率</column>	
+		    <column dataIndex="FREQUENCE" isNotNull="true">周期日期</column>
+		    <column dataIndex="DURATION" isNotNull="true">任务时长</column>
+		      <column dataIndex="TASK_TYPE" isNotNull="true">任务类型</column>		
+		</columns>
+		<fields>
+			
+		</fields>
+		<cm>
+			{
+			}
+		</cm>
+		<sql dao="IbatisResDAO">
+		
+			SELECT  *
+		  FROM SITE T
+      
+		</sql>
+		<note>
+			任务管理TOP表格
+		</note>
+	</grid>
+	<grid name="DMMA.TASK.BOTTOM.GRID" title="任务管理BOTTOM表格" >
+		<columns>
+			<column dataIndex="CUID" isNotNull="true">编号</column>
+			<column dataIndex="TASK_STATE" isNotNull="true">任务状态</column>
+			<column dataIndex="LABEL_CN" isNotNull="true">任务名称</column>
+			<column dataIndex="PTASKNAME" isNotNull="true">所属父任务</column>
+			<column dataIndex="RELATED_DISTRICT_CUID" isNotNull="true">所属区域</column>
+			<column dataIndex="FINISH_PERSENT" isNotNull="true">完成百分比</column>
+			<column dataIndex="START_TIME" isNotNull="true">开始时间</column>
+			<column dataIndex="END_TIME" isNotNull="true">结束时间</column>
+			<column dataIndex="ACTUAL_END_TIME" isNotNull="true">实际结束时间</column>
+			<column dataIndex="PDA_TASK_STATE" isNotNull="true">设备执行状态</column>
+			<column dataIndex="PDA_USER_NAME" isNotNull="true">设备用户</column>
+			<column dataIndex="TASK_TIME" isNotNull="true">派发任务时间</column>
+			<column dataIndex="PDA_ACCEPT_TIME" isNotNull="true">任务接受时间</column>
+			<column dataIndex="PDA_ACTION_TIME" isNotNull="true">任务执行时间</column>
+			<column dataIndex="ROUTELENGTH" isNotNull="true">巡线长度</column>
+			<column dataIndex="TRAVELLENGTH" isNotNull="true">实际巡线长度</column>	
+			<column dataIndex="REMARK" isNotNull="true">备注</column>
+		</columns>
+		<fields>
+			
+		</fields>
+		<cm>
+			{
+			}
+		</cm>
+		<sql dao="IbatisResDAO">
+		
+			SELECT  *
+		  FROM SITE T
+      
+		</sql>
+		<note>
+			任务管理BOTTOM表格
+		</note>
+	</grid>
+</tpl>

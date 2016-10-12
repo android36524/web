@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+<!-- 接入点管理 -->
+	<editor name="IRMS.RMS.ACCESSPOINT" classname="ACCESSPOINT" title="接入点">
+		<columns>
+		    <column id="OBJECTID"  filter="all">OBJECTID</column>
+			<column id="CUID"  filter="all">CUID</column>
+			<column id="LABEL_CN" filter="all" editable="true" categoryname="基本属性" nullable="true">名称
+			</column>
+			<column id="VPN_CUID" filter="all" editable="true" 
+			    editor="asyncombox@DM.VPN"
+			    categoryname="基本属性" nullable="true">所属VPN
+			</column>
+			<column id="VP_CUID" editable="true" filter="all"
+				editor="asyncombox@DM.VP"
+				categoryname="基本属性" nullable="true">所属客户
+			</column>
+			<!--editor="asyncombox@DMDF.DISTRICT" -->
+			<column id="DISTRICT_CUID" editable="true" filter="all"
+				editor="asyncombox@DMDF.DISTRICT"
+	            categoryname="基本属性" nullable="true">所属区域
+	        </column>
+	         
+			<column id="SITE_CUID" editable="true" filter="all"
+			    editor="asyncombox@SPACE.SITE"
+			    categoryname="基本属性" nullable="true">所属局站
+			</column>
+		    <column id="LONGITUDE" editable="true" filter="all" 
+                editor="double@0~180|6"
+		        categoryname="基本属性" nullable="false">经度
+            </column>
+            <column id="LATITUDE" editable="true" filter="all" 
+                editor = "double@0~90|6"
+                categoryname="基本属性" nullable="false">纬度
+            </column>
+            <column id="LOCATION" editable="true" filter="all" 
+				categoryname="基本属性" nullable="false">接入点地址
+			</column>
+			<column id="VP_CONTACT" editable="true" filter="all" categoryname="基本属性">客户联系人
+		    </column>
+		    <column id="VP_PHONE" editable="true" filter="all" categoryname="基本属性">客户联系人电话
+		    </column>
+		    <column id="MAINTAIN_MAN" editable="true" filter="all" categoryname="基本属性">维护经理
+		    </column>
+		    <column id="MAINTAIN_PHONE" editable="true" filter="all" categoryname="基本属性">维护经理电话
+		    </column>
+		    <column id="IS_YJR" editable="true" filter="all" 
+		        editor="enumbox@BooleanType" 
+		        categoryname="基本属性" nullable="true">是否预覆盖接入点
+		    </column>
+		    <column id="BOSS_CODE" editable="true" filter="all" categoryname="基本属性">boss编码
+		    </column>
+		    <column id="VP_LABEL_CN" editable="true" filter="all" categoryname="基本属性">客户名称
+			</column>
+		</columns>
+		<sql>
+			SELECT * FROM ACCESSPOINT
+		</sql>
+		<remote name="PointPropTemplateBO">
+			<method type="query">IAccessPointBO.getAccesspointBySql</method>
+			<method type="count">IAccessPointBO.getAccesspointBySql</method>
+			<method type="insert">IAccessPointBO.addAccesspoints</method>
+			<method type="update">IAccessPointBO.modifyAccesspoints</method>
+			<method type="delete">IAccessPointBO.deleteAccesspoints</method>
+		</remote>
+	</editor>
+</tpl>

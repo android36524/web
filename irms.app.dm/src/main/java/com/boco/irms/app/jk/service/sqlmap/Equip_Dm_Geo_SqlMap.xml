@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd" >
+<sqlMap namespace="EQUIP_DM_GEO">
+	<select id="queryGeoGridCommunityByCuids" parameterClass="com.boco.sf.rms.base.CommonCuids" resultClass="java.util.HashMap">
+		select CUID, LABEL_CN, SDE.ST_ASTEXT(SHAPE) AS SHAPE from GEO_GRID_COMMUNITY WHERE
+		<isNotEmpty property="cuidList">
+			<iterate prepend=" CUID IN " property="cuidList" conjunction="," open="(" close=")">
+				#cuidList[]#
+			</iterate>
+		</isNotEmpty>
+		<isEmpty property="cuidList">1 = 2</isEmpty>
+	</select>
+
+	<delete id="deleteGeoGridCommunityByCuids" parameterClass="com.boco.sf.rms.base.CommonCuids">
+		DELETE FROM GEO_GRID_COMMUNITY WHERE
+		<isNotEmpty property="cuidList">
+			<iterate prepend=" CUID IN " property="cuidList" conjunction="," open="(" close=")">
+				#cuidList[]#
+			</iterate>
+		</isNotEmpty>
+		<isEmpty property="cuidList">1 = 2</isEmpty>
+	</delete>
+</sqlMap>

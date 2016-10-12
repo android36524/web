@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<!-- 光缆段导出 -->
+	<editor name="IRMS.RMS.EXPORT.WIRE_SEG" classname="WIRE_SEG" title="光缆段">
+		<columns>
+		     <column id="RELATED_SYSTEM_CUID">光缆系统名称</column>
+		     <column id="LABEL_CN">光缆段名称</column>
+		     <column id="ORIG_POINT_TYPE">起始点设施类型</column>
+		     <column id="ORIG_POINT_CUID">起始点设施名称</column>
+		     <column id="DEST_POINT_TYPE">终止点设施类型</column>
+		     <column id="DEST_POINT_CUID">终止点设施名称</column>
+		     <column id="LAY_TYPE">敷设方式</column>
+		     <column id="VENDOR">生产厂家</column>
+		     <column id="BUILDER">施工单位</column>
+		     <column id="BUILD_DATE">施工时间</column>
+		     <column id="FINISH_DATE">竣工时间</column>
+		     <column id="CHECK_DATE">竣工时间</column>
+		     <column id="MAINT_DEP">维护单位</column>
+		     <column id="USER_NAME">使用单位</column>
+		     <column id="REMARK">备注</column>
+		     <column id="RES_OWNER">所有权人</column>
+		     <column id="MAINT_MODE">维护方式</column>
+		     <column id="SERVICER">巡检人</column>
+		     <column id="PHONE_NO">联系电话</column>
+		     <column id="PURPOSE">用途</column>
+		     <column id="LENGTH">皮长</column>
+		     <column id="OWNERSHIP">产权</column>
+		     <column id="PRODUCE_DATE">投产日期</column>
+		     <column id="STUFF">材料</column>
+		     <column id="FIBER_COUNT">纤芯数目</column>
+		     <column id="RELETED_TAMPLETE_NAME">光缆模板名称</column>
+		     <column id="SPECIAL_PURPOSE">专线用途</column>
+		     <column id="OLEVEL">重要性</column>
+		</columns>
+		<sql>
+		     SELECT * FROM WIRE_SEG
+		</sql>
+		<remote name="WireSegPropTemplateBO">
+			<method type="query">IDataExportBO.exportWireSeg</method>
+		</remote>
+	</editor>
+</tpl>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="irms.app.dm"
+		class="com.boco.transnms.client.model.base.ImportBo">
+		<property name="importBoNames">
+			<map>
+				<entry key="IInflexionBO"><value>DM</value></entry>
+				<entry key="ILineCrossPointBO"><value>DM</value></entry>
+				<entry key="ILineToRoadCrossBO"><value>DM</value></entry>
+				<entry key="IManhleBO"><value>DM</value></entry>
+				<entry key="IPoleBO"><value>DM</value></entry>
+				<entry key="IPresetPointBO"><value>DM</value></entry>
+				<entry key="ISamplePointBO"><value>DM</value></entry>
+				<entry key="IStoneBO"><value>DM</value></entry>
+				<entry key="IMaintManagementBO"><value>DM</value></entry>
+				<entry key="IDuctAttachBO"><value>DM</value></entry>
+				<entry key="IProjectManagementBO"><value>DM</value></entry>
+				<entry key="IWireSubnetBO"><value>DM</value></entry>
+				<entry key="IDuctBranchBO"><value>DM</value></entry>
+				<entry key="IDuctChildHoleBO"><value>DM</value></entry>
+				<entry key="IDuctDisplaySegBO"><value>DM</value></entry>
+				<entry key="IDuctHoleBO"><value>DM</value></entry>
+				<entry key="IDuctSegBO"><value>DM</value></entry>
+				<entry key="IDuctSystemBO"><value>DM</value></entry>
+				<entry key="IHangWallBO"><value>DM</value></entry>
+				<entry key="IHangWallSegBO"><value>DM</value></entry>
+				<entry key="IHangWallDisplaySegBO"><value>DM</value></entry>
+				<entry key="IMicrowaveLineDisplaySegBO"><value>DM</value></entry>
+				<entry key="IMicrowaveLineSegBO"><value>DM</value></entry>
+				<entry key="IMicrowaveSegBO"><value>DM</value></entry>
+				<entry key="IMicrowaveSystemBO"><value>DM</value></entry>
+				<entry key="ICarryingCableBO"><value>DM</value></entry>
+				<entry key="IPolewayBranchBO"><value>DM</value></entry>
+				<entry key="IPolewayDisplaySegBO"><value>DM</value></entry>
+				<entry key="IPolewaySegBO"><value>DM</value></entry>
+				<entry key="IPolewaySystemBO"><value>DM</value></entry>
+				<entry key="IStonewayBranchBO"><value>DM</value></entry>
+				<entry key="IStonewayDisplaySegBO"><value>DM</value></entry>
+				<entry key="IStonewaySegBO"><value>DM</value></entry>
+				<entry key="IStonewaySystemBO"><value>DM</value></entry>
+				<entry key="IUpLineBO"><value>DM</value></entry>
+				<entry key="IUpLineDisplaySegBO"><value>DM</value></entry>
+				<entry key="IUpLineSegBO"><value>DM</value></entry>
+				<entry key="IWireRemainBO"><value>DM</value></entry>
+				<entry key="IWireToDuctLineBO"><value>DM</value></entry>
+				<entry key="ILineColorCfgBO"><value>DM</value></entry>
+				<entry key="IDuctManagerBO"><value>DM</value></entry>
+				<entry key="IIconInfBO"><value>DM</value></entry>
+				<entry key="IMapLayerCfgBO"><value>DM</value></entry>
+				<entry key="IDmStatBO"><value>DM</value></entry>
+				<entry key="IWireTroubleBO"><value>DM</value></entry>
+				<entry key="ISearchPathBO"><value>DM</value></entry>
+				<entry key="ISiteLinkBO"><value>DM</value></entry>
+				<entry key="ISiteLinkToSegBO"><value>DM</value></entry>
+				<entry key="IPdaDeviceBO"><value>DM</value></entry>
+				<!-- optical-check-H -->
+				<entry key="ICheckSMSBO"><value>OPTICALCHECK</value></entry>
+				<entry key="IMakeOpticalWayBO"><value>DM</value></entry>
+				<entry key="IMakeOpticalFiberBO"><value>DM</value></entry>
+				<entry key="IOpticalCheckBO"><value>DM</value></entry>
+				<entry key="IOpticalManagerBO"><value>OPTICALCHECK</value></entry>
+				<entry key="IOCGenericSchedulerBO"><value>OPTICALCHECK</value></entry>
+				<!-- optical-H -->
+				<entry key="IOpticalBO"><value>DM</value></entry>
+				<entry key="IOpticalBOX"><value>DM</value></entry>
+				<entry key="IAttempOpticalWayLogBO"><value>DM</value></entry>
+				<entry key="IOpticalBusinessBO"><value>DM</value></entry>
+				<entry key="IOpticalRouteBO"><value>DM</value></entry>
+				<entry key="IOpticalRouteToPathBO"><value>DM</value></entry>
+				<entry key="IOpticalToIndiPointsBO"><value>DM</value></entry>
+				<entry key="IOpticalWayBO"><value>DM</value></entry>
+				<entry key="IOpticalWayBOX"><value>DM</value></entry>
+				<entry key="ISearchOpticalWayRouteBO"><value>DM</value></entry>
+				<!-- wire-H -->
+				<entry key="IFcabportBO"><value>DM</value></entry>
+				<entry key="IFiberCabBO"><value>DM</value></entry>
+				<entry key="IFibercabmoduleBO"><value>DM</value></entry>
+				<entry key="IFiberDpBO"><value>DM</value></entry>
+				<entry key="IFiberDpPortBO"><value>DM</value></entry>
+				<entry key="IFiberJointBoxBO"><value>DM</value></entry>
+				<entry key="IFiberJointPointBO"><value>DM</value></entry>
+				<entry key="IOpticalToFiberBO"><value>DM</value></entry>
+				<entry key="IFiberBO"><value>DM</value></entry>
+				<entry key="ILogicWireSegBO"><value>DM</value></entry>
+				<entry key="IWireBranchBO"><value>DM</value></entry>
+				<entry key="IWireDisplaySegBO"><value>DM</value></entry>
+				<entry key="IWireSegBO"><value>DM</value></entry>
+				<entry key="IWireSystemBO"><value>DM</value></entry>
+				<entry key="IWireStatBO"><value>DM</value></entry>
+				<entry key="IPONBO"><value>DM</value></entry>
+				<!--nmsbase-L -->
+				<entry key="IBoManageService"><value>DM</value></entry>
+				<entry key="MsgBusServiceBO"><value>DM</value></entry>
+				<entry key="XrpcMsgServiceBO"><value>DM</value></entry>
+				<entry key="SchedulerBO"><value>DM</value></entry>
+				<entry key="MessageServiceBO"><value>DM</value></entry>
+				<entry key="ISystemParaBO"><value>DM</value></entry>
+				<entry key="IRoomRemoveBO"><value>DM</value></entry>
+				<entry key="IObjectSecurityBO"><value>DM</value></entry>
+				<entry key="ISecurityBO"><value>DM</value></entry>
+				<entry key="IObjectSecurityBOX"><value>DM</value></entry>
+				<entry key="IDistrictBO"><value>DM</value></entry>
+				<entry key="IDistrictBOX"><value>DM</value></entry>
+				<entry key="ISiteBO"><value>DM</value></entry>
+				<entry key="IRoomBO"><value>DM</value></entry>
+				<entry key="IFloorBO"><value>DM</value></entry>
+				<entry key="IObjectOperateLogBO"><value>DM</value></entry>
+				<entry key="IAllPicsBO"><value>DM</value></entry>
+				<entry key="IIconBO"><value>DM</value></entry>
+				<entry key="IMapToObjectBO"><value>DM</value></entry>
+				<entry key="IThemeMapBO"><value>DM</value></entry>
+				<entry key="IThemeMapToObjectBO"><value>DM</value></entry>
+				<entry key="IVersionManagerBO"><value>DM</value></entry>
+				<entry key="IEnumBO"><value>DM</value></entry>
+				<entry key="ISystemMapBO"><value>DM</value></entry>
+				<entry key="ITemplateGroupBO"><value>DM</value></entry>
+				<entry key="ITemplateBOX"><value>DM</value></entry>
+				<entry key="IDeviceVendorBO"><value>DM</value></entry>
+				<entry key="IServiceParamBO"><value>DM</value></entry>
+				<entry key="IColumnConfigBO"><value>DM</value></entry>
+				<entry key="IMailInfoBO"><value>DM</value></entry>
+				<entry key="IRelationPropertyLoadBO"><value>DM</value></entry>
+				<entry key="IJumpFiberBO"><value>DM</value></entry>
+				<entry key="IWireBranchBOX"><value>DM</value></entry>
+				<entry key="ISystemDevManageBO"><value>DM</value></entry>
+				<entry key="ILayerInfoBO"><value>DM</value></entry>
+				<entry key="IUploadBO"><value>DM</value></entry>
+				<!-- equip-H -->
+				<entry key="IInterCableBO"><value>DM</value></entry>
+				<entry key="IInterWireBO"><value>DM</value></entry>
+				<entry key="IJumpFiberBO"><value>DM</value></entry>
+				<entry key="IJumpPairBO"><value>DM</value></entry>
+				<entry key="ILinePairBO"><value>DM</value></entry>
+				<entry key="IPhyOdfBO"><value>DM</value></entry>
+				<entry key="IPhyDdfBO"><value>DM</value></entry>
+				<entry key="IPhyOdfPortBO"><value>DM</value></entry>
+				<entry key="IPhyDdfPortBO"><value>DM</value></entry>
+				<entry key="IPhyOdmBO"><value>DM</value></entry>
+				<entry key="IPhyDdmBO"><value>DM</value></entry>
+				<entry key="IRackBO"><value>DM</value></entry>
+				<entry key="IMiscRackBO"><value>DM</value></entry>
+				<entry key="IShelfBO"><value>DM</value></entry>
+				<entry key="IXdfPortQueryBO"><value>DM</value></entry>
+				<entry key="IPhyXdfBO"><value>DM</value></entry>
+				<entry key="IRoomRemoveBO"><value>DM</value></entry>
+				<entry key="IFiberBOX"><value>DM</value></entry>
+				
+				<!-- equip-L -->
+				<entry key="IInterCableBOX"><value>DM</value></entry>
+				<entry key="IInterWireBOX"><value>DM</value></entry>
+				<entry key="IJumpFiberBOX"><value>DM</value></entry>
+				<entry key="IJumpPairBOX"><value>DM</value></entry>
+				<entry key="ILinePairBOX"><value>DM</value></entry>
+				<entry key="IMiscrackBOX"><value>DM</value></entry>
+				<entry key="IPhyOdfBOX"><value>DM</value></entry>
+				<entry key="IPhyDdfBOX"><value>DM</value></entry>
+				<entry key="IPhyOdfmoduleBOX"><value>DM</value></entry>
+				<entry key="IPhyDdfmoduleBOX"><value>DM</value></entry>
+				<entry key="IPhyOdfPortBOX"><value>DM</value></entry>
+				<entry key="IPhyDdfPortBOX"><value>DM</value></entry>
+				<entry key="IShelfBOX"><value>DM</value></entry>
+				<entry key="IRackBOX"><value>DM</value></entry>
+				<entry key="IAccessPointBO"><value>DM</value></entry>
+				<entry key="ISchemeBO"><value>DM</value></entry>
+				<entry key="IWireToWireTroubleBO"><value>DM</value></entry>
+				
+				<!-- import-dm-H -->
+				<entry key="IDataMobileExportBO"><value>IMPORT</value></entry>
+				<entry key="IDataExportBO"><value>IMPORT</value></entry>
+				<entry key="IDataImportBO"><value>IMPORT</value></entry>
+				<entry key="IDataMobileImportBO"><value>IMPORT</value></entry>
+				<entry key="IEquipDataImportBO"><value>IMPORT</value></entry>
+				
+				<!-- other BO --> 
+				<entry key="ISwitchPortBO"><value>CM</value></entry>
+				<entry key="IEquipmentHolderBO"><value>CM</value></entry>
+				<entry key="ITopoMapBO"><value>CM</value></entry>
+				<entry key="ITransElementBO"><value>CM</value></entry>
+				<entry key="ITemplateBO"><value>CM</value></entry>
+				<entry key="ITopoTraphRouteBO"><value>CM</value></entry>
+				<entry key="ITopoTransPathRouteBO"><value>CM</value></entry>
+				<entry key="ITopoLinkBO"><value>CM</value></entry>
+				<entry key="ITransSystemBO"><value>CM</value></entry>
+				<entry key="IPTPBO"><value>CM</value></entry>
+				<entry key="IPTPBOX"><value>CM</value></entry>
+				<entry key="INmsSystemBO"><value>CM</value></entry>
+				<entry key="ICardBO"><value>CM</value></entry>
+				<entry key="ITransSubNetWorkBO"><value>CM</value></entry>
+				<entry key="IVipBO"><value>CM</value></entry>
+				<entry key="IVpnBO"><value>CM</value></entry>
+				<entry key="ITraphQueryBOX"><value>CM</value></entry>
+				<entry key="ITopoSubnetBO"><value>CM</value></entry>
+				<entry key="ICTPBO"><value>CM</value></entry>
+				<entry key="ICardTypeBO"><value>CM</value></entry>
+				<entry key="IRuleNameBO"><value>CM</value></entry>
+				<entry key="IMstpEthServiceBO"><value>CM</value></entry>
+				<entry key="ICMBOX"><value>CM</value></entry>
+				<entry key="IGponTypeBO"><value>CM</value></entry>
+				<entry key="IPowerDeviceBOX"><value>CM</value></entry>
+				<entry key="IOnuAndPosNeBO"><value>CM</value></entry>
+				<entry key="IOnuAndPosNeBOX"><value>CM</value></entry>
+				<entry key="ITopoWdmTransPathBO"><value>CM</value></entry>
+				<entry key="IPowerDeviceBO"><value>CM</value></entry>
+				<entry key="IPhyOdfmoduleBOX"><value>CM</value></entry>
+				
+				
+				<entry key="IDfDispatchBO"><value>DM</value></entry>
+				<entry key="IOpticalWayXBO"><value>DM</value></entry>
+				<entry key="ITraphBO"><value>DM</value></entry>	
+				<entry key="ICutoverTaskBO"><value>DM</value></entry>
+				<entry key="ICutoverSchemeBO"><value>DM</value></entry>	
+				<entry key="ITempCutoverWireSegBO"><value>DM</value></entry>
+				<entry key="ITempCutoverFiberBO"><value>DM</value></entry>
+				<entry key="ITempWireToDuctlineBO"><value>DM</value></entry>
+				<entry key="IWireSegBOX"><value>DM</value></entry>	
+				<entry key="IAreaAccessPointBO"><value>AREARES</value></entry>	
+				
+				<entry key="IHisOverlayResourceBO"><value>DM</value></entry>	
+				<entry key="IProjectPlanPeriodBO"><value>DM</value></entry>	
+				<entry key="IOverlayResourceBO"><value>DM</value></entry>
+				<entry key="IOrientedDesignBO"><value>DM</value></entry>		
+						
+				<entry key="IPdaBO"><value>BMDP</value></entry>
+				<entry key="IPdaGroupBO"><value>DM</value></entry>
+			</map>
+		</property>
+	</bean>
+</beans>

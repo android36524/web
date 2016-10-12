@@ -1,0 +1,11 @@
+@CHARSET "UTF-8";
+.x-grid3-row-data-selected {
+	background-color: #7aaa00 !important;
+	background-image: none;
+	border-color: #a3bae9;
+	} 
+.x-grid3-row-detail-selected {
+	background-color: #778899 !important;
+	background-image: none;
+	border-color: #a3bae9;
+}

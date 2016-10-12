@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+<!-- 光纤管理 -->
+	<editor name="IRMS.RMS.PON" classname="TRANS_ELEMENT" title="PON">
+		<columns>
+		     <column id="OBJECTID"  filter="all">OBJECTID</column>
+			<column id="CUID"  filter="all">CUID</column>
+			<column id="LABEL_CN" filter="all" editable="false" 
+			    categoryname="基本属性" nullable="true">名称
+			</column>
+		    <column id="RELATED_DISTRICT_CUID" editable="false" filter="all" 
+		        editor="asyncombox@DMDF.DISTRICT" 
+		        categoryname="基本属性">所有区域
+		    </column>
+		    <column id="CONFIG_TYPE" editable="false" filter="all" 
+		        editor="enumbox@PonConfigType" categoryname="基本属性">配置类型
+		    </column>
+		    <column id="RELATED_SITE_CUID" editable="true" filter="all" 
+		        editor="asyncombox@SPACE.SITE"
+		        categoryname="基本属性">所属站点
+		    </column>
+		    <column id="RELATED_ACCESS_POINT" editable="true" filter="all" 
+		        editor="asyncombox@DM.ACCESSPOINT"
+		        categoryname="基本属性">所属接入点
+		    </column>
+		    <column id="RELATED_CAB_CUID" editable="true" filter="all"
+		        editor="asyncombox@DM.FIBER_CAB" 
+		        categoryname="基本属性">所属光交接点
+			</column>
+		</columns>
+		<sql>
+			SELECT * FROM TRANS_ELEMENT
+		</sql>
+		<remote name="PointPropTemplateBO">
+			<method type="query">IPONBO.getElementsBySql</method>
+			<method type="count">IPONBO.getElementsBySql</method>
+		</remote>
+	</editor>
+</tpl>

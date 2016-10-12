@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<!-- 工程管理 -->
+	<editor name="IRMS.RMS.PROJECT_MANAGEMENT" classname="PROJECT_MANAGEMENT" title="工程">
+		<columns>
+			<column id="OBJECTID" filter="all" categoryname="系统属性">OBJECTID
+			</column>
+			<column id="CUID" filter="all" categoryname="系统属性">CUID</column>
+			<column id="LABEL_CN" editable="true" nullable="true"
+			    editor="filtertext"
+				categoryname="系统属性">工程名称</column>
+			<column id="STATE" editable="true" editor="enumbox@DMProjectState" 
+				nullable="true" categoryname="业务属性">工程状态</column>
+			<column id="NO" editable="true" nullable="true" categoryname="系统属性">工程编号
+			</column>
+			<column id="RELATED_DISTRICT_CUID" editable="true"
+				editor="asyncombox@DMDF.DISTRICT" relationproperty="true" categoryname="业务属性">所属区域
+			</column>
+			<column id="OWNERSHIP" editable="true" editor="enumbox@DMOwnerShip"
+				nullable="true" categoryname="业务属性">产权</column>
+			<column id="PURPOSE" editable="true" editor="enumbox@DMPurpose"
+				nullable="true" categoryname="业务属性">用途</column>
+			<column id="BUILDER" editable="true" nullable="true"
+				categoryname="业务属性">建设单位</column>
+			<column id="MANAGER" editable="true" categoryname="业务属性">监理单位
+			</column>
+			<column id="PROJECT_TYPE" editable="true" editor="enumbox@ProjectType"
+				nullable="true" categoryname="业务属性">工程类型</column>
+			<column id="CONSTRUCT" editable="true" nullable="true"
+				categoryname="业务属性">施工单位</column>
+			<column id="CONTACTOR" editable="true" categoryname="业务属性">施工单位联系人
+			</column>
+			<column id="DUCT_LENGTH" editable="true" editor="double"
+				categoryname="业务属性">管道沟公里(km)</column>
+			<column id="DUCT_HOLE_LENGTH" editable="true" editor="double"
+				categoryname="业务属性">管道孔公里(km)</column>
+			<column id="WIRE_LENGTH" editable="true" editor="double"
+				categoryname="业务属性">光缆皮公里(km)</column>
+			<column id="FIBER_LENGTH" editable="true" editor="double"
+				categoryname="业务属性">光缆芯公里(km)</column>
+			<column id="POLE_WAY_LENGTH" editable="true" editor="double"
+				categoryname="业务属性">杆路长度(km)</column>
+			<column id="STONE_WAY_LENGTH" editable="true" editor="double"
+				categoryname="业务属性">直埋长度(km)</column>
+			<column id="REMARK" editable="true" categoryname="业务属性">备注</column>
+			<column id="DESIGNER_START_DATE" editable="true" editor="date"
+				categoryname="业务属性">设计开始日期</column>
+			<column id="DESIGNER_FINISH_DATE" editable="true" editor="date"
+				categoryname="业务属性">设计结束时间</column>
+			<column id="PROJECT_START_DATE" editable="true" editor="date"
+				categoryname="业务属性">工程起始日期</column>
+			<column id="PROJECT_FINISH_DATE" editable="true" editor="date"
+				nullable="true" categoryname="业务属性">工程完工日期</column>
+			<column id="CHECK_DATE" editable="true" editor="date"
+				categoryname="业务属性">数据验收日期</column>
+		</columns>
+		<sql>
+			SELECT * FROM PROJECT_MANAGEMENT
+		</sql>
+		<remote name="ProjectPropTemplateBO">
+			<method type="query">IProjectManagementBO.getProjectManagementsBySql</method>
+			<method type="count">IProjectManagementBO.getProjectManagementsBySql</method>
+			<method type="insert">IProjectManagementBO.addProjectManagement</method>
+			<method type="update">IProjectManagementBO.modifyProjectManagement</method>
+			<method type="delete">IProjectManagementBO.deleteProjectManagements</method>
+			<method type="editorMetaPluginBoName">DefaultEditorMetaPluginBO</method>
+		</remote>
+	</editor>
+</tpl>
+
+
+

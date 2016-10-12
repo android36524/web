@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 光路完整路由 -->
+<tpl>
+	<editor name="IRMS.RMS.OPTICALWAY_ROUTE" classname="OPTICAL_WAY" title="光路完整路由">
+		<columns>
+		
+			<column id="NO" filter="all" editable="true">序号</column>				
+			<column id="DIRCTION" filter="all" editable="true">方向</column>
+			<column id="A_DEV_PORT"  filter="all" editable="true">A设备端口</column>
+			<column id="NAME_CODE"  filter="all" editable="true">光缆系统名称+纤芯编号</column>
+			<column id="B_DEV_PORT" filter="all" editable="true">B设备端口</column>
+		</columns>
+		<cm>
+		    {
+				NO : {
+					width : 50
+				},
+				DIRCTION : {
+					width : 50
+				},
+				A_DEV_PORT : {
+					width : 450
+				},
+				NAME_CODE : {
+					width : 350
+				},
+				B_DEV_PORT : {
+					width : 450
+				}
+			}
+		</cm>
+	</editor>
+</tpl>
+			
+    

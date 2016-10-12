@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <bean id="TnmsXrpcProxy" class="com.boco.transnms.client.model.base.XrpcProxyManager">
+    <property name="xrpcContextName">
+      <value>TRANSNMS_CONTEXT</value>
+    </property>
+    <property name="boProxyName">
+      <value>TnmsXrpcProxy</value>
+    </property>
+    <property name="xrpcBoNames">
+      <list>
+        <value>IBoManageService</value>
+      </list>
+    </property>
+    <!--property name="localBoProxy">
+      <value>false</value>
+    </property-->
+  </bean>
+  <bean id="LocalTnmsXrpcProxy" class="com.boco.transnms.client.model.base.XrpcProxyManager">
+    <property name="xrpcContextName">
+      <value>LOCAL_CONTEXT</value>
+    </property>
+    <property name="boProxyName">
+      <value>LocalTnmsXrpcProxy</value>
+    </property>
+    <property name="xrpcBoNames">
+      <list></list>
+    </property>
+    <property name="localBoProxy">
+      <value>true</value>
+    </property>
+  </bean>
+  <bean id="NPXrpcProxy" class="com.boco.transnms.client.model.base.XrpcProxyManager">
+    <property name="xrpcContextName">
+      <value>NP_CONTEXT</value>
+    </property>
+    <property name="boProxyName">
+      <value>NPXrpcProxy</value>
+    </property>
+    <property name="xrpcBoNames">
+      <list>
+        <value>AttempSheetService</value>
+      </list>
+    </property>
+    <property name="localBoProxy">
+      <value>false</value>
+    </property>
+  </bean>
+  <bean id="BoProxyFactory" class="com.boco.transnms.client.model.base.BoProxyFactory" factory-method="getInstance">
+    <property name="xrpcProxyManagers">
+      <list>
+        <ref bean="TnmsXrpcProxy"/>
+        <ref bean="LocalTnmsXrpcProxy"/>
+        <ref bean="NPXrpcProxy"/>
+      </list>
+    </property>
+  </bean>
+</beans>

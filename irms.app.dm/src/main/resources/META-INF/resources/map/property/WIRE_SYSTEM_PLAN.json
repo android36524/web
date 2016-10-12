@@ -1,0 +1,29 @@
+[
+{
+      "name":"LABEL_CN", 
+      "displayName":"名称", 
+      "editable":true, 
+      "categoryName":"基本属性", 
+      "nullable":false,
+      "emptiable":true,
+      "color":"red",
+      "className":"Renderer.QueryPanelRenderer",
+      "format":"YYYY-MM-dd",
+      "accessType":"attr"}
+,{
+      "name":"RELATED_SPACE_CUID_NAME", 
+      "displayName":"所属区域", 
+      "editable":false,
+      "nullable":false,
+      "color":"red", 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"SYSTEM_LEVEL", 
+      "displayName":"系统级别", 
+      "editable":true, 
+      "className":"Renderer.EnumTypeRenderer", 
+      "key":"DMSystemLevel", 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+]

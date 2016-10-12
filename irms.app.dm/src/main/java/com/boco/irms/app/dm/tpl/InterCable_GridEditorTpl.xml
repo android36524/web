@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<editor name="IRMS.RMS.INTER_CABLE" classname="INTER_CABLE"
+		title="楼内电缆">
+		<columns>
+			<column id="OBJECTID" filter="all" categoryname="系统属性">OBJECTID
+			</column>
+			<column id="CUID" filter="all" categoryname="系统属性">CUID</column>
+
+			<column id="LABEL_CN" editable="true" editor="filtertext"
+				categoryname="基础" nullable="true">电缆名称
+			</column>
+
+
+			<column id="CABLE_MODEL" editable="true" categoryname="基础">型号
+			</column>
+
+
+			<column id="ORIG_POINT_CUID" editable="true"
+				editor="dmcombox@service_dict_dm.DM_ROOM" categoryname="基础"
+				nullable="true">A端机房
+			</column>
+
+			<column id="DEST_POINT_CUID" editable="true"
+				editor="dmcombox@service_dict_dm.DM_ROOM" categoryname="基础"
+				nullable="true">Z端机房
+			</column>
+
+			<column id="NUM_PAIR" editable="true" editor="long"
+				categoryname="基础">线对数
+			</column>
+
+			<column id="LENGTH" editable="true" editor="double"
+				categoryname="基础">皮长
+			</column>
+
+			<column id="REMARK" editable="true" categoryname="基础">备注
+			</column>
+
+		</columns>
+		<sql>
+			select * from inter_cable
+		</sql>
+		<remote name="ResSingleDeleteTemplateBO">
+			<method type="query">IInterCableBO.getInterCableBySql</method>
+			<method type="count">IInterCableBO.getInterCableBySql</method>
+			<method type="insert">IInterCableBO.addInterCable</method>
+			<method type="update">IInterCableBO.modifyInterCable</method>
+			<method type="delete">IInterCableBO.deleteInterCable</method>
+		</remote>
+	</editor>
+</tpl>

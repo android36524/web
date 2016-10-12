@@ -1,0 +1,38 @@
+[
+{
+      "name":"LABEL_CN", 
+      "displayName":"名称", 
+      "editable":false,
+      "width":200,
+      "accessType":"attr"}
+,{
+      "name":"RELATED_DISTRICT_CUID", 
+      "displayName":"所属区域", 
+      "editable":false, 
+      "width":80, 
+      "accessType":"attr"}
+,{
+      "name":"JUNCTION_TYPE", 
+      "displayName":"接头形式", 
+      "editable":false, 
+      "width":80, 
+      "className":"Renderer.EnumTypeColumnRenderer",
+      "key":"DMJunctionType",
+      "accessType":"attr"}
+,{
+      "name":"KIND", 
+      "displayName":"接头盒类型", 
+      "editable":false, 
+      "width":80, 
+      "className":"Renderer.EnumTypeColumnRenderer", 
+      "key":"DMFBoxKindType",
+      "accessType":"attr"}
+,{
+      "name":"CONNECT_TYPE", 
+      "displayName":"熔接方式", 
+      "editable":false, 
+      "width":80, 
+	  "className":"Renderer.EnumTypeColumnRenderer", 
+      "key":"DMConnecrType",
+      "accessType":"attr"}
+]

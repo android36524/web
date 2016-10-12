@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<!-- 管道段导出 -->
+	<editor name="IRMS.RMS.EXPORT.DUCT_SEG" classname="DUCT_SEG" title="管道段">
+		<columns>
+			<column id="RELATED_SYSTEM_CUID">所属分支的起点类型</column>
+			<column id="ORIG_BRANCH_TYPE">所属分支的起点类型</column>
+			<column id="ORIG_BRANCH">所属分支的起点名称</column>
+			<column id="DEST_BRANCH_TYPE">所属分支的终止点类型</column>
+			<column id="DEST_BRANCH">所属分支的终止点名称</column>
+			<column id="ORIG_POINT_TYPE">A点设施类型</column>
+			<column id="ORIG_POINT_CUID">A点设施名称</column>
+			<column id="IS_ORIG_DISPLAY">A点是否为显示点</column>
+			<column id="DEST_POINT_TYPE">Z点设施类型</column>
+			<column id="DEST_POINT_CUID">Z点设施名称</column>
+			<column id="IS_DEST_DISPLAY">Z点是否为显示点</column>
+			<column id="LENGTH">距离</column>
+			<column id="STUFF">管孔材料</column>
+			<column id="BUILDER">施工单位</column>
+			<column id="FINISH_DATE">竣工时间</column>
+			<column id="SPEC">规格</column>
+			<column id="OWNERSHIP">产权</column>
+			<column id="SECTION_HEIGHT">截面高</column>
+			<column id="SECTION_LENGTH">截面长</column>
+			<column id="TOP_HELGHT_A">管顶高1</column>
+			<column id="TOP_HELGHT_B">管顶高2</column>
+			<column id="LEFT_DISTANCE_A">左侧距1</column>
+			<column id="LEFT_DISTANCE_B">左侧距2</column>
+			<column id="MAINT_MODE">维护方式</column>
+			<column id="PURPOSE">用途</column>
+			<column id="BUILD_DATE">施工时间</column>
+			<column id="RES_OWNER">所有权人</column>
+			<column id="USER_NAME">使用单位</column>
+			<column id="MULTI_BUILD_USER">共建单位</column>
+			<column id="SHARED_USER">共享单位</column>
+			<column id="MAINT_DEP">维护单位</column>
+			<column id="CHECK_DATE">检修时间</column>
+			<column id="SERVICER">巡检人</column>
+			<column id="PHONE_NO">联系电话</column>
+			<column id="REMARK">备注</column>
+			<column id="RELATED_TAMPLETE_NAME">管孔模板名称</column>
+		</columns>
+		<sql>
+		     SELECT * FROM DUCT_SEG
+		</sql>
+		<remote name="RouteManaPropTemplateBO">
+		    <method type="query">IDataExportBO.exportDuctSeg</method>
+		</remote>
+	</editor>
+	
+</tpl>

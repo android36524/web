@@ -1,0 +1,83 @@
+[
+{
+      "name":"LABEL_CN", 
+      "displayName":"名称", 
+      "editable":true, 
+      "color":"red",
+      "nullable":false,
+      "emptiable":true,
+      "categoryName":"系统属性", 
+      "accessType":"attr"}
+,{
+      "name":"RELATED_DISTRICT_CUID_NAME", 
+      "displayName":"所属区域", 
+      "editable":false, 
+      "color":"red",
+      "nullable":false,
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"OWNERSHIP", 
+      "displayName":"产权", 
+      "editable":true, 
+      "className":"Renderer.EnumTypeRenderer", 
+      "key":"DMOwnerShip",
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"PURPOSE", 
+      "displayName":"用途", 
+      "editable":true, 
+      "className":"Renderer.EnumTypeRenderer", 
+      "key":"DMPurpose",
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"LONGITUDE", 
+      "displayName":"经度", 
+      "editable":false,
+      "color":"red",
+      "nullable":false, 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"LATITUDE", 
+      "displayName":"纬度", 
+      "editable":false,
+      "color":"red",
+      "nullable":false, 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"STONE_TYPE", 
+      "displayName":"标石类型", 
+      "editable":true, 
+      "className":"Renderer.EnumTypeRenderer", 
+      "key":"DMStoneType", 
+      "categoryName":"基本属性", 
+      "accessType":"attr"}
+,{
+      "name":"RES_OWNER", 
+      "displayName":"产权单位", 
+      "editable":true,
+      "categoryName":"业务属性", 
+      "accessType":"attr"}
+,{
+      "name":"USERNAME", 
+      "displayName":"使用单位", 
+      "editable":true,
+      "categoryName":"业务属性", 
+      "accessType":"attr"}
+,{
+      "name":"MAINT_DEP", 
+      "displayName":"维护单位", 
+      "editable":true, 
+      "categoryName":"业务属性", 
+      "accessType":"attr"}
+,{
+      "name":"REMARK", 
+      "displayName":"备注", 
+      "editable":true, 
+      "categoryName":"其它属性", 
+      "accessType":"attr"}
+]

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tpl>
+	<!-- 光缆减量详细信息 -->
+	<editor name="IRMS.RMS.WIRE_DECREMENT_INFO" classname="OPERATED_WIRE" title="光缆减量详细信息">
+		<columns>
+			<column id="CUID"  filter="all" categoryname="系统属性">CUID</column>
+			
+			<column id="LABEL_CN"  editable="false" categoryname="基本属性" nullable="false" >光缆段名称
+			</column>
+			
+			<column id="SYSTEM_LABEL_CN" editable="false" categoryname="基本属性" nullable="false">光缆系统名称
+			</column>
+			
+			<column id="ORIG_POINT_TYPE" editable="false" categoryname="基本属性" nullable="false">起点类型
+			</column>
+			
+			<column id="ORIG_POINT_NAME" editable="false" categoryname="基本属性" nullable="false">起点名称
+			</column>
+			
+			<column id="DEST_POINT_TYPE" editable="false" categoryname="基本属性" nullable="false">终点类型
+			</column>
+			
+			<column id="DEST_POINT_NAME" editable="false" categoryname="基本属性" nullable="false">终点名称
+			</column>
+			
+			<column id="LENGTH" editable="false" categoryname="基本属性" nullable="false">长度
+			</column>
+			
+			<column id="DISTRICT_NAME" editable="false" categoryname="基本属性" nullable="false">区域
+			</column>
+			
+			<column id="CREATE_TIME" editable="false" categoryname="基本属性" nullable="false">操作时间
+			</column>
+		</columns>
+		<sql>
+			<![CDATA[
+			SELECT DIS.LABEL_CN AS DISTRICT_NAME,
+		       RES.LABEL_CN,
+		       RES.SYSTEM_LABEL_CN,
+		       RES.ORIG_POINT_CUID,
+		       RES.ORIG_POINT_NAME,
+		       RES.DEST_POINT_CUID,
+		       RES.DEST_POINT_NAME,
+		       RES.LENGTH,
+		       RES.CREATE_TIME
+		  FROM OPERATED_WIRE RES
+		  LEFT JOIN DISTRICT DIS
+		    ON RES.RELATED_SPACE_CUID = DIS.CUID
+		 WHERE TYPE = 2
+		   AND RES.RELATED_SPACE_CUID = '$RELATED_DISTRICT_CUID$'
+		   AND $CHECK_MONTH$
+  			 ]]>
+		</sql>
+	</editor>
+</tpl>
